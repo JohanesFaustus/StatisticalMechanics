@@ -1,0 +1,36 @@
+\documentclass[10pt]{report} 
+\title{Modern Physics}
+\author{EFF}
+\date{\today}
+
+\usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{amsmath, esdiff, esint, indentfirst, titlesec, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, longtable,svg }
+
+\graphicspath{{./Rss/}}
+\def\gmto{{\mbox{$\resizebox{.0786in}{.11in}{\includegraphics{{/Themodynamics/KeyConcepts/gamma.pdf}}}$}}}
+
+\titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
+\titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[]
+\titleformat{\subsubsection}[runin]{\bfseries}{}{}{\indent}
+
+\def\dbar{{\mathchar'26\mkern-12mu d}}
+
+\begin{document}
+\pagestyle{empty}
+\subfile{./Cover/cov.tex}
+
+\chapter*{Mathematics}
+\section*{Partial Derivative}
+\subfile{./Chapter/Mathematics/PartialDerivative/PD.tex}\clearpage
+
+\chapter*{Thermodynamics}
+\section*{Key Concepts}
+\subfile{./Chapter/Thermodynamics/KeyConcept/KeyConcept.tex}\clearpage
+
+\section*{Thermodynamics' Law}
+\subfile{./Chapter/Thermodynamics/ThermoLaw/ThermoLaw.tex}\clearpage
+
+\section*{Thermodynamics' Potentials}
+
+\chapter*{Statistical Mechanics}
+\end{document}
