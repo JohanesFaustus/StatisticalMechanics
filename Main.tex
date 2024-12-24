@@ -4,10 +4,14 @@
 \date{\today}
 
 \usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{amsmath, esdiff, esint, indentfirst, titlesec, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, longtable,svg }
+\usepackage{amsmath, esdiff, esint, indentfirst, titlesec, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, longtable }
 
 \graphicspath{{./Rss/}}
 \def\gmto{{\mbox{$\resizebox{.0786in}{.11in}{\includegraphics{{/Themodynamics/KeyConcepts/gamma.pdf}}}$}}}
+
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{./export.bib}
 
 \titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
 \titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[]
@@ -18,6 +22,7 @@
 \begin{document}
 \pagestyle{empty}
 \subfile{./Cover/cov.tex}
+\nocite{Boas2005}\nocite{Faisca2022}\nocite{Puri2024}
 
 \chapter*{Mathematics}
 \section*{Homongeneus Function}
@@ -36,4 +41,5 @@
 \section*{Thermodynamics' Potentials}
 
 \chapter*{Statistical Mechanics}
+\printbibliography
 \end{document}
