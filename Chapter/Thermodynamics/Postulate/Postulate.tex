@@ -1,0 +1,81 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+In this approach, thermodynamics is built using entropy as its basis, instead of the traditional thermodynamics laws. We treat entropy as fundamental function characterizing thermodynamics state. We henceforth will discuss four postulates of thermodynamics and its connection with thermodynamics laws.
+
+\subsection*{First Postulate}
+\begin{quote}
+    Simple system in equilibrium can be characterized by its internal energy $U$, volume $V$ and number molecule $N_1,\dots,N_r$ of its chemical components.
+\end{quote}
+
+In essence, this postulate simply confirm the existence of equilibrium state.
+
+\subsection*{Second Postulate}
+\begin{quote}
+    The entropy function $S$ is a first order homogeneous function with the properties of assuming maximum value when external constrains are removed.
+\end{quote}
+
+Also called the maximum entropy principle.
+
+\subsection*{Third Postulate}
+\begin{quote}
+    Entropy has the following properties.
+\begin{enumerate}
+    \item The total entropy system is the sum entropy of each subsystem. 
+    \item The entropy function is single-valued, continuous, differentiable, and monotonically increasing with respect to internal energy $U$ over its entire domain.
+\end{enumerate}
+\end{quote}
+
+We will also consider the implication next.
+
+\subsection*{Fourth Law}
+\begin{quote}
+    If the system for which
+\begin{equation*}
+    \frac{\partial U}{\partial S}\bigg|_{V,N_{i|r}}=0
+\end{equation*}
+applies, the entropy of the system vanishes.
+\end{quote}
+
+The equivalent of Third thermodynamics law.
+
+\subsection*{Implication}
+\subsubsection*{Entropy's arguments.} Since the entropy function, implied by the second postulate, is an extensive parameter. Therefore, by the first postulate, entropy is a function of 
+\begin{equation*}
+    S=S(U,V,N_{i|r})\quad\text{where}\quad N_{i|r}=N_1,\dots,N_r
+\end{equation*}
+
+\subsubsection*{Extensive properties.} Due to implication from the second postulate, the entropy function the relation 
+\begin{equation*}
+    S(\lambda U, \lambda V, \lambda N_{i|r} ). = \lambda S(U, V, N_{i|r} )
+\end{equation*}
+Since entropy is also homogeneous function of the first order, it also obeys 
+\begin{equation*}
+    S=U\frac{\partial S}{\partial V}\bigg|_{V,N_{i|r}}+V\frac{\partial S}{\partial V}\bigg|_{V,N_{i|r}}+ \sum_{j=1}^{r} N_j\frac{\partial S}{\partial N_j}\bigg|_{V,N_{i\neq r}}
+\end{equation*}
+Invoking the relation between intensive parameters and partial derivative of entropy, we have 
+\begin{equation*}
+    S=\frac{U}{T}+\frac{PV}{T}-\sum_{j=1}^{r}\frac{N_j\mu_j}{T}
+\end{equation*}
+
+\subsubsection*{Monotonic function.} The property of increasing monotonically implies
+\begin{equation*}
+    \frac{\partial S}{\partial U}\bigg|_{V,N_{i|r}}>0
+\end{equation*}
+Invoking the relation of temperature with partial derivative of entropy
+\begin{equation*}
+    \frac{1}{T}>0\implies T>0
+\end{equation*}
+Another statement of the third law
+
+\subsubsection*{Third thermodynamics law.} Using the relation of temperature and the partial derivative of entropy, we can write the fourth postulate as 
+\begin{equation*}
+    \frac{\partial U}{\partial S}\bigg|_{V,N_{i|r}}=T=0
+\end{equation*} 
+Which is the temperature when entropy of any system reaches zero.
+
+\subsubsection*{Internal energy function.} All that properties with respect to internal energy imply that entropy might be converted into internal energy. We can therefore say that internal energy is a function of the same extensive parameter
+\begin{equation*}
+    U=U(S,V,N_{i|r})=ST-PV+\sum_{j=1}^{r}N_j\mu_j
+\end{equation*}
+
+\end{document}

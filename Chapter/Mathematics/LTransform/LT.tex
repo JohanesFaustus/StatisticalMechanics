@@ -1,0 +1,63 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+\subsection*{Definition}
+Consider monotonic function $f(x)$. The slope of $f(x)$ expressed as 
+\begin{equation*}
+    s(x)=\frac{d}{dx}f(x)
+\end{equation*}
+Suppose now we want to transform $f(x)$ into function $G(s)$ as function of its slope. We write 
+\begin{equation*}
+    G(s)=f[x(s)]-sx(s)
+\end{equation*}
+where $x(s)$ reads as $x$ in terms of its slope $s$. The function $G(s)$ referred as Legendre transform of $f(x)$. If we want to transform $G(s)$ back into $f(x)$, called inverse transform, we write 
+\begin{equation*}
+    f(x)=G[s(x)]+xs(x)
+\end{equation*}
+
+\subsection*{Derivation}
+Consider the same monotonic function $f(x)$. Say that its tangent line intercept the y-axis at $Q$. Another family of the tangent line of the same slope will also intercept the y-axis; they will, however, did it at different point. We define the intercept of origin $O$ and $Q$ as $G(s)$.
+
+To find the actual intercept, note that line passing through $Q$ has the form $y=mx+Q$. Since we define $G(s )$ as the line $OG$, we have
+\begin{equation*}
+    G(s)=f[x(s)]-sx(s)
+\end{equation*}
+
+The differential of $G$ is 
+\begin{equation*}
+    dG(s)=\frac{\partial G}{\partial s}ds=-x(s)\;ds
+\end{equation*}
+Hence
+\begin{equation*}
+    x=-\frac{dG(s)}{ds}
+\end{equation*}
+In a sense the symmetry of $f(x)$ and $G(s)$ can be traced to equation above. $f(x)$ has the slope of $s$, where $G(s)$ is $x$. We can therefore write 
+\begin{equation*}
+    f(x)=G[s(x)]+xs(x)
+\end{equation*}
+to transform $G(s)$ back to $f(x)$.
+ 
+\begin{figure*}
+    \centering
+    \normfig{../../../Rss/Mathematics/LegendreTransform/LT.png}
+\end{figure*}
+
+\subsection*{Multivariable Function}
+\subsubsection*{Single variable transform.} Consider some multivariable function, say $f(x,y,z)$ Suppose we want to construct Legendre transform of $f(x,y,z)$ with respect to $x$. First we have the slope
+\begin{equation*}
+    s=\frac{\partial f}{\partial x}\bigg|_{y,z}
+\end{equation*}
+We then write the transform of $f(x)$ as 
+\begin{equation*}
+    \mathcal{L}_x[f(x,y,z)] = f(x(s),y,z)-sx(s)
+\end{equation*}
+which is the same for single variable function.
+
+\subsubsection*{Multivariable transform.} Suppose that, with the same function, we want to perform Legendre transforms with respect to all variable $x,y,z$. First we define
+\begin{equation*}
+    s=\frac{\partial f}{\partial x}\bigg|_{y,x}\quad ; t=\frac{\partial f}{\partial y}\bigg|_{x,z}\quad ;u=\frac{\partial f}{\partial z}\bigg|_{x,y}
+\end{equation*}
+We then write
+\begin{equation*}
+    \mathcal{L}_{x,y,z}[f(x,y,z)] = f[x(s),y(t),z(u)]-sx(s)-ty(t)-uz(u)
+\end{equation*}
+\end{document}
