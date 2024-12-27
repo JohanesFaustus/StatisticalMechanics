@@ -9,7 +9,7 @@ The Jacobian of $[u(x,y), v(x,y)]$ with respect to $(x, y)$ is defined by
        \dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
     \end{vmatrix}    
 \end{equation*}
-Here are some indentity relating the Jacobian with partial derivative.
+Here are some identity relating the Jacobian with partial derivative.
 
 \subsubsection*{Unity.} Unity as in one
 \begin{equation*}
@@ -137,7 +137,7 @@ We can therefore evaluate the Jacobian
     \frac{\partial x}{\partial y}\bigg|_w\;=\frac{\partial (x,w)}{\partial (y,w)} =\frac{\partial (x,w)}{\partial (z,w)}\frac{\partial (z,w)}{\partial (y,w)}  =\frac{\partial x}{\partial z}\bigg|_w\;\frac{\partial z}{\partial y}\bigg|_w
 \end{equation*}
 
-\subsubsection*{Cyclic rule.}This is chain rule all over again\dots
+\subsubsection*{Cyclic rule.} This is chain rule all over again\dots
 \begin{equation*}
     \frac{\partial x}{\partial z}\bigg|_y \;\frac{\partial z}{\partial y}\bigg|_x \; \frac{\partial y}{\partial x}\bigg|_z\;=-1
 \end{equation*}
@@ -150,7 +150,7 @@ We can therefore evaluate the Jacobian
 \end{multline*}
 
 \subsection*{Application in Thermodynamics}
-Here we will derive some usefull intensive parameter used in thermodynamics. We assumed entopy function $S$ has the form of 
+Here we will derive some useful intensive parameter used in thermodynamics. We assumed entropy function $S$ has the form of 
 \begin{equation*}
     S=S(U, V, N_{i|r} )
 \end{equation*}
@@ -162,7 +162,7 @@ We also assume the following quantities
 \begin{equation*}
     T=\frac{\partial U}{\partial S}\bigg|_{V, N_{i} }\quad
     ;P=-\frac{\partial U}{\partial V}\bigg|_{S, N_{i} }\quad
-    ;\mu_j=\frac{\partial U}{\partial S}\bigg|_{S, V, N_{i\neq j} }
+    ;\mu_j=\frac{\partial U}{\partial N}\bigg|_{S, V, N_{i\neq j} }
 \end{equation*}
 
 \subsubsection*{First identity.} As follows
