@@ -4,10 +4,12 @@
 \date{\today}
 
 \usepackage[paperheight=25.5 cm, paperwidth=14.25cm, left=1.75cm, right=1.75cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{amsmath, esdiff, esint, indentfirst, titlesec, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, longtable, csquotes,amsopn }
+\usepackage{amsmath, esdiff, esint, indentfirst, titlesec, mathdots, amssymb, upgreek, amsthm, graphicx, subfiles, caption, longtable, csquotes,amsopn, braket, relsize, mathtools,romannum }
 
 \graphicspath{{./Rss/}}
 \def\gmto{{\mbox{$\resizebox{.0786in}{.11in}{\includegraphics{{/Themodynamics/KeyConcepts/gamma.pdf}}}$}}}
+\def\arufa{{\mbox{$\resizebox{.07530in}{.1in}{\includegraphics{{/StatisticalMechanics/KineticTheory/arufa.pdf}}}$}}}
+\def\arufas{{\mbox{$\resizebox{.05271in}{.07in}{\includegraphics{{/StatisticalMechanics/KineticTheory/arufa.pdf}}}$}}}
 \newcommand{\normfig}[1]{\includegraphics[width=0.5\textwidth]{#1}}
 \newcommand{\normfigL}[1]{\includegraphics[width=0.8\textwidth]{#1}}
 \newcommand{\dfig}[1]{\includegraphics[width=0.3\textwidth]{#1}}
@@ -20,7 +22,8 @@
 \DeclareMathOperator{\erfi}{erfi}
 
 \titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
-\titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[]
+\titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[\vspace{0.5cm}]
+\titleformat{\subsection}[hang]{\bfseries\large}{}{}{}[\noindent\rule{\textwidth}{0.4pt}]
 \titleformat{\subsubsection}[runin]{\bfseries}{}{}{\indent}
 
 \def\dbar{{\mathchar'26\mkern-12mu d}}
@@ -46,6 +49,9 @@
 \section*{Special Function}
 \subfile{./PhysicalMathematics/Section/SpecialFunction/Sfunc.tex}\clearpage 
 
+\section*{Statistics}
+\subfile{./PhysicalMathematics/Section/Probability/Probability.tex}
+
 \chapter*{Thermodynamics}
 
 \section*{Key Concepts}
@@ -63,6 +69,8 @@
 \section*{Maxwell Relations}
 \subfile{./Chapter/Thermodynamics/MaxwellRelation/Maxwell.tex}\clearpage
 
-%\chapter*{Statistical Mechanics}
+\chapter*{Statistical Mechanics}
+\section*{Kinetic Theory}
+\subfile{./Chapter/StatisticalMechanics/KineticTheory/KT.tex}\clearpage
 \printbibliography
 \end{document}
