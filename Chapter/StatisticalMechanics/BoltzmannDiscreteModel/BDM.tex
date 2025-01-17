@@ -20,11 +20,11 @@ In this model, Boltzmann postulates in a gas of $N$ particle, that each particle
 
 Each configuration must also obey the following restriction.
 \begin{equation*}
-    \sum_{k=0}^{P}=N,\quad U=\epsilon\sum_{k=0}^{P} kn_k
+    \sum_{k=0}^{P}n_k=N,\quad U=\epsilon\sum_{k=0}^{P} kn_k
 \end{equation*}
 or simply
 \begin{equation*}
-    \sum_{k=0}^{P}=N,\quad \sum_{k=0}^{P} kn_k=L
+    \sum_{k=0}^{P}n_k=N,\quad \sum_{k=0}^{P} kn_k=L
 \end{equation*}
 The first restriction says that each configuration is in such way that the sum of each element $n_k$ is the total number of particle $N$, while the second restriction rule the total energy $U$ of the system.
 
@@ -38,7 +38,7 @@ To find the total configuration of a system, we're then summing all possible sta
 \end{equation*}
 For a special case when $L\leq P$, the equation above turns into
 \begin{equation*}
-\mathcal{D}(N,L)=\frac{1}{L!}\frac{(N+L-1)!}{(N-1)!}
+\mathcal{P}(N,L)=\frac{1}{L!}\frac{(N+L-1)!}{(N-1)!}
 \end{equation*}
 
 \begin{longtable}{c||c}
@@ -74,7 +74,7 @@ By Stirling’s formula, the logarithm of $D(N , P, n_{k|P} )$ is expressed as
 
 Using equation above, Boltzmann then derive the logarithm of the largest number of configuration, which of course correspond to equilibrium state. The logarithm in question expressed as 
 \begin{equation*}
-    \ln(\mathcal{D}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
+    \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
 \end{equation*}
 The number of particle $n_k$ inside configuration above is 
 \begin{equation*}
@@ -109,7 +109,7 @@ for convenience’s sake, we use
     n_k=Ax^k\quad \text{with}\quad A=e^{-\alpha}\land x=e^{-\gamma}
 \end{equation*}
 
-Using this result for $n_k$, the first restriction $R_\Romannum{1}$ can be written as
+Using this result for $n_k$, the first restriction can be written as
 \begin{equation*}
     \sum_{k=0}^{P}n_k=N\implies A\sum_{k=0}^{P}x^k=N
 \end{equation*}
@@ -158,11 +158,11 @@ applying the condition for real system, we have $n_k$ which maximize the configu
 
 Substituting $n_k$ we just obtained inside the expression of $\ln D$, we get 
 \begin{equation*}
-    \ln(\mathcal{D}_\text{max})=-N\left(\ln (1-x)+\frac{x}{1-x}\ln (x)\right)
+    \ln(\mathcal{P}_\text{max})=-N\left(\ln (1-x)+\frac{x}{1-x}\ln (x)\right)
 \end{equation*}
 expressing the equation above in terms of $L$ and $N$ to get 
 \begin{equation*}
-    \ln(\mathcal{D}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
+    \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
 \end{equation*}
 
 \subsection*{Result}

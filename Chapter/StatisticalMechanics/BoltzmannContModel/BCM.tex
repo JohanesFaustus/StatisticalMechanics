@@ -1,0 +1,90 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+\subsection*{Continuous Energy Levels}
+Assume continuous energy $E$ within interval $(0,\infty)$, with an interval of $\epsilon$. The function $f(E)$ denote the number of atoms per unit energy. The density function $f(E) $ for continuous energy levels at equilibrium is given by
+\begin{equation*}
+    f(E)=\frac{N}{u}e^{-E/u}
+\end{equation*}
+Permutability measure is defined as 
+\begin{equation*}
+    \Omega=-\int_{0}^{\infty}f(E)\ln\left[f(E)\right]\;dE
+\end{equation*}
+which, on using the given expression for density function evaluates into 
+\begin{equation*}
+    \Omega=N(1+\ln u-\ln N)
+\end{equation*}
+
+\subsubsection*{Derivation.} Let $n_k$ be the number of atoms whose energy lies between $(k\epsilon, k\epsilon+\epsilon)$. For any positive integer $k$, 
+\begin{equation*}
+    n_k=\epsilon f(k\epsilon)
+\end{equation*}
+By taking the limit of $\epsilon\rightarrow0$, $n_k$ now denote the number of atoms whose energy lies between $(E, E+dE)$
+\begin{equation*}
+   \lim_{\epsilon\rightarrow0} n_k=f(E)\;dE
+\end{equation*}
+As it the case with discrete model, we have the following restriction
+\begin{equation*}
+    \sum_{k=0}^{P}n_k=N,\quad \epsilon\sum_{k=0}^{P} kn_k=Nu
+\end{equation*}
+By using the expression for $n_k$ when $\epsilon\rightarrow0$ these restrictions now read as
+\begin{equation*}
+    \int_{0}^{\infty}f(E)\;dE=N,\quad \int_{0}^{\infty}Ef(E)\;dE=Nu
+\end{equation*}
+
+Now we consider the expression for number of configuration in the limit $D\rightarrow\mathcal{P}$. The expression for the logarithm of $D$ written as
+\begin{equation*}
+    \ln D=N\ln N-N-\sum_{k=0}^{\infty}\left(n_k\ln n_k-n_k\right)
+\end{equation*}
+By taking the limit, we have
+\begin{align*}
+    \ln \mathcal{P} &= N\ln N-N-\int_{0}^{\infty}\left[f(E)\ln (n_k)-f(E)\right]\;dE\\
+    & = N\ln N-N-\int_{0}^{\infty}f(E)\ln[ f(E)]\;dE - \lim_{\epsilon\rightarrow0}\int_{0}^{\infty}f(E)\ln(\epsilon)\;dE \\
+    &\quad+  \int_{0}^{\infty}f(E)\;dE \\
+    \ln \mathcal{P}&=N\ln N-\int_{0}^{\infty}f(E)\ln [f(E)]\;dE - \lim_{\epsilon\rightarrow0}N\ln(\epsilon) 
+\end{align*}
+
+Recall that equilibrium state correspond to the largest number of configuration. Although the equation above, due to the last term, diverges; it can be ignored since maximization does not concern constant. In essence, we what to maximize the logarithm of $\mathcal{P}$ by varying the expression for $f(E)$. Therefore, we maximize the quantity of 
+\begin{equation*}
+    \Omega\equiv-\int_{0}^{\infty}f(E)\ln [f(E)]\;dE
+\end{equation*}
+which is defined as permutability measure, with $N$ and $Nu$ constraint. By the Lagrange multiplier method, we have the following auxiliary function
+\begin{equation*}
+    F(f)=\int_{0}^{\infty}[f\ln (f)+\lambda_1f+\lambda_2Ef]\;dE
+\end{equation*}
+Then, we set its derivative to zero
+\begin{equation*}
+    \frac{dF}{df}=\int_{0}^{\infty}[\ln f+1\lambda_1+\lambda_2E]\;dE=0
+\end{equation*}
+One possible way for an integral to be zero is that the integrand is zero, hence we have 
+\begin{equation*}
+    \ln f+1+\lambda_1+\lambda_2E=0\implies \begin{array}{l l}
+        f(E)&=\exp (-1-\lambda_1-\lambda_2E)\\
+        f(E)&=Ce^{-\lambda_2E}
+    \end{array}
+\end{equation*}
+On Using this expression, $N$ constraint now may be evaluated as 
+\begin{equation*}
+    N=\int_{0}^{\infty}Ce^{-\lambda_2E}\;dE=\frac{Ce^{\lambda_2E}}{\lambda_2}\bigg|_{\infty}^{0}=\frac{C}{\lambda_2}
+\end{equation*}
+As for $Nu$ constraint
+\begin{align*}
+    Nu&=\int_{0}^{\infty}ECe^{-\lambda_2E}\;dE= Ce^{-\lambda_2E}\left( \frac{E}{-\lambda_2}-\frac{1}{\lambda_2^2}\right) \bigg|_{0}^{\infty} \\
+    &= \frac{CEe^{\lambda_2E}}{\lambda_2}\bigg|_{\infty}^{0} + \frac{Ce^{-\lambda_2E}}{\lambda_2^2}\bigg|_{\infty}^{0}=\frac{C}{\lambda_2^2}=\frac{N}{\lambda_2}
+\end{align*}
+We have
+\begin{equation*}
+    C=\frac{N}{u}\quad\land\quad\lambda_2=\frac{1}{u}
+\end{equation*}
+The equilibrium distribution now may be written as 
+\begin{equation*}
+    f(E)=\frac{N}{u}e^{-E/u}\quad\blacksquare
+\end{equation*}
+
+Now we evaluate the permutability measure
+\begin{align*}
+    \Omega&=-\int_{0}^{\infty}\frac{N}{u}e^{-E/u}\ln\left[\frac{N}{u}e^{-E/u}\right]\;dE\\
+    &=-\int_{0}^{\infty}\frac{N}{u}e^{-E/u}\left[\ln\left(\frac{N}{u}\right)-\frac{E}{u}\right]\;dE\\
+    &=Ne^{E/u}\ln\left(\frac{N}{u}\right)\bigg|_{0}^{\infty}+\frac{N}{u^2}\left(-Eu-u^2\right)e^{E/u}\bigg|_{0}^{\infty}\\
+    \Omega&=-N\ln\left(\frac{N}{u}\right)+N=N(1+\ln U-\ln N)\quad\blacksquare
+\end{align*}
+\end{document}
