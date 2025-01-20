@@ -232,7 +232,7 @@ which, on using the given expression for density function evaluates into
 \end{equation*}
 By taking the limit of $\epsilon\rightarrow0$, $n_k$ now denote the number of atoms whose energy lies between $(E, E+dE)$
 \begin{equation*}
-   \lim_{\epsilon\rightarrow0} n_k=f(E)\lim_{\epsilon\rightarrow0}\epsilon
+   n=f(E)\lim_{\epsilon\rightarrow0}\epsilon
 \end{equation*}
 As it the case with discrete model, we have the following restriction
 \begin{equation*}
@@ -269,7 +269,7 @@ Then, we set its derivative to zero
 \end{equation*}
 One possible way for an integral to be zero is that the integrand is zero, hence we have 
 \begin{equation*}
-    \ln f+1+\lambda_1+\lambda_2E=0
+    \ln (f)+1+\lambda_1+\lambda_2E=0
 \end{equation*}
 which implies
 \begin{align*}
@@ -318,7 +318,7 @@ Using the relation for gas ideal $u=3k_BT/2$, one can obtain the same distributi
 \end{equation*}
 and as $\boldsymbol{\epsilon}\rightarrow0$
 \begin{equation*}
-    n_\mathbf{k}=f(\mathbf{v})\lim_{\boldsymbol{\epsilon}\rightarrow0}\boldsymbol{\epsilon}=f(\mathbf{v})\;d^3v
+    n=f(\mathbf{v})\lim_{\boldsymbol{\epsilon}\rightarrow0}\boldsymbol{\epsilon}=f(\mathbf{v})\;d^3v
 \end{equation*}
 As before, we want to find the equilibrium distribution function, $f(\mathbf{ v})$ in this case, by maximizing the said distribution function, constrained by $N$ and $Nu$ function. The $N$ constraint simply evaluate into 
 \begin{equation*}
@@ -380,11 +380,11 @@ Then the $Nu$ constraint
 \end{multline*}
 Solving both for $N$ and equating them 
 \begin{align*}
-    C\left(\frac{2\pi}{m\lambda_2}\right)^{3/2} & = \frac{3}{4} Cm\left(\frac{2\pi^{3/5}}{m\lambda_2}\right)^{5/2}\\
+    C\left(\frac{2\pi}{m\lambda_2}\right)^{3/2} & = \frac{3}{4u} Cm\left(\frac{2\pi^{3/5}}{m\lambda_2}\right)^{5/2}\\
     \frac{4u}{3}&=\frac{2m}{m\lambda_2}\\
     \lambda_2&=\frac{3}{2u}
 \end{align*}
-On using this to $N$ constraint
+On using this to the previously evaluated $N$ constraint
 \begin{equation*}
     N=C\left(\frac{2\pi}{m}\frac{2u}{3}\right)^{3/2}\implies C=N \left(\frac{3m}{4\pi u}\right)^{3/2}
 \end{equation*}
@@ -393,5 +393,119 @@ Hence
     f(\mathbf{v})=C\exp\left(-\frac{\lambda_2m}{2}v^2\right)= N \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)\quad\blacksquare
 \end{equation*}
 
-\subsection*{Position Velocity Distribution}
+\subsection*{6$\boldsymbol{n}$ Phase Space Distribution}
+Boltzmann then generalize the distribution function as a function of position and velocity $f=f(\mathbf{r},\mathbf{v})$ such that the number of particle whose position and velocity lies within  $(\mathbf{r}+d\mathbf{r},\mathbf{v}+d\mathbf{v})$ is given by 
+\begin{equation*}
+    n=f(\mathbf{r},\mathbf{v})\;d^3r\;d^3v
+\end{equation*}
+where the distribution function itself is given by
+\begin{equation*}
+    f(\mathbf{r},\mathbf{v})=\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)
+\end{equation*}
+Boltzmann also extend the definition of permutability measure using the said distribution function into
+\begin{equation*}
+    \Omega=-\int\limits_{V,\mathbb{R}^3} f(\mathbf{r},\mathbf{v})\ln [f(\mathbf{r},\mathbf{v})]\;d^3r\;d^3v
+\end{equation*} 
+which then evaluate into 
+\begin{equation*}
+    \Omega=N\left[\frac{3}{2}\ln (u)+\ln (V)\right]-N\ln (N)+\frac{3}{2}N\;\left[\ln\left(\frac{4\pi}{3m}\right)+1\right]
+\end{equation*}
+
+\subsubsection*{Derivation.} To obtain the said distribution function we begin by maximizing the permutability measure
+\begin{equation*}
+    \Omega=-\int f(\mathbf{r},\mathbf{v})\ln [f(\mathbf{r},\mathbf{v})]\;d^3r\;d^3v
+\end{equation*}
+constrained with 
+\begin{equation*}
+    N=\int f(\mathbf{r},\mathbf{v})\;d^3r\;d^3v,\quad Nu=\frac{m}{2}\int  v^2f(\mathbf{r},\mathbf{v})\;d^3r\;d^3v
+\end{equation*}
+By assuming that the distribution function is only a function of $r$ and $v$, we can evaluate both constraints into
+\begin{equation*}
+    N=16\pi^2\int r^2v^2 f(\mathbf{r},\mathbf{v})\;dr\;dv,\quad Nu=8m\pi^2\int r^2v^4f(\mathbf{r},\mathbf{v})\;dr\;dv
+\end{equation*}
+Some remark, this evaluation method works since we assume that the particle are uniformly distributed. By Lagrange's method, we define the auxiliary function
+\begin{equation*}
+    F(f)=\int \left[f\ln (f)+ \lambda_1f+\lambda2\frac{m}{2}v^2f\right] \;d^3r\;d^3v
+\end{equation*}
+Setting its derivative to zero 
+\begin{equation*}
+    \frac{dF}{df} = \int \left[\ln(f+) +1 + \lambda_1 +\lambda2\frac{m}{2}v^2\right] =0
+\end{equation*}
+which implies
+\begin{equation*}
+    \ln(f) +1 + \lambda_1 +\lambda2\frac{m}{2}v^2=0
+\end{equation*}
+Solving for $f$, we have the expression for our distribution function, albeit with some constant that needed to be determined
+\begin{equation*}
+    f=C\exp\left(- \frac{\lambda_2m}{2}v^2\right)
+\end{equation*}
+
+Now we plug into $N$ constraint
+\begin{multline*}
+    N=16\pi^2\int r^2v^2 C\exp\left(- \frac{\lambda_2m}{2}v^2\right)\;dr\;dv\\
+    = 16\pi^2C\frac{r^3}{3}\frac{1}{2}\left(\frac{2}{\lambda_2m}\right)^{3/2}\frac{\sqrt{\pi}}{2}
+    =CV\left(\frac{2\pi}{\lambda_2m}\right)^{3/2}
+\end{multline*}
+and the $Nu$ constraint
+\begin{multline*}
+    Nu=8m\pi^2\int r^2v^4 C\exp\left(- \frac{\lambda_2m}{2}v^2\right)\;dr\;dv\\
+    = 8m\pi^2C \frac{r^3}{3}\frac{1}{2}\left(\frac{2}{\lambda_2m}\right)^{3/2}\frac{3}{4}\sqrt{\pi}
+    = \frac{3}{4}mCV\left(\frac{2\pi^{3/5}}{\lambda_2m}\right)^{5/2}
+\end{multline*}
+Solving both for $N$ and equating them 
+\begin{align*}
+    CV\left(\frac{2\pi}{\lambda_2m}\right)^{3/2}&=\frac{3}{4u}mCV\left(\frac{2\pi^{3/5}}{\lambda_2m}\right)^{5/2}\\
+    \frac{4u}{3}&=\frac{2m}{\lambda_2m}\\
+    \lambda_2&=\frac{3}{2u}
+\end{align*}
+On using this to the previously evaluated $N$ constraint
+\begin{equation*}
+    N=CV\left(\frac{2\pi}{m}\frac{2u}{3}\right)^{3/2}\implies C=\frac{N}{V}\left(\frac{3m}{4\pi u}\right)^{3/2}
+\end{equation*}
+Hence
+\begin{equation*}
+    f(\mathbf{r},\mathbf{v})=C\exp\left(- \frac{\lambda_2m}{2}v^2\right)= \frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)\quad \blacksquare
+\end{equation*}
+
+Now we evaluate the expression permutability measure
+\begin{equation*}
+    \Omega=-\int f(\mathbf{r},\mathbf{v})\ln [f(\mathbf{r},\mathbf{v})]\;d^3r\;d^3v
+\end{equation*}
+We have Assumed that $f(\mathbf{r},\mathbf{v})$ is independent of $\mathbf{r}$, thus $f(\mathbf{r},\mathbf{v})\rightarrow f(\mathbf{v})$ and the equation may be written as
+\begin{equation*}
+    \Omega=-\int 4\pi r^2\;dr\int  f( \mathbf{v})\ln [f( \mathbf{v})]\;d^3v=-V\int  f( \mathbf{v}) \ln [f( \mathbf{v})]\;d^3v
+\end{equation*}
+We evaluate this in \enquote{spherical} coordinate
+\begin{multline*}
+    \Omega=-4\pi V\int v^2 \frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)\\
+     \ln \left[\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)\right]\;dv
+\end{multline*}
+This looks hard, but it is actually very easy. Watch this.
+\begin{multline*}
+    \Omega=-4\pi N \left(\frac{3m}{4\pi u}\right)^{3/2}\int v^2 \exp\left(-\frac{3m}{4u}v^2\right)\\
+      \left[\ln\left\{\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\right\} -\frac{3m}{4u}v^2\right]\;dv
+\end{multline*}
+then
+\begin{multline*}
+    \Omega=-4\pi N \left(\frac{3m}{4\pi u}\right)^{3/2}\Bigg[ \ln\left\{\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\right\} \frac{1}{2}\left(\frac{4u}{3m}\right)^{3/2}\frac{\sqrt{\pi}}{2}\\
+    -\frac{3m}{4u}\frac{1}{2}\left(\frac{4u}{3m}\right)^{5/2}\frac{3\sqrt{\pi}}{4}\Bigg]
+\end{multline*}
+and then
+\begin{multline*}
+    \Omega=-4\pi N \left(\frac{3m}{4\pi u}\right)^{3/2}\Bigg[\frac{\sqrt{\pi}}{4}\left(\frac{4u}{3m}\right)^{3/2} \ln\left\{\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\right\} \\
+    -\frac{3\sqrt{\pi}}{8} \left(\frac{4u}{3m}\right)^{3/2}\Bigg]
+\end{multline*}
+and then 
+\begin{equation*}
+    \Omega=-4\pi N \left(\frac{3m}{4\pi u}\right)^{3/2}\frac{\sqrt{\pi}}{4}\left(\frac{4u}{3m}\right)^{3/2} \left[\ln\left\{\frac{N}{V} \left(\frac{3m}{4\pi u}\right)^{3/2}\right\} 
+    -\frac{3}{2}\right]
+\end{equation*}
+and then 
+\begin{equation*}
+    \Omega=-N\left[\ln\left\{N\right\}+\frac{3}{2}\ln\left\{\frac{3m}{4\pi}\right\} - \ln \left\{V\right\}-\frac{3}{2}\ln\left\{u\right\}-\frac{3}{2}\right]
+\end{equation*}
+and finally then
+\begin{equation*}
+    \Omega=N\left[\frac{3}{2}\ln\left\{u\right\}+\ln \left\{V\right\}\right] -N\ln\left\{N\right\}+\frac{3}{2}N\left[\ln\left\{\frac{4\pi}{3m}\right\}+1\right] \quad\blacksquare
+\end{equation*}
 \end{document}
