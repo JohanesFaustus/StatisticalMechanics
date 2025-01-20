@@ -72,25 +72,35 @@ For a special case when $L\leq P$, the equation above turns into
 
 \subsubsection*{ Real\textsuperscript{\texttrademark} System.} Boltzmann postulates that thermal equilibrium correspond to state with the largest number of configuration. The previous example with $N=7$ we know that the state in question is $n_{k|P}=(3, 2, 1, 1, 0, 0, 0, 0)$. In real system with large $N$, it is impossible to determine the equilibrium state using method above.
 
-By Stirling’s formula, the logarithm of $D(N , P, n_{k|P} )$ is expressed as
+Boltzmann then derive the logarithm of the largest number of configuration, which of course correspond to equilibrium state. The logarithm in question expressed as 
 \begin{equation*}
-    \ln\left[D(N , P, n_{k|P} )\right]=N\ln N-N-\sum_{k=0}^{P}\left(n_k\ln n_k-n_k\right)
+    \ln(\mathcal{P}_\text{max})=N\left[\ln \left(\frac{1}{1-x}\right)+\frac{x}{1-x}\ln \left(\frac{1}{x}\right)\right]
 \end{equation*}
-
-Using equation above, Boltzmann then derive the logarithm of the largest number of configuration, which of course correspond to equilibrium state. The logarithm in question expressed as 
+or
 \begin{equation*}
     \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
 \end{equation*}
+where $x=L/(L+N)$. 
+
 The number of particle $n_k$ inside configuration above is 
 \begin{equation*}
     n_k=N(1-x)x^k
 \end{equation*}
-where $x=L/(L+N)$. The expression $n_k$ above maximize the $D$. If the average kinetic energy $u=U/N=L\epsilon/N$ is much bigger separation $\epsilon$, $n_k$ can be approximated as 
+The expression $n_k$ above maximize the $D$. If the average kinetic energy $u=U/N=L\epsilon/N$ is much bigger separation $\epsilon$, $n_k$ can be approximated as 
 \begin{equation*}
     n_k=\frac{N_\epsilon}{u+\epsilon}\left(1+\frac{\epsilon}{u}\right)^{-k}\approx\frac{N\epsilon}{u}e^{-k\epsilon/u}
 \end{equation*}
+In terms of observable quantity, this expression reads 
+\begin{equation*}
+    n_k=N\left[1-\exp\left(-\frac{\epsilon}{k_BT}\right)\right]\exp\left[-\frac{k\epsilon}{k_BT}\right]
+\end{equation*}
 
-\emph{Proof.} To find the desired maximum function, we use Lagrange's multiplier method. We will maximize $D(N , P, n_{k|P})$ for $P\rightarrow\infty$
+\emph{Proof.} By Stirling’s formula, the logarithm of $D(N , P, n_{k|P} )$ is expressed as
+\begin{equation*}
+    \ln\left[D(N , P, n_{k|P} )\right]=N\ln N-N-\sum_{k=0}^{P}\left(n_k\ln n_k-n_k\right)
+\end{equation*}
+
+Using equation above,  we can find the desired maximum function. We will maximize $D(N , P, n_{k|P})$ for $P\rightarrow\infty$
 \begin{equation*}
     F(n_k)=\ln\left[D(N , P, n_{k|P} )\right]- \sum_{k=0}^{P}(\alpha + k\gamma )n_k
 \end{equation*}
@@ -154,20 +164,45 @@ Rearranging the equation above
 
 Since have found the expression for $A$, $L$, and $x$, we can then write the complete expression for $n_k$
 \begin{equation*}
-    n_k=\frac{N(1-x)}{1-x^{P+1}}x^k
+    n_k=\frac{N(1-x)}{1-x^{P+1}}x^k 
 \end{equation*}
 applying the condition for real system, we have $n_k$ which maximize the configuration
 \begin{equation*}
-    n_k=N(1-x)x^k\lim_{P\rightarrow\infty}\frac{1}{1-\exp\left[-\gamma (P+1)\right]}=N(1-x)x^k
+    n_k=\lim_{P\rightarrow\infty}\frac{N(1-x)x^k}{1-\exp\left[-\gamma (P+1)\right]}=N(1-x)x^k \quad \blacksquare
+\end{equation*}
+Using $u=L\epsilon/N$, we $x=L/(L+N)$ as 
+\begin{equation*}
+    x=\frac{Nu/\epsilon}{Nu/\epsilon+L\epsilon/u}=\frac{u}{u+L\epsilon^2/Nu}= \frac{u}{u+\epsilon}
+\end{equation*}
+Substituting it inside the expression of $n_k$
+\begin{equation*}
+    n_k=N(1-x)x^k =N\left(1-\frac{u}{u+\epsilon}\right)\left(\frac{u}{u+\epsilon}\right)^k= \frac{N_\epsilon}{u+\epsilon}\left(1+\frac{\epsilon}{u}\right)^{-k} \quad \blacksquare
+\end{equation*}
+I suppose we can also solve $x$ for $u$
+\begin{align*}
+    xu+x\epsilon&=u\\
+    u(1-x)&=x\epsilon\\
+    u&=\frac{x\epsilon}{1-x}
+\end{align*}
+Then plug in the equation for average molecular energy
+\begin{align*}
+    \frac{\epsilon}{\exp(\epsilon/k_BT)-1}&=\frac{x\epsilon}{1-x}\\
+    \frac{1-x}{x}&=\exp(\epsilon/k_BT)-1\\
+    1&=x\exp(\epsilon/k_BT)\\
+    x&=\exp(-\epsilon/k_BT)
+\end{align*}
+Substituting the value of $x$ inside the expression for $n_k$, we have
+\begin{equation*}
+    n_k=N(1-x)x^k =N\left[1-\exp\left(-\frac{\epsilon}{k_BT}\right)\right]\exp\left[-\frac{k\epsilon}{k_BT}\right]\quad\blacksquare
 \end{equation*}
 
-Substituting $n_k$ we just obtained inside the expression of $\ln D$, we get 
+Substituting $n_k$ inside the expression of $\ln D$, we get 
 \begin{equation*}
-    \ln(\mathcal{P}_\text{max})=-N\left(\ln (1-x)+\frac{x}{1-x}\ln (x)\right)
+    \ln(\mathcal{P}_\text{max})=-N\left(\ln (1-x)+\frac{x}{1-x}\ln (x)\right)\quad \blacksquare
 \end{equation*}
 expressing the equation above in terms of $L$ and $N$ to get 
 \begin{equation*}
-    \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N)
+    \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N) \quad \blacksquare
 \end{equation*}
 
 \subsubsection*{Result.} We shall now discuss the result of Boltzmann derivation. The case in this discussion will be the same as previously, which is $N = P = 7 , L \leq P$. Here we will compare those three result: 
@@ -508,4 +543,61 @@ and finally then
 \begin{equation*}
     \Omega=N\left[\frac{3}{2}\ln\left\{u\right\}+\ln \left\{V\right\}\right] -N\ln\left\{N\right\}+\frac{3}{2}N\left[\ln\left\{\frac{4\pi}{3m}\right\}+1\right] \quad\blacksquare
 \end{equation*}
+
+\subsection*{Relation With Thermodynamics}
+Recall the identity of
+\begin{align*}
+    dQ&=N\;du+P\;dV&\impliedby &dU=dQ+P\;dV,\; dN=0\\
+    PV&=\frac{2}{3}Nu&\impliedby &PV=Nk_BT,\;u=\frac{3}{2}k_BT
+\end{align*}
+We then use it to obtain
+\begin{multline*}
+    \int \frac{dQ}{u}=\int\frac{N}{u}du+\int \frac{2N}{3V}dV=N\ln u+\frac{2N}{3}\ln V+C\\
+    =\frac{2}{3}N\left(\frac{3}{2}\ln u+\ln V\right)+C
+\end{multline*}
+and to write it in other way
+\begin{equation*}
+    \int \frac{dQ}{u}=\frac{2}{3k_BT}dQ=\frac{2}{3k_B}S_{T}
+\end{equation*}
+On equating both of them, we obtain an expression for thermodynamics entropy 
+\begin{equation*}
+    S_{T}=Nk_B\left(\frac{3}{2}\ln u+\ln V\right)+C
+\end{equation*}
+Hence with appropriate value for $C$, we can obtain the desired link between Boltzmann's permutability measure and thermodynamics entropy
+\begin{equation*}
+    S_T=k_B\Omega\equiv S_{B}\implies\frac{1}{T}=\frac{\partial S_B}{\partial U}
+\end{equation*}
+In terms of macroscopic properties, the Boltzmann entropy written as
+\begin{equation*}
+    S_B=Nk_B\left[\frac{3}{2}\ln \frac{U}{N}+\ln \left(\frac{V}{N}\right)+\frac{3}{2}\ln\left(\frac{4\pi}{3m}\right)+\frac{3}{2}\right]
+\end{equation*}
+which is extensive; unlike thermodynamics entropy, which require pro-per constant.
+
+\subsubsection*{Discrete model.} Recall the expression for logarithm of maximum configuration $\mathcal{P}_m$ in terms of $x$. By Boltzmann definition of entropy, we have
+\begin{equation*}
+    S=Nk_B\left[\ln \left(\frac{1}{1-x}\right)+\frac{x}{1-x}\ln \left(\frac{1}{x}\right)\right]
+\end{equation*} 
+Substituting the value of $x$
+\begin{align*}
+    S_B&=Nk_B\left[\ln \left(\frac{1}{1-u/(u+\epsilon)}\right)+\frac{u/(u+\epsilon)}{1-u/(u+\epsilon)}\ln \left(\frac{1}{u/(u+\epsilon)}\right)\right]\\
+    &=Nk_B\left[\ln \left(\frac{u+\epsilon}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left(\frac{u+\epsilon}{u}\right)\right]\\
+    &=Nk_B\left[\ln \left(1+\frac{u}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left(1+\frac{\epsilon}{u}\right)\right]\\
+    &=Nk_B\left[\ln \left(1+\frac{u}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left\{\frac{\epsilon}{u}\left(\frac{u}{\epsilon}+1\right)\right\}\right]\\
+    &=Nk_B\left[\left(1+\frac{u}{\epsilon} \right) \ln \left(1+\frac{u}{\epsilon}\right)-\frac{u}{\epsilon}\ln\left(\frac{u}{\epsilon}\right)\right]
+\end{align*}  
+Using this we can determine another expression of $u$ in terms of $\epsilon$
+\begin{align*}
+    \frac{1}{T}&=Nk_B\frac{\partial}{N\partial u}\left[\left(1+\frac{u}{\epsilon} \right) \ln \left(1+\frac{u}{\epsilon}\right)-\frac{u}{\epsilon}\ln\left(\frac{u}{\epsilon}\right)\right]\\
+    &=k_B\left[\frac{\partial}{\partial \alpha}\left(\alpha\ln \alpha\right)\frac{\partial}{\partial u}\left(1+\frac{u}{\epsilon}\right)-\frac{1}{\epsilon}\frac{\partial}{\partial u}\left(u\ln u-u\ln\epsilon\right)\right]\\
+    &=k_B\left[\left\{\ln\left(1+\frac{u}{\epsilon} \right)+1\right\}\frac{1}{\epsilon}-\frac{1}{\epsilon}\left\{\ln (u)+1-\ln (\epsilon)\right\}\right]\\
+    \frac{1}{T}&=\frac{k_B}{\epsilon}\left[\ln\left(1+\frac{u}{\epsilon}\right)-\ln\left(\frac{u}{\epsilon}\right)\right]\\
+    \frac{\epsilon}{k_BT}&=\ln\left(\frac{\epsilon}{u}+1\right)
+\end{align*}
+Raising $e$ to the power of it, we have 
+\begin{align*}
+    \exp\left(\frac{\epsilon}{k_BT}\right)&=\frac{\epsilon}{u}+1\\
+    u\left[\exp\left(\frac{\epsilon}{k_BT}\right)-1\right]&=\epsilon\\
+    u&=\frac{\epsilon}{\exp(\epsilon/k_BT)-1}
+\end{align*}
+As an aside, using $\epsilon=h\nu$ would result in Planck's entropy and average molecular energy to $S_B$ and $u$ respectively.
 \end{document}
