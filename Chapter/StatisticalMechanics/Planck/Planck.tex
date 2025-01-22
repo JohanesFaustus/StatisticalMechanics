@@ -1,0 +1,84 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+In his theory of blackbody radiation, energy density at frequency $\nu$ inside cavity with temperature $T$ is given by
+\begin{equation*}
+    \mathcal{U}(\nu,T)=\rho u
+\end{equation*}
+where $\rho$ is the number of radiation modes per unit volume and $u$ is the average energy at said frequency. Both quantity respectively are given by 
+\begin{equation*}
+    \rho=\frac{8\pi\nu^2}{c^3},\quad u=\frac{h\nu}{\exp(h\nu/k_BT)-1}
+\end{equation*}
+Hence
+\begin{equation*}
+    \mathcal{U}(\nu,T)=\frac{\nu^3}{c^3}\frac{8\pi h}{\exp(h\nu/k_BT)-1}
+\end{equation*}
+or we can write it in terms of $\lambda$
+\begin{equation*}
+    \mathcal{U}(\lambda,T)=\frac{c}{\lambda^5}\frac{8\pi h}{\exp(hc/\lambda k_BT)-1}
+\end{equation*}
+\subsubsection*{Derivation.} In his work, Planck assumes that the walls of the cavity act as oscillator with  energy of integer multiple $\epsilon$. This has some similarity with Boltzmann discrete model. We denote $n_k$ as the number particle with $k\epsilon$ energy, with maximum energy of $P\epsilon$. Therefore, we have the following constraints.
+\begin{equation*}
+    \sum_{k=0}^{P}n_k=N,\quad\sum_{k=0}^{P}kn_k=P
+\end{equation*}
+
+Planck he defined entropy as 
+\begin{equation*}
+    S_P=k_B\ln (W)+C
+\end{equation*}
+where
+\begin{equation*}
+    W=\frac{\mathcal{R}}{\mathcal{J}}
+\end{equation*}
+is the probability of the $N$ atoms have $p\epsilon$ energy. In other hand, $\mathcal{R}$ denotes the number of said configuration and $\mathcal{J}$ denotes the total configuration. It then may be written as
+\begin{equation*}
+    S_P=k_B\ln \mathcal{R}
+\end{equation*}
+where $\mathcal{R}$ is given by 
+\begin{equation*}
+    \mathcal{R}=\frac{(N+L-1)!}{L!(N-1)!}
+\end{equation*}
+The logarithm of $\mathcal{R}$ can be evaluated as
+\begin{multline*}
+    \ln \mathcal{R}=(N+L-1)[\ln (N+L-1)-1]-L[\ln (L)-1]\\
+    -(N-1)[\ln(N-1)-1]
+\end{multline*}
+and then
+\begin{equation*}
+    \ln \mathcal{R}=(N+L-1)\ln(N+L-1)-L\ln L-(N-1)\ln(N-1)
+\end{equation*}
+and then 
+\begin{multline*}
+    \ln \mathcal{R}=(N+L)\ln(N+L-1)-\ln(N+L-1)-L\ln L \\
+    -N\ln(N-L)+\ln(N-1)
+\end{multline*}
+and then 
+\begin{multline*}
+    \ln \mathcal{R}=(N+L)\left[\ln\left(\frac{N+L-1}{N+L}\right) +\ln\left(N+L\right)\right]-L\ln L \\
+    -N\left[\ln \left(\frac{N-1}{N}\right)+\ln (N)\right]-\ln\left(\frac{N+L-1}{N+L}\right)
+\end{multline*}
+and then we rewrite it as
+\begin{multline*}
+    \ln \mathcal{R}=(N+L)\ln(N+L) -L\ln L - N\ln N \\
+    -N\ln\left(\frac{N-1}{N}\right) +(N+L-1)\ln\left(\frac{N+L-1}{N+L}\right)
+\end{multline*}
+For large $N,L$; those last two terms will approach zero. Hence,
+\begin{equation*}
+    \ln \mathcal{R}=(N+L)\ln(N+L) -L\ln L - N\ln N 
+\end{equation*}
+This equation give the same result for $\ln(\mathcal{P}_\text{max})$ in the case of Boltzmann discrete model. Therefore, we write 
+\begin{equation*}
+    S_P=Nk_B\left[\left(1+\frac{u}{\epsilon} \right) \ln \left(1+\frac{u}{\epsilon}\right)-\frac{u}{\epsilon}\ln\left(\frac{u}{\epsilon}\right)\right]
+\end{equation*}
+Based on empirical data, Planck concludes that entropy is a function of energy and frequency
+\begin{equation*}
+    S_P=f\left(\frac{u}{\nu}\right)
+\end{equation*}
+On comparing those two equation, it can be seen that energy $\epsilon$ is proportional to frequency $\nu$. To show this realitionship, we then write $\epsilon=h\nu$. Solving the equation of entropy $S_P$ above for average energy $u$ we have derived the following result.
+\begin{equation*}
+    u=\frac{\epsilon}{\exp(\epsilon/k_BT)-1}
+\end{equation*}
+Substituting $\epsilon=h\nu$ from our imperical observation, we obtain
+\begin{equation*}
+    u=\frac{hv}{\exp(hv/k_BT)-1}\quad\blacksquare
+\end{equation*}
+\end{document}

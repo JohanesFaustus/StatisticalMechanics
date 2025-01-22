@@ -575,7 +575,7 @@ which is extensive; unlike thermodynamics entropy, which require pro-per constan
 
 \subsubsection*{Discrete model.} Recall the expression for logarithm of maximum configuration $\mathcal{P}_m$ in terms of $x$. By Boltzmann definition of entropy, we have
 \begin{equation*}
-    S=Nk_B\left[\ln \left(\frac{1}{1-x}\right)+\frac{x}{1-x}\ln \left(\frac{1}{x}\right)\right]
+    S_B=k_B\ln(\mathcal{P}_\text{max})=Nk_B\left[\ln \left(\frac{1}{1-x}\right)+\frac{x}{1-x}\ln \left(\frac{1}{x}\right)\right]
 \end{equation*} 
 Substituting the value of $x$
 \begin{align*}
@@ -583,7 +583,7 @@ Substituting the value of $x$
     &=Nk_B\left[\ln \left(\frac{u+\epsilon}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left(\frac{u+\epsilon}{u}\right)\right]\\
     &=Nk_B\left[\ln \left(1+\frac{u}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left(1+\frac{\epsilon}{u}\right)\right]\\
     &=Nk_B\left[\ln \left(1+\frac{u}{\epsilon}\right)+\frac{u}{\epsilon}\ln \left\{\frac{\epsilon}{u}\left(\frac{u}{\epsilon}+1\right)\right\}\right]\\
-    &=Nk_B\left[\left(1+\frac{u}{\epsilon} \right) \ln \left(1+\frac{u}{\epsilon}\right)-\frac{u}{\epsilon}\ln\left(\frac{u}{\epsilon}\right)\right]
+    S_B&=Nk_B\left[\left(1+\frac{u}{\epsilon} \right) \ln \left(1+\frac{u}{\epsilon}\right)-\frac{u}{\epsilon}\ln\left(\frac{u}{\epsilon}\right)\right]
 \end{align*}  
 Using this we can determine another expression of $u$ in terms of $\epsilon$
 \begin{align*}
