@@ -1,0 +1,125 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+\subsection*{Bose Statistics}
+Bose derived Planck's law independent of classical electrodynamics to obtain coefficient $8\pi \nu^2/c^3$. He considered gas of photon with energy of $E=h\nu$ and momentum $p=hv/c$. He assumed that quantum state is described by space and momentum phase space. Next he determined the volume of phase space within interval $(\nu,\nu+d\nu)$, which is
+\begin{equation*}
+    d\omega=V\;d\mathcal{V}
+\end{equation*}
+where $V$ is the spatial volume and $d\mathcal{V}$ is the momentum volume of the shell within radii $h(\nu+d\nu)/c,h\nu$. The said shell volume is given by
+\begin{multline*}
+    d\mathcal{V}=(\mathcal{V}+d\mathcal{V})-\mathcal{V}=\frac{4\pi h^3}{3c^3}\left[(\nu+d\nu)^3-\nu^3\right] =\\ \frac{4\pi h^3}{3c^3}\left[3\nu^2\;d\nu+3\nu\;d^2\nu+d^3\nu\right]=\frac{4\pi h^3}{c^3}\nu^2\;d\nu
+\end{multline*}
+The resulting volume of phase space $d\omega$ is
+\begin{equation*}
+    d\omega=4\pi V\left(\frac{h}{c}\right)^3\nu^2\;d\nu
+\end{equation*}
+This volume then divided by Bose into cells of volume $h^3$. The number $P_\nu$ as phase space cells available to the photon expressed by
+\begin{equation*}
+    P_\nu=\frac{2}{c^3}d\omega=\frac{8\pi V\nu^2}{c^3}
+\end{equation*}
+where the factor of 2 comes after taking account the two direction of polarization. 
+
+Next he evaluates the entropy of said system. To do that, he uses the same method as Boltzmann. He defined the cell $\mathcal{P}_v$ as a box which photon are distributed. Let $n_{k\nu}$ defined as the number of boxes that contain $k$ photon of frequency $\nu$. We have then the following constraints.
+\begin{equation*}
+    P_\nu=\sum_{k=0}^{\infty}n_{k\nu},\quad U_\nu= hv\sum_{k=0}^{\infty}kn_{k\nu}
+\end{equation*}
+or simply
+\begin{equation*}
+    P_\nu=\sum_{k=0}^{\infty}n_{k\nu},\quad N_\nu= \sum_{k=0}^{\infty} kn_{k\nu}
+\end{equation*}
+where $N_\nu$ is the number of photon with frequency $\nu$. The number of configuration is given by 
+\begin{equation*}
+    \mathcal{P}_\nu=P_\nu!\left(\prod_{k=0}^{\infty}n_{k\nu}\right)^{-1}
+\end{equation*}  
+All of those equations applies for distinct frequency $\nu$, what we what however distribution over all frequency $(0,\infty)$. The expression for constraints is
+\begin{equation*}
+    P_\nu=\sum_{k=0}^{\infty}n_{k\nu},\quad U= h\sum_{k=0}v\sum_{k=0}^{\infty}kn_{k\nu}
+\end{equation*}
+and the expression for the number of configuration is 
+\begin{equation*}
+    \mathcal{P}=\sum_{\nu=0}^{\infty}\mathcal{P}_\nu
+\end{equation*} 
+As usual, the equation that we want to maximize not the configuration $\mathcal{P}$ itself, rather its logarithm; which may be written as 
+\begin{equation*}
+    \ln \mathcal{P}=\sum_{\nu=0}^{\infty}\ln\left[\mathcal{P}_v!\left( \prod_{k=0}^{\infty} n_{k\nu}\right)^{-1}\right]
+\end{equation*}
+On using Stirling's approximation
+\begin{align*}
+    \ln \mathcal{P}&=\sum_\nu^\infty\left[\mathcal{P}_\nu\ln \left(\mathcal{P}_\nu\right)-\mathcal{P}_\nu - \sum_{k}^{\infty}\left\{n_{k\nu}\ln \left(n_{k\nu} \right)-n_{k\nu} \right\}\right]\\
+    \ln \mathcal{P}&=\sum_\nu^\infty\left[\mathcal{P}_\nu\ln \left(\mathcal{P}_\nu\right) - \sum_{k}^{\infty}n_{k\nu}\ln \left(n_{k\nu} \right)\right]
+\end{align*}
+Since we want to maximize said logarithm with respect to $n_{k\nu}$, we construct the following function using Lagrange's method.
+\begin{equation*}
+    F(n_{k\nu})=\sum_\nu \left[\mathcal{P}\ln \mathcal{P}_\nu - \sum_{k} n_{k\nu}\ln n_{k\nu} \right]+ 
+    \lambda_1\sum_{k}n_{k\nu}+
+    \lambda_2h\sum_{v,k}vkn_{k\nu}
+\end{equation*}
+Setting its derivative to zero
+\begin{equation*}
+    \frac{dF}{dn_{k\nu}}=-\ln(n_{k\nu})-1+\lambda_1+\lambda_2hk\nu=0
+\end{equation*}
+which implies
+\begin{equation*}
+    n_{k\nu}=\exp\left(1-\lambda_1-\lambda_2hk\nu\right)=C\exp\left(-\lambda_2hk\nu\right)
+\end{equation*}
+Substituting the result into $\mathcal{P}_\nu$ constraints
+\begin{equation*}
+    \mathcal{P}_\nu=C\sum_{k } \exp\left(-\lambda_2hk\nu\right) \implies C=\mathcal{P}_\nu\left[\sum_{k } \exp\left(-\lambda_2hk\nu\right)\right]^{-1}
+\end{equation*}
+The term inside parenthesis is a geometric series with ratio of $\exp(-\lambda_2h\nu)$. The constant then can be simply evaluated into 
+\begin{equation*}
+    C=\mathcal{P}_\nu\left[\frac{1}{1-\exp(-\lambda_2h\nu)}\right]^{-1} = \mathcal{P}_\nu\left[1-\exp(-\lambda_2h\nu)\right]
+\end{equation*}
+Hence the $n_{k\nu}$ assumes the form 
+\begin{equation*}
+    n_{k\nu}=\mathcal{P}_\nu\left[1-\exp(-\lambda_2h\nu)\right]\exp\left(-\lambda_2hk\nu\right)
+\end{equation*}
+On using this to the expression for logarithm of $\mathcal{P}$, we obtain
+\begin{multline*}
+    \ln \mathcal{P}_{\max}= \sum_\nu \bigg[ \mathcal{P}_\nu \ln \left(\mathcal{P}_\nu\right) \\
+    - \sum_{k} n_{k\nu}\ln \{\mathcal{P}_\nu\left[1-\exp(-\lambda_2h\nu)\right]\exp\left(-\lambda_2hk\nu\right) \} \bigg]
+\end{multline*}
+Then by definition of Boltzmann entropy, we have
+\begin{multline*}
+    S_B=k_B \ln \mathcal{P}_{\max}= \sum_\nu k_B \bigg[ \mathcal{P}_\nu \ln \left(\mathcal{P}_\nu\right) \\
+    - \sum_{k} n_{k\nu}\ln \{\mathcal{P}_\nu\left[1-\exp(-\lambda_2h\nu)\right]\exp\left(-\lambda_2hk\nu\right) \} \bigg]
+\end{multline*}
+We then write it as such 
+\begin{multline*}
+    S_B= \sum_\nu k_B \bigg[ \mathcal{P}_\nu \ln \left(\mathcal{P}_\nu\right) \\
+    - \sum_{k} n_{k\nu}\left\{\ln(\mathcal{P}_\nu)+\ln (1-\exp\{-\lambda_2h\nu\})-\lambda_2vkh\right\} \bigg]
+\end{multline*}
+additionally
+\begin{equation*}
+    S_B= \sum_\nu k_B \bigg[\lambda_2hv\sum_{k}kn_{k\nu} - \sum_{k} n_{k\nu}\ln (1-\exp\{-\lambda_2h\nu\})\bigg]
+\end{equation*}
+Recall the $\mathcal{P}_\nu$ and $U_\nu$ constraints
+\begin{equation*}
+    S_B= k_B \bigg[\lambda_2U- \sum_\nu\mathcal{P}_\nu \ln (1-\exp\{-\lambda_2h\nu\})\bigg]
+\end{equation*}
+Using the following relationship
+\begin{equation*}
+    \frac{1}{T}=\frac{\partial S}{\partial U}
+\end{equation*}
+we have
+\begin{equation*}
+    \frac{1}{T}=k_B\lambda_2\implies \lambda_2=\frac{1}{k_BT}
+\end{equation*}
+At last, we have 
+\begin{equation*}
+    n_{k\nu}=\mathcal{P}_\nu\left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]\exp\left(-\frac{hk\nu}{k_BT}\right)
+\end{equation*}
+and
+\begin{equation*}
+    S_B= \frac{U}{T}- \sum_\nu k_B\mathcal{P}_\nu \ln \left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]
+\end{equation*}
+
+Henceforward, we use these result to evaluate the following quantity. We have first the number of quanta frequency $\nu$
+\begin{equation*}
+    N_\nu=\sum_k kn_{k\nu}=\frac{P_\nu}{\exp(h\nu/k_BT)-1}
+\end{equation*}
+and the energy within the same frequency
+\begin{equation*}
+    U_\nu=h\nu N_\nu =\frac{h\nu P_\nu}{\exp(h\nu/k_BT)-1}
+\end{equation*}
+\end{document}
