@@ -11,11 +11,11 @@ where $V$ is the spatial volume and $d\mathcal{V}$ is the momentum volume of the
 \end{multline*}
 The resulting volume of phase space $d\omega$ is
 \begin{equation*}
-    d\omega=4\pi V\left(\frac{h}{c}\right)^3\nu^2\;d\nu
+    d\omega=\frac{4\pi V h^3}{c^3}\nu^2\;d\nu
 \end{equation*}
-This volume then divided by Bose into cells of volume $h^3$. The number $P_\nu$ as phase space cells available to the photon expressed by
+This volume then divided by Bose into cells of volume $h^3$. The number $P_\nu$ as phase space cells available to the photon within $(\nu,\nu+d\nu)$ expressed by
 \begin{equation*}
-    P_\nu=\frac{2}{c^3}d\omega=\frac{8\pi V\nu^2}{c^3}
+    P_\nu=\frac{2}{c^3}d\omega=\frac{8\pi V\nu^2}{c^3}\;d\nu
 \end{equation*}
 where the factor of 2 comes after taking account the two direction of polarization. 
 
@@ -39,7 +39,7 @@ and the expression for the number of configuration is
 \begin{equation*}
     \mathcal{P}=\sum_{\nu=0}^{\infty}\mathcal{P}_\nu
 \end{equation*} 
-As usual, the equation that we want to maximize not the configuration $\mathcal{P}$ itself, rather its logarithm; which may be written as 
+As usual, the equation that we want to maximize not the configuration $\mathcal{P}$ itself, but rather its logarithm; which may be written as 
 \begin{equation*}
     \ln \mathcal{P}=\sum_{\nu=0}^{\infty}\ln\left[\mathcal{P}_v!\left( \prod_{k=0}^{\infty} n_{k\nu}\right)^{-1}\right]
 \end{equation*}
@@ -114,12 +114,146 @@ and
     S_B= \frac{U}{T}- \sum_\nu k_B\mathcal{P}_\nu \ln \left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]
 \end{equation*}
 
-Henceforward, we use these result to evaluate the following quantity. We have first the number of quanta frequency $\nu$
+Henceforward, we use these result to evaluate the following quantity. First we evaluate the number of quanta of frequency $\nu$ denoted as $N_\nu$
+\begin{equation*}
+    N_\nu=\sum_k^{\infty} kn_{k\nu}
+\end{equation*}
+Substituting the known value of $n_{k\nu}$, we get 
+\begin{align*}
+    N_\nu&=\sum_k k \mathcal{P}_\nu\left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]\exp\left(-\frac{hk\nu}{k_BT}\right)\\
+    &=\mathcal{P}_\nu\left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right] \sum_k^{\infty} k \exp\left(-\frac{hk\nu}{k_BT}\right)
+\end{align*}
+
+To evaluate such sum we consider the geometric series
+\begin{equation*}
+    \sum_{k=0}^{\infty}r^{k}=\frac{1}{1-r}
+\end{equation*}
+for $r<1$. Taking a derivative of both sides to get
+\begin{equation*}
+    \sum_{k=0}^{\infty}kr^{k-1}=\frac{1}{(1-r)^2}
+\end{equation*}
+Then shift the index down by one 
+\begin{equation*}
+    \sum_{k=-1}^{\infty}(k+1)r^{k}=\sum_{k=0}^{\infty}(k+1)r^{k}
+\end{equation*}
+where the left side is allowed since the series is zero at $k=-1$. Then subtract this series with the first series
+\begin{equation*}
+    \sum_{k=0}^{\infty}(k+1)r^{k}-r^k=\sum_{k=0}^{\infty} kr^k=\frac{1-(1-r)}{(1-r)^2}=\frac{r}{(1-r)^2}
+\end{equation*}
+
+Using the formula above, with 
+\begin{equation*}
+    r=\exp\left(-\frac{h\nu}{k_BT}\right)
+\end{equation*}
+
+we can now evaluate the number of quanta
+\begin{align*}
+    N_\nu&=\mathcal{P}_\nu\left[1-\exp\left(-\frac{h\nu}{k_BT}\right) \right]\exp\left(-\frac{h\nu}{k_BT}\right)\left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]^{-2}\\
+    &=\mathcal{P}_\nu\exp\left(-\frac{h\nu}{k_BT}\right)\left[1-\exp\left(-\frac{h\nu}{k_BT}\right)\right]^{-1}\\
+    &=\mathcal{P}_\nu\left[\exp\left(\frac{h\nu}{k_BT}\right)-1 \right]^{-1}
+\end{align*}
 \begin{equation*}
     N_\nu=\sum_k kn_{k\nu}=\frac{P_\nu}{\exp(h\nu/k_BT)-1}
 \end{equation*}
-and the energy within the same frequency
+
+The second is energy within the same frequency
 \begin{equation*}
     U_\nu=h\nu N_\nu =\frac{h\nu P_\nu}{\exp(h\nu/k_BT)-1}
+\end{equation*}
+
+\subsection*{Distribution for Indistinguishable Molecules}
+The distribution for indistinguishable ideal quantum gas also called the Bose-Einstein distribution. The number particle per unit energy interval is given by 
+\begin{equation*}
+    n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]-1}
+\end{equation*}
+
+\subsubsection*{Derivation.} Einstein's method has some similarity with Bose's method. He first considers the energy of non-relativistic particle, which is 
+\begin{equation*}
+    E=\frac{p^2}{2m}
+\end{equation*}
+This implies
+\begin{equation*}
+    p=\sqrt{2mE},\quad dp=\frac{m}{p}dE=\frac{m}{\sqrt{2mE}}dE
+\end{equation*}
+This will be used to determine the volume of $(\mathbf{r},\mathbf{p}+ d\mathbf{p})$ phase space
+\begin{multline*}
+    d\omega=V \frac{4}{3}\pi\left[(p+dp)^3-p^3\right] = \frac{4}{3}\pi V\left[3p^2\;dp+3p\;d^2p+d^3p\right]\\
+    =4\pi Vp^2\;dp =4\pi V \;2mE\;\frac{m}{\sqrt{2mE}}dE=2\pi(2m)^{3/2}\sqrt{E}\;dE
+\end{multline*} 
+The said volume then divided into cells of $h^3$ volume. Let this number of distinct cells as 
+\begin{equation*}
+    P_E=\frac{d\omega}{h^3}=\frac{4\pi}{h^3}V(2m)^{3/2}\sqrt{E}\;dE
+\end{equation*}
+The number of configuration $\mathcal{P}_E$ for distributing $N_E$ indistinguishable particle in $P_E$ boxes is given by 
+\begin{equation*}
+    \mathcal{P}_E=\frac{(N_E+P_E-1)}{N_E! (P_E-1)!}
+\end{equation*}
+This gives configuration for particle within $(E,E+dE)$, conversely the total configuration is given by 
+\begin{equation*}
+    \mathcal{P}=\prod_{E=0}^{\infty}\mathcal{P}_E
+\end{equation*}
+
+We then move to determining the entropy $S=k_B \ln \mathcal{P}_{\max}$ by maximizing the logarithm of $\mathcal{P}$ with respect to $N_E$ subjected to the following constraints.
+\begin{equation*}
+    N=\sum_{E=0}^{\infty}N_E,\quad U=\sum_{E=0}^{\infty}EN_E
+\end{equation*}
+Using Stirling's approximation on said logarithm, we have 
+\begin{align*}
+    \ln \mathcal{P}&=\sum_{E}\ln\frac{(N_E+P_E-1)}{N_E! (P_E-1)!}\\
+    \ln \mathcal{P}&=\sum_E (N_E+P_E)\ln (N_E+P_E)-N_E\ln(N_E)- P_E \ln (P_E)
+\end{align*}
+By Lagrange's method
+\begin{equation*}
+    F=\ln \mathcal{P} +\lambda_1N_E +\lambda_2EN_E
+\end{equation*}
+Setting its derivative to zero
+\begin{equation*}
+    \ln (N_E+P_E)+1-\ln (N_E)-1+\lambda_1+\lambda_2=0
+\end{equation*}
+Taking the exponential and solving for $N_E$
+\begin{align*}
+    \frac{N_E+P_E}{N_E}&=\exp(-\lambda_1-\lambda_2E)\\
+    N_E&=\frac{P_E}{\exp(-\lambda_1-\lambda_2E)-1}
+\end{align*}
+Substituting this value into the logarithm of $\mathcal{P}$
+\begin{multline*}
+    \ln \mathcal{P}_{\max}=\sum_E (N_E+P_E)\left[\ln (P_E)+\ln\left(\frac{\exp(-\lambda_1-\lambda_2E)}{\exp(-\lambda_1-\lambda_2E)-1}\right)\right]\\
+    - P_E \ln (P_E)-N_E\left[\ln(P_E)-\ln\left(\exp \{-\lambda_1-\lambda_2E\}-1\right)\right] 
+\end{multline*}
+then 
+\begin{multline*}
+    \ln \mathcal{P}_{\max}=\sum_E (N_E+P_E)\ln\left(\frac{\exp(-\lambda_1-\lambda_2E)}{\exp(-\lambda_1-\lambda_2E)-1}\right)\\
+    + N_E\ln\left(\exp \{-\lambda_1-\lambda_2E\}-1\right)
+\end{multline*}
+moreover
+\begin{equation*}
+    \ln \mathcal{P}_{\max}=\sum_E N_E \left(-\lambda_1-\lambda_2E\right)
+    + P_E\ln\left(\frac{\exp(-\lambda_1-\lambda_2E)}{\exp(-\lambda_1-\lambda_2E)-1}\right)
+\end{equation*}
+Hence
+\begin{equation*}
+    S=\sum_E k_B P_E\ln\left(\frac{\exp(-\lambda_1-\lambda_2E)}{\exp(-\lambda_1-\lambda_2E)-1}\right)-k_B(N\lambda_1+U\lambda_2)
+\end{equation*}
+On using the following relations
+\begin{equation*}
+    \frac{1}{T}=\frac{\partial S}{\partial U}\bigg|_{V,N},\quad -\frac{\mu}{T}=\frac{\partial S}{\partial N}\bigg|_{U,V}
+\end{equation*}
+we have 
+\begin{align*}
+    \frac{1}{T}&=-\lambda_2k_B\\
+    \lambda_2&=-\frac{1}{k_BT}
+\end{align*}
+and
+\begin{align*}
+    -\frac{\mu}{T}&=\lambda_1k_B\\
+    \lambda_1&=\frac{\mu}{k_BT}
+\end{align*}
+Thus
+\begin{equation*}
+    N_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]-1} \;dE
+\end{equation*}
+The quantity $n_E$ is defined as the number of molecules per unit energy interval
+\begin{equation*}
+    n_E=\frac{N_E}{dE}=     n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]-1} \quad\blacksquare
 \end{equation*}
 \end{document}
