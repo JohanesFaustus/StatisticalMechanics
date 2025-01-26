@@ -1,0 +1,79 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+\subsection*{Bose-Dirac Distribution}
+The distribution of particle obeying the Pauli exclusion principle, also called fermion, is governed by Fermi-Dirac distribution, given by
+\begin{equation*}
+    n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1}
+\end{equation*}
+
+\subsubsection*{Derivation.} The number of configuration in this case is the number of ways to choose $N_E$ particle from $P_E$ cells
+\begin{equation*}
+    \mathcal{P}_E={P_E \choose N_E}=\frac{P_E!}{(P_E-N_E)!N_E!}
+\end{equation*}
+with the number of cells given by
+\begin{equation*}
+    P_E= \frac{2\pi}{h^3}V(2m)^{3/2}\sqrt{E}\;dE
+\end{equation*}
+This is the same value that Bose derived. As for the total number of configuration across all interval of energy
+\begin{equation*}
+    \mathcal{P}=\prod_{E=0}^{\infty}\mathcal{P}_E
+\end{equation*}
+
+To find the distribution function, we need to determine the entropy of such system. Hence, we need to maximize the logarithm of said configuration. To such end, we write the logarithm as 
+\begin{align*}
+    \ln \mathcal{P}&= \sum_E \big[P_E\ln (P_E)- P_E - (P_E-N_E)\ln (P_E-N_E)+ (P_E-N_E) \\
+    &- N_E\ln (N_E) + N_E \big]\\
+    \ln \mathcal{P}&= \sum_E P_E\ln (P_E) - (P_E-N_E)\ln (P_E-N_E) - N_E\ln (N_E)
+\end{align*}
+By Lagrange's method, we consider the following constraints
+\begin{equation*}
+    N=\sum_{E=0}^{\infty}N_E,\quad U=\sum_{E=0}^{\infty}EN_E
+\end{equation*}
+and construct the following function
+\begin{equation*}
+    F=\ln \mathcal{P}+\lambda_1 N_E+ \lambda_2 E N_E
+\end{equation*}
+Setting the derivative to zero
+\begin{equation*}
+    \ln(P_E- N_E)+1 -\ln(N_E)-1\lambda_1 +\lambda_2E =0
+\end{equation*}
+and solving for $N_E$
+\begin{align*}
+    \frac{P_E-N_E}{N_E}&=\exp(\lambda_1 -\lambda_2E)\\
+    N_E&=\frac{P_E}{\exp(\lambda_1 -\lambda_2E)+1}
+\end{align*}
+
+The expression for entropy then reads
+\begin{multline*}
+    S=\sum_E  P_Ek_B\ln (P_E) -
+    \sum_E  (P_Ek_B-N_Ek_B)\\\left[\ln (P_E)+\ln \left(\frac{ \exp(\lambda_1 - \lambda_2E)}{\exp(\lambda_1 -\lambda_2E) +1}\right)\right]\\
+    -\sum_E N_E k_B\left[\ln (P_E)-\ln (\exp(\lambda_1 -\lambda_2E) +1)\right]
+\end{multline*}
+furthermore
+\begin{multline*}
+    S=\sum_E  (N_Ek_B- P_Ek_B)\ln \left(\frac{ \exp(\lambda_1 - \lambda_2E)}{\exp(\lambda_1 -\lambda_2E) +1}\right) \\
+    +\ln \sum_E  N_Ek_B \ln \left(\exp(\lambda_1 -\lambda_2E) +1\right)
+\end{multline*}
+additionally
+\begin{equation*}
+    S=Nk_B(-\lambda_1-\lambda_2E)-\sum_E P_E\ln \left(\frac{ \exp(\lambda_1 - \lambda_2E)}{\exp(\lambda_1 -\lambda_2E) +1}\right)
+\end{equation*}
+By using the thermodynamics relation
+\begin{align*}
+    \frac{1}{T}=\frac{\partial S}{\partial U}\bigg|_{V,N}=-\lambda_2k_B\implies
+    \lambda_2=-\frac{1}{k_BT}
+\end{align*}
+and 
+\begin{equation*}
+    -\frac{\mu}{T}=\frac{\partial S}{\partial N}=-k_B\lambda_1 \implies \lambda_1=\frac{\mu}{k_B T}
+\end{equation*}
+Therefore 
+\begin{equation*}
+    N_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1} \;dE
+\end{equation*}
+and for the distribution function
+\begin{equation*}
+    n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1}
+\end{equation*}
+
+\end{document}
