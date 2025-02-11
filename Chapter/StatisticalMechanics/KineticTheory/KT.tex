@@ -1,17 +1,13 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
 \subsection*{Maxwell Distribution} 
-Maxwell assumes that the random velocity of particles can be described by some probability distribution. He then derived the formula for average number of particles whose velocity lies between $(\mathbf{v},\mathbf{v}+d\mathbf{v})$. The single-particle distribution function $F(\mathbf{v})$ is given by Maxwell distribution:
+Maxwell assumes that the random velocity of particles can be described by some probability distribution. He then derived the formula for average number of particles whose velocity lies between $(\mathbf{v},\mathbf{v}+d\mathbf{v})$. The single-particle distribution function $f(\mathbf{v})$ is given by Maxwell distribution:
 \begin{equation*}
-    F(\mathbf{v})=\left(\frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k_B T}\right)
+    f(\mathbf{v})\;d^3\mathbf{v}=\left(\frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k_B T}\right)d^3\mathbf{v}
 \end{equation*} 
-To find the probability of $N$ particles within interval $(v_1,v_2)$, we then integrate that probability function
-\begin{equation*}
-    \int_{v_1}^{v_2} N\left(\frac{m}{2\pi k_B T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k_B T}\right)\;d^3\mathbf{v}
-\end{equation*}
 where $d^3\mathbf{v}=dv_x\; dv_y\; dv_z$. This can be simplified into
 \begin{equation*}
-    4\pi N\left(\frac{m}{2\pi k_B T}\right)^{3/2}\int_{v_1}^{v_2} v^2\exp\left(-\frac{m v^2}{2k_B T}\right)\;dv
+    f(v)\;dv=4\pi N\left(\frac{m}{2\pi k_B T}\right)^{3/2}\int_{v_1}^{v_2} v^2\exp\left(-\frac{m v^2}{2k_B T}\right)\;dv
 \end{equation*}
 
 \subsection*{Maxwell Distribution Derivation}
