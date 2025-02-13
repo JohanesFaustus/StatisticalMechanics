@@ -1,27 +1,39 @@
 \documentclass[../../../Main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Maxwell Distribution} 
+\subsection*{Maxwell-Boltzman Distribution} 
 Maxwell assumes that the random velocity of particles can be described by some probability distribution. He then derived the formula for average number of particles whose velocity lies between $(\mathbf{v},\mathbf{v}+d\mathbf{v})$. The 3D distribution function $f(\mathbf{v})$ is given by Maxwell distribution:
 \begin{equation*}
-    f(\mathbf{v})\;d^3\mathbf{v}=N\left(\frac{m}{2\pi k T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k T}\right)d^3\mathbf{v}
+    n(\mathbf{v})\;d^3\mathbf{v}=N\left(\frac{m}{2\pi k T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k T}\right)d^3\mathbf{v}
 \end{equation*} 
 where $v^2=v_x^2+v_y^2+v_z^2$ and $d^3\mathbf{v}=dv_x\; dv_y\; dv_z$. The single component distribution is given by 
 \begin{equation*}
-    f(v_x)\;dv_x=N\left(\frac{m}{2\pi k T}\right)^{1/2}\exp\left(-\frac{m v_x^2}{2k T}\right)dv_x
+    n(v_x)\;dv_x=N\left(\frac{m}{2\pi k T}\right)^{1/2}\exp\left(-\frac{m v_x^2}{2k T}\right)dv_x
 \end{equation*} This can be transformed into speed distribution function as 
 \begin{equation*}
-    f(v)\;dv=4\pi N\left(\frac{m}{2\pi k T}\right)^{3/2}v^2\exp\left(-\frac{m v^2}{2k T}\right)\;dv
+    n(v)\;dv=4\pi N\left(\frac{m}{2\pi k T}\right)^{3/2}v^2\exp\left(-\frac{m v^2}{2k T}\right)\;dv
+\end{equation*}
+By using $\mathbf{v}=\mathbf{p}/m$ and $d^3\mathbf{v}=d^3\mathbf{p}/m^3$, we can also express it in terms of momentum
+\begin{equation*}
+    n(\mathbf{p})\; d^3\mathbf{p}=N\left(\frac{1}{2\pi mkT}\right)^{3/2}\exp\left(-\frac{p^2}{2mkT}\right)\; d^3\mathbf{p}
+\end{equation*}
+and 
+\begin{equation*}
+    n(p)\; dp=4\pi N \left(\frac{1}{ 2\pi mkT}\right)^{3/2}p^2\exp\left(-\frac{p^2}{2mkT}\right)\;dp
+\end{equation*}
+In terms of energy, the distribution function is given by 
+\begin{equation*}
+    n(\epsilon)\;d\epsilon=\frac{2\pi N}{(\pi kT)^{3/2}}\sqrt{E}\exp\left(-\frac{E}{k_BT}\right)\;d\epsilon
 \end{equation*}
 
 \subsection*{Maxwell's Derivation}
 Maxwell first noted that the distribution function $F(\mathbf{v})$ with res-pect to $x$-axis does not affect $F(\mathbf{v})$ with respect to $y$-axis and $z$-axis, since they are at right angle, orthogonal, and independent. Hence, He wrote that a particle velocity lies at $(\mathbf{v}, \mathbf{v}+d\mathbf{v})$ as 
 \begin{equation*}
-    F(\mathbf{v})\;d^3\mathbf{v}=f(v_x)f(x_y)f(v_z)\;dx\;dy\;dz
+    F(\mathbf{v})\;d^3\mathbf{v}=f(v_x)f(v_y)f(v_z)\;dv_x\;dv_y\;dv_z
 \end{equation*}
 Then also argued that the probability only depend on the magnitude of $\mathbf{v}$, thus
 \begin{equation*}
-    f(v_x)f(x_y)f(v_z)= g(v_x^2+v_y^2+v_z^2)
+    f(v_x)f(v_y)f(v_z)= g(v_x^2+v_y^2+v_z^2)
 \end{equation*}
 should apply. This functional equation is solved by
 \begin{equation*}
@@ -223,6 +235,116 @@ On using this to the previously evaluated $N$ constraint
 Hence
 \begin{equation*}
     f(\mathbf{v})=C\exp\left(-\frac{\lambda_2m}{2}v^2\right)= N \left(\frac{3m}{4\pi u}\right)^{3/2}\exp\left(-\frac{3m}{4u}v^2\right)\quad\blacksquare
+\end{equation*}
+
+
+\subsection*{Einstein's Derivation}
+
+\subsubsection*{Derivation.} The number of way to distribute $N_E$ distinct particle into $P_E$ distinct cells is 
+\begin{equation*}
+    \mathcal{P}_e=P_E^{N_E}
+\end{equation*}
+where
+\begin{equation*}
+    P_E=\frac{2\pi}{h^3}V(2m)^{3/2}\sqrt{E}\;dE
+\end{equation*}
+Hence the number of distribution for all energy interval is 
+\begin{equation*}
+    \mathcal{P}_E=\prod_{E=0}^{\infty}P_E^{N_E}
+\end{equation*}
+The total number of configuration is obtained by multiplying the number of configuration for distinct case $\mathcal{P}_E$ by the number of ways to distribute $N_E$ particle from $N$
+\begin{equation*}
+    \mathcal{P}=\prod_{E} P_E^{N_E}N!\left(\prod_{E} N_E!\right)^{-1}
+\end{equation*}
+By applying Stirling's approximation, the logarithm reads
+\begin{align*}
+    \ln \mathcal{P}&=\sum_E N_E \ln P_E+ N\ln N -N-\sum_E N_E \ln N_E+ N_E\\
+    \ln \mathcal{P}&=\sum_E N_E \ln \left(\frac{P_E}{N_E}\right)+ N\ln (N)
+\end{align*} 
+Then define the following function according to Lagrange's method
+\begin{equation*}
+    F=\sum_E N_E \ln \left(\frac{P_E}{N_E}\right)+ N\ln (N) +\lambda_1\sum_E N_E +\lambda_2\sum_E EN_E
+\end{equation*}
+where we have used the $N$ and $U$ constraints. Then set its derivative to zero 
+\begin{equation*}
+    \ln \left(\frac{P_E}{N_E}\right)-1+\lambda_1+\lambda_2E=0
+\end{equation*}
+Solving for $N_E$
+\begin{align*}
+    \frac{P_E }{N_E}&=C_1\exp\left(-\lambda_2E\right)\\
+    N_E&=P_E C_2 \exp\left(-\beta E\right)
+\end{align*}
+Inserting this into $N$ constraint
+\begin{equation*}
+    N=\sum_E P_E C_2 e^{-\beta E}= \frac{2\pi}{h^3}V(2m)^{3/2} C_2\int_{0}^{\infty} \sqrt{E}e^{-\beta E}\;dE
+\end{equation*}
+
+The integral is solved as follows. Consider
+\begin{equation*}
+    I=\int_{0}^{\infty} \sqrt{x}e^{-ax}\;dx
+\end{equation*}
+Make change of variable $u=-ax$. We have then $d\alpha=-a\;dx$ and $\sqrt{x}=i\sqrt{\alpha/a}$. The integral then reads
+\begin{equation*}
+    I=-\frac{i}{a^{3/2}}\int_{0}^{-\infty}\sqrt{\alpha}e^\alpha\;d\alpha
+\end{equation*}
+By choosing $u=\sqrt{\alpha}$ and $dv=e^\alpha$, consequently we have $du=1/2 \sqrt{\alpha}$ and $v=e^\alpha$. Using method of integral by parts,
+\begin{equation*}
+    I=-\frac{i}{a^{3/2}}\left[e^\alpha \sqrt{\alpha}\bigg|_{0}^{-\infty} -\int_{0 }^{-\infty }\frac{e^\alpha}{2\sqrt{\alpha}}\;d\alpha\right] =\frac{i}{2a^{3/2}}\int_{0 }^{- \infty }\frac{e^\alpha}{\sqrt{\alpha}}\;d\alpha
+\end{equation*}
+We again make the change of variable $t^2=\alpha$; which implies $d\alpha=2t \;dt$. Although in this case, the lower limit remains the same, namely zero, the upper limit has two possible value due to quadratic nature of our variable
+\begin{equation*}
+    t^2=-\infty\implies t=\pm \infty i
+\end{equation*}
+The value we pick is the negative one; this is due to the nature of logarithm. Recalling the definition of imaginary error function. The integral above can be recast as 
+\begin{equation*}
+    I= \frac{i}{a^{3/2}}\int_{0 }^{- \infty i}e^{t^2} \;dt=\frac{i\pi}{2a^{3/2}}\erfi(- \infty i)
+\end{equation*}
+Hence, the result is
+\begin{equation*}
+    I=\frac{\pi}{2a^{3/2}}
+\end{equation*}
+a positive value. For positive value $t=-\infty i$, the resulting integral will be negative instead. We want the positive value of the integral since we will be taking the logarithm. Positive argument will ensure the value of our logarithm is real, since it represent the logarithm of number a configuration, which is positive real. 
+
+Now plugging the result of previous integral, we have
+\begin{equation*}
+    N=\frac{2\pi}{h^3}V(2m)^{3/2}C_2\frac{\sqrt{\pi}}{2\beta^{3/2}}=C_2V\left(\frac{2\pi m}{h^2\beta}\right)^{3/2}
+\end{equation*}
+or by solving of $C_2$, 
+\begin{equation*}
+    C_2=\frac{N}{V} \left(\frac{h^2\beta}{2\pi m}\right)^{3/2}
+\end{equation*}
+And by plugging this into $N_E$, we also have 
+\begin{equation*}
+    N_E=\frac{N}{V}P_E \exp\left(-\beta E\right) \left(\frac{h^2\beta}{2\pi m}\right)^{3/2}
+\end{equation*}
+
+The logarithm of maximum configuration then 
+\begin{align*}
+    \ln \mathcal{P}_{\max}&=\sum_E N_E\ln\left[ \frac{V}{N}\exp\left(\beta E\right) \left(\frac{2\pi m}{h^2\beta}\right)^{3/2}\right]+N\ln (N)\\
+    \ln \mathcal{P}_{\max}&=N\ln(V)+\frac{3}{2}N\ln\left(\frac{2\pi m}{h^2\beta}\right) +\beta U
+\end{align*}
+As for the entropy
+\begin{equation*}
+    S=Nk_B\ln(V)+\frac{3}{2}Nk_B\ln\left(\frac{2\pi m}{h^2\beta}\right) +k_B\beta U
+\end{equation*}
+Using the thermodynamics relationship of 
+\begin{equation*}
+    \frac{1}{T}=\frac{\partial S}{\partial U}\bigg|_{V,N}= k_B U \implies \beta=\frac{1}{T}
+\end{equation*}
+
+Now the number of particle within $(\nu,\nu+d\nu)$ can be evaluated as 
+\begin{align*}
+    N_E&=\frac{N}{V}\frac{2\pi}{h^3}V(2m)^{3/2}\sqrt{E} \exp\left(-\frac{E}{k_BT}\right) \left(\frac{h^2}{2\pi k_BT m}\right)^{3/2}\;dE\\
+    N_E&=\left(\frac{\sqrt[3]{4} N^{2/3}}{\sqrt{\pi}k_B T}\right)^{3/2} \sqrt{E}\exp\left(-\frac{E}{k_BT}\right)\;dE
+\end{align*}
+and the distribution function as 
+\begin{equation*}
+    n_E=\left(\frac{\sqrt[3]{4} N^{2/3}}{\sqrt{\pi}k_B T}\right)^{3/2} \sqrt{E}\exp\left(-\frac{E}{k_BT}\right)
+\end{equation*}
+
+We can also recover the ideal gas law using the thermodynamics relationship
+\begin{equation*}
+    \frac{P}{T}=\frac{\partial S}{\partial V}\bigg|_{S,N}=\frac{Nk_B}{V} \implies PV=Nk_BT
 \end{equation*}
 
 \subsection*{Maxwell Distribution for Relative Velocities}
