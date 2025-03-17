@@ -1,6 +1,6 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsubsection*{Blackbody radiation}
+\subsection*{Blackbody radiation}
 In his theory of blackbody radiation, energy density at frequency $\nu$ inside cavity with temperature $T$ is given by
 \begin{equation*}
     \mathcal{U}(\nu,T)=\rho u
@@ -11,12 +11,22 @@ where $\rho$ is the number of radiation modes per unit volume and $u$ is the ave
 \end{equation*}
 Hence
 \begin{equation*}
-    \mathcal{U}(\nu,T)=\frac{\nu^3}{c^3}\frac{8\pi h}{\exp(h\nu/k T)-1}
+    \mathcal{U}(\nu,T)=\frac{8\pi h}{c^3}\frac{\nu^3}{\exp(h\nu/k T)-1}
 \end{equation*}
 or, we can write it in terms of $\lambda$
 \begin{equation*}
-    \mathcal{U}(\lambda,T)=\frac{c}{\lambda^5}\frac{8\pi h}{\exp(hc/\lambda k T)-1}
+    \mathcal{U}(\lambda,T)=\frac{8\pi hc}{\lambda^5}\frac{1}{\exp(hc/\lambda k T)-1}
 \end{equation*}
+
+The particle density as function of wavelength
+\begin{equation*}
+    n(\lambda,T)=\frac{8\pi}{\lambda^4}\frac{1}{\exp(hc/\lambda k T)-1}
+\end{equation*} 
+And the relation with energy density
+\begin{equation*}
+    \mathcal{U}(\lambda)=n(\lambda)E(\lambda)
+\end{equation*}
+with $E=hc/\lambda$. 
 
 \subsection*{Planck's Derivation}
 
@@ -96,7 +106,7 @@ Moreover
 \begin{equation*}
     \frac{1}{T}=\frac{k}{\epsilon}\left[\ln\left(1+\frac{u}{\epsilon}\right)-\ln \left(\frac{u}{\epsilon}\right)\right]=\frac{k}{\epsilon}\ln \left(\frac{\epsilon}{u}+1\right)
 \end{equation*}
-Futhermore
+Furthermore
 \begin{equation*}
     \frac{\epsilon}{u}+1=\exp \left(\frac{\epsilon}{kT}\right)
 \end{equation*}
@@ -308,4 +318,92 @@ and
     \mathcal{U}(\nu,T) =\frac{\nu^3}{c^3}\frac{8\pi h}{\exp(h\nu/k_BT)-1}
 \end{equation*}
 which is the same as Bose's result.
+
+\subsection*{Rayleigh-Jeans Model}
+This model is only accurate for large $\lambda$ or small $\nu$. The energy density described by this model is 
+\begin{equation*}
+    \mathcal{U}(\lambda,T)=\frac{8\pi}{\lambda^4}kT\quad\text{or}\quad\mathcal{U}(\nu,T)=\frac{8\pi\nu^2}{c^3}kT
+\end{equation*}
+\subsubsection*{Derivation.} For large $\lambda$, the exponential term approaches zero, so it can be approximated with 
+\begin{equation*}
+    \exp\left(\frac{hc}{\lambda kT}\right)\approx\frac{hc}{\lambda kT}-1
+\end{equation*}
+Hence, the energy density as function of wavelength is 
+\begin{equation*}
+    \mathcal{U}(\lambda,T)\approx\frac{8\pi hc}{\lambda^5}\frac{1}{(hc/\lambda kT)}=\frac{8\pi}{\lambda^4}kT\quad\blacksquare
+\end{equation*}
+
+\subsection*{Wien's Law}
+In other hand, this model only accurate for small $\lambda$ or large $\nu$. The energy density based this model is 
+\begin{equation*}
+    \mathcal{U}(\lambda,T)=\frac{8\pi hc}{\lambda^5}\exp\left(-\frac{hc}{\lambda kT}\right)
+\end{equation*}
+Wien's model is able to obtain the fact that the product maximum wavelength and temperature is constant, in particular
+\begin{equation*}
+    \lambda_m T=2.897 \text{ mmK}
+\end{equation*}
+\subsubsection*{Derivation.} For small $\lambda$, the exponential term approach infinity, so the denominator term of the Plack distribution can be approximated with
+\begin{equation*}
+    \left[\exp\left(\frac{hc}{\lambda kT}\right)-1\right]^{-1}\approx \exp\left(-\frac{hc}{\lambda kT}\right)
+\end{equation*}
+Hence 
+\begin{equation*}
+    \mathcal{U}(\lambda,T)=\frac{8\pi hc}{\lambda^5}\exp\left(-\frac{hc}{\lambda kT}\right)
+\end{equation*}
+
+To find the maximum wavelength given by Wien's distribution, we set 
+\begin{equation*}
+    \frac{du}{d\lambda}=8\pi hc\left[-\frac{5}{\lambda^6}\exp\left( -\frac{hc}{\lambda kT}+\right)\frac{1}{\lambda^5}\frac{hc}{\lambda^2kT}\exp\left( -\frac{hc}{\lambda kT}+\right)\right]
+\end{equation*}
+into zero to obtain
+\begin{align*}
+    \frac{5}{\lambda_m^6}&=\frac{hc}{\lambda_m^7kT}\\
+    \lambda_m T&=\frac{hc}{5k}=2.897 \text{ mmK}
+\end{align*}
+
+
+\subsection*{Stefan's Law}
+\begin{equation*}
+    u=\alpha T^4
+\end{equation*}
+where $\alpha=1.65\cdot10^{-16}$ J/K$^{4}$m$^{3}$.
+
+\subsubsection*{Derivation.} Integrating $\mathcal{U}(\lambda)$ over all possible wavelength to obtain
+\begin{equation*}
+    u=\int_0^\infty\frac{8\pi hc}{\lambda^5}\frac{1}{\exp(hc/\lambda k T)-1}d\lambda\\
+\end{equation*}
+
+Substituting $x=hc/\lambda kT$, we have $1/\lambda=xkT/hc$ and $d\lambda=-hc/x^2kT\;dx$. Thus,
+\begin{align*}
+    u&=\int_0^\infty 8\pi hc \left(\frac{xkT}{hc}\right)^5\frac{1}{e^x-1}\left(-\frac{hc}{x^2kT}\right)\;dx\\
+    &=\frac{8\pi (kT)^4}{(hc)^3}\int_{0}^{\infty}\frac{x^3}{e^x-1}\;dx\\
+    u&=\frac{8\pi (kT)^4}{(hc)^3}6\frac{\pi^2}{90}
+\end{align*}
+Evaluating the constant, we finally have 
+\begin{equation*}
+    u=7.65\cdot10^{-16} T^4\quad\blacksquare
+\end{equation*}
+
+\subsection*{Stefan-Boltzman's Law}
+\begin{equation*}
+    I=\sigma T^4
+\end{equation*}
+where $\sigma=5.57\cdot10^{-8}$ J/K$^{4}$m$^{2}$.
+
+\subsubsection*{Derivation.} Based on MB distribution, the flux of a gas is 
+\begin{equation*}
+    \Gamma=\frac{1}{4}\rho\braket{v}
+\end{equation*}
+On using this to gas of photon we have 
+\begin{equation*}
+    \Gamma=\frac{1}{4}nc
+\end{equation*} 
+By using the relation 
+\begin{equation*}
+    \mathcal{U}(\lambda)=n(\lambda)E(\lambda)
+\end{equation*}
+we have our intensity as 
+\begin{equation*}
+    I=\frac{1}{4}uc=\frac{1}{4}7.65\cdot10^{-16} T^4c=5.57\cdot10^{-8}\; T^4
+\end{equation*}
 \end{document}
