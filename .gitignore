@@ -303,3 +303,4 @@ TSWLatexianTemp*
 .vscode/ltex.hiddenFalsePositives.en-US.txt
 *.bbl-SAVE-ERROR
 /PhysicalMathematics
+/Chapter/**/*.pdf

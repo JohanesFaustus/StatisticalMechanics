@@ -518,6 +518,15 @@ We also have flux, that is a number of particles per unit area per unit time
     \Gamma=\frac{1}{4}\rho\braket{v}
 \end{equation*}
 
+To determine the fraction of particle within certain range of value, say energy
+\begin{equation*}
+    \text{Fraction}=\int_{x_1}^{x_2}f(x)\;dx
+\end{equation*}
+where $f(x)=n(x)/N$ is normalized distribution function. Alternately, for small range, we can use Leibniz formula
+\begin{equation*}
+    \text{Fraction}=\left[f\left(\frac{x_1+x_2}{2}\right)\right](x_2-x_1)
+\end{equation*}
+
 \subsubsection*{Derivation.} The derivation of $\braket{v}$ and $v_\text{rms}$ are quite trivial. For the expectation value of velocity
 \begin{multline*}
     \braket{v}=4\pi \left(\frac{m}{2\pi k T}\right)^{3/2} \int_{0}^{\infty}v^3\exp\left(-\frac{m v^2}{2k T}\right)\;dv\\
@@ -561,7 +570,7 @@ We find
     \braket{v_x}&=\left(\frac{m}{2\pi kT}\right)^{1/2}\int v_x\exp\left(\frac{-m v^2}{2kT}\right)\;dv_x\\
     &=\left(\frac{m}{2\pi kT}\right)^{1/2}\frac{1}{2}\left(\frac{2\pi kT}{m}\right)^{1/2}\Gamma(2)=\sqrt{\frac{kT}{2\pi m}}
 \end{align*}
-We could simply substitute this result into our flux equation, or alternavitely we write 
+We could simply substitute this result into our flux equation, or alternately we write 
 \begin{equation*}
     \braket{v}=\sqrt{\frac{8kT}{m}}=4\braket{v_x}
 \end{equation*}
