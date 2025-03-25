@@ -1,12 +1,30 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsection*{Bose-Dirac Distribution}
-The distribution of particle obeying the Pauli exclusion principle, also called fermion, is governed by Fermi-Dirac distribution, given by
+\subsection*{Fermi-Dirac Distribution}
+The distribution of particle obeying the Pauli exclusion principle, also called fermion, is governed by Fermi-Dirac distribution. In general, the number of particle per unit energy interval is given by 
 \begin{equation*}
-    n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1}
+    n(E)=\frac{g(E)}{\exp\left[(E-\mu)/k_BT\right]+1}
 \end{equation*}
 
-\subsubsection*{Derivation.} The number of configuration in this case is the number of ways to choose $N_E$ particle from $P_E$ cells
+For free non-relativistic fermion--such as metals, conductor, and electron gases--the density of state is given by
+\begin{equation*}
+    g(E)=\frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E^{1/2}
+\end{equation*}
+then the distribution function simply evaluate into
+\begin{equation*}
+    n(E)=\frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}\frac{{E}^{1/2}}{\exp\left[(E-\mu)/k_BT\right]+1}
+\end{equation*}
+
+The Fermi-Dirac distribution may be expressed as a product of the Fermi function and the density of state
+\begin{equation*}
+    n(E)=f(E,T)g(E)
+\end{equation*}
+where
+\begin{equation*}
+    f(E,T)=\frac{1}{\exp\left[(E-\mu)/k_BT\right]+1}
+\end{equation*}
+\subsection*{Einstein Derivation}
+The number of configuration in this case is the number of ways to choose $N_E$ particle from $P_E$ cells
 \begin{equation*}
     \mathcal{P}_E={P_E \choose N_E}=\frac{P_E!}{(P_E-N_E)!N_E!}
 \end{equation*}
@@ -76,4 +94,87 @@ and for the distribution function
     n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1}
 \end{equation*}
 
+\subsection*{Fermi Gas at Zero Temperature}
+The Fermi function at absolute zero can be written as step function
+\begin{equation*}
+    f(E,0)=\begin{cases}
+        1&E<\mu\\
+        0&\mu<E
+    \end{cases}
+\end{equation*}
+To see how this came to be, observe the behavior of the Fermi function, which depends on the value $E-\mu$, as $T$ approach zero. For $E<\mu$ and $\mu<E$ respectively, we have
+\begin{equation*}
+    f(E,0)=\frac{1}{\exp (-\infty)+1}\quad\text{and}\quad f(E,0)=\frac{1}{\exp(\infty)+1}
+\end{equation*}
+Since the Fermi-Dirac distribution is a product of Fermi function and density of state, DoS, function, we must have 
+\begin{equation*}
+    n(E)\big|_{T=0}=\begin{cases}
+        g(E)&E<\mu\\
+        0&\mu<E
+    \end{cases}
+\end{equation*}
+
+\subsubsection*{Fermi energy.} The Fermi energy is the energy of the highest occupied state at absolute zero temperature. It is given by
+\begin{equation*}
+    E_F=\frac{\hbar^2}{2m}\left(3\pi^2\frac{N}{V}\right)^{2/3}
+\end{equation*}
+To derive the said quantity, we consider the total number of particle
+\begin{align*}
+    N&=\int_{0}^{\infty}n(E)\;dE=\int_{0}^{E_F}g(E)\;dE\\
+    &=\int_{0}^{E_F} \frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E^{1/2}\;dE\\
+    N&=\frac{V}{3\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E_F^{3/2}
+\end{align*}
+By solving for $E_F$, we obtain the expression for Fermi energy.
+
+\subsubsection*{Fermi temperature.} The Fermi temperature is the temperature where the thermal energy $kT$ can be compared with the Fermi energy $E_F$. By comparing those two energy, we obtain the value of Fermi temperature
+\begin{equation*}
+    T_F=\frac{E_F}{k}=\frac{\hbar^2}{2mk}\left(3\pi^2\frac{N}{V}\right)^{2/3}
+\end{equation*}
+
+\subsubsection*{Fermi velocity.} Like Fermi energy, the Fermi velocity is the highest velocity, or rather speed, of fermion at absolute zero. It is given by 
+\begin{equation*}
+    v_F=\left(\frac{2E_F}{m}\right)^{1/2}
+\end{equation*}
+It can be obtained by using the kinetic energy relation $E=mv^2/2$ for the Fermi energy. To be more explicit, we can also write
+\begin{equation*}
+    v_F=\frac{h}{m}\left(3\pi^2\frac{N}{V}\right)^{1/3}
+\end{equation*}
+
+\subsubsection*{Fermi momentum.} The Fermi momentum is the highest momentum fermions at absolute zero can possibly have, and it is given by 
+\begin{equation*}
+    p=\hbar\left(3\pi^2\frac{N}{V}\right)^{1/3}
+\end{equation*}
+
+\subsubsection*{Fermi wavevector and wavelength.} Since the momentum of a free fermion is $p=hk$, we have the Fermi wavevector as $k=p/h$ or 
+\begin{equation*}
+    k_F=\left(3\pi^2\frac{N}{V}\right)^{1/3}
+\end{equation*}
+
+Using the wave relation $k=2\pi/\lambda$, we can determine the Fermi wavelength
+\begin{equation*}
+    \lambda_F=\frac{2\pi}{\left(3\pi^2N/V\right)^{1/3}}
+\end{equation*}
+
+\subsubsection*{Average energy.} At absolute zero, the average energy of fermion is given by 
+\begin{equation*}
+    \braket{E}=\frac{3}{5}E_F
+\end{equation*}
+It is derived by the following method.
+\begin{align*}
+    \braket{E}\big|_{T=0}&= \frac{1}{N}\int_{0}^{\infty}En(E)\;dE =\frac{1}{N}\int_{0}^{\infty} \frac{V}{2\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}E^{3/2}\;dE\\
+    &=\frac{V}{2\pi^2 N}\left(\frac{2m}{\hbar^2}\right)^{3/2}\frac{2}{5}E_F^{5/2}\\
+    &=\frac{V}{2\pi^2 N}\left(\frac{2m}{\hbar^2}\right)^{3/2}\frac{2}{5}\left(\frac{\hbar^2}{2m}\right)^{5/2}\left(3\pi^2\frac{N}{V}\right)^{5/3}\\
+    \braket{E}\big|_{T=0}&=\frac{1}{5}\left(\frac{\pi^2N}{V}\right)^{3/2}\left(\frac{\hbar}{2m}\right)3^{5/3}=\frac{3^{5/3}}{5}\frac{E_F}{3^{2/3}}=\frac{3}{5}E_F
+\end{align*}
+
+\subsubsection*{Average velocity.} The average velocity of fermion at absolute zero is given by 
+\begin{equation*}
+    \braket{v}\big|_{T=0}= \frac{1}{N}\int_{0}^{\infty}En(E)\;dE 
+\end{equation*}
+It is derived in the following ways.
+\begin{align*}
+    \braket{v}\big|_{T=0}&=\frac{1}{N}\int_{0}^{\infty}vn(v)\;dv=\frac{1}{N}\int_{0}^{\infty} \frac{V}{2\pi^2}\left(\frac{\hbar}{2m}\right)^{3/2}\left(\frac{m}{2}\right)^{1/2}v^2\;mv\;dv\\
+    &=\frac{V}{\pi^2N}\left(\frac{m}{\hbar}\right)^3\frac{1}{4}v_F^4\\
+    &=\frac{V}{\pi^2N}\left(\frac{m}{\hbar}\right)^3\frac{1}{4} \left(\frac{h}{m}\right)^3\left(3\pi^2\frac{N}{V}\right)v_f=\frac{3}{4}v_F
+\end{align*}
 \end{document}
