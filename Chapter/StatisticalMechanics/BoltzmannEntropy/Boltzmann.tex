@@ -9,20 +9,20 @@
 \subsection*{Discrete Energy Levels}
 In this model, Boltzmann postulates in a gas of $N$ particle, that each particle has discretely spaced value of energy kinetic $\epsilon P$. The permutation of configuration $E_k|N\equiv E_1,\dots E_N$ denote distinct configuration. State of system is then defined as set $n_k\equiv n_0,\cdot, n_P$ where $n_k$ is the number of molecule having $k\epsilon$ energy level.
 
-\begin{table*}[ht]
-    \begin{center}
-\caption*{Table: system with two possible energy level $(0, \epsilon)$}
-\begin{tabular}{c || c}
-    \hline\hline
-    $\begin{array}{c}\text{State} \\n_{k|P}=(n_0,n_1)\end{array}$  &  $\begin{array}{c}\text{Configuration} \\ E_k|N=(E_1 , E_2 , E_3 )\end{array}$ \\
-    \hline\hline
-    $(3, 0)$&$(0, 0, 0)$\\
-    $(2, 1)$&$(\epsilon, 0, 0), (0, \epsilon, 0), (0, 0, \epsilon)$\\
-    $(1, 2)$&$(\epsilon, \epsilon, 0), (\epsilon, 0, \epsilon), (0, \epsilon, \epsilon)$\\
-    $(0, 3)$&$(\epsilon, \epsilon, \epsilon)$\\
-\end{tabular}
-    \end{center}
-\end{table*}
+\begin{table}[h]
+    \centering
+    \caption*{Table: system with two possible energy level $(0, \epsilon)$}
+    \begin{tabular}{cc} 
+        \toprule
+        $\begin{array}{c}\text{State} \\n_{k|P}=(n_0,n_1)\end{array}$  &  $\begin{array}{c}\text{Configuration} \\ E_k|N=(E_1 , E_2 , E_3 )\end{array}$ \\
+        \midrule
+        $(3, 0)$&$(0, 0, 0)$\\
+        $(2, 1)$&$(\epsilon, 0, 0), (0, \epsilon, 0), (0, 0, \epsilon)$\\
+        $(1, 2)$&$(\epsilon, \epsilon, 0), (\epsilon, 0, \epsilon), (0, \epsilon, \epsilon)$\\
+        $(0, 3)$&$(\epsilon, \epsilon, \epsilon)$\\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 Each configuration must also obey the following restriction.
 \begin{equation*}
@@ -46,29 +46,32 @@ For a special case when $L\leq P$, the equation above turns into
 \begin{equation*}
 \mathcal{P}(N,L)=\frac{1}{L!}\frac{(N+L-1)!}{(N-1)!}
 \end{equation*}
+\begin{table}[h]
+    \centering
+    \caption*{Table: State and configuration a system with $N=P=7$ and $L\leq P$}
+    \begin{tabular}{cc} 
+        \toprule
+        $\begin{array}{c}\text{State} \\n_{k|P}=(n_0,n_1,n_2, n_3, n_4, n_5, n_6, n_7)\end{array}$&$\begin{array}{c}\text{Number of configuration}\\  D(N,P,n_{k|P})\end{array}$\\
+        \midrule
+        $(6, 0, 0, 0, 0, 0, 0, 1)$&$\frac{7!}{6!0!0!0!0!0!0!1!} =7 $ \\
+        $(5, 1, 0, 0, 0, 0, 1, 0)$&$\frac{7!}{5!1!0!0!0!0!1!0!} =42 $ \\
+        $(5, 0, 1, 0, 0, 1, 0, 0)$&$\frac{7!}{5!0!1!0!0!1!0!0!} =42$\\
+        $(5, 0, 0, 1, 1, 0, 0, 0)$&$\frac{7!}{5!0!0!1!1!0!0!0!} =42 $\\
+        $(4, 2, 0, 0, 0, 1, 0, 0)$&$\frac{7!}{4!2!0!0!0!1!0!0!} =105$\\
+        $(4, 1, 1, 0, 1, 0, 0, 0)$&$\frac{7!}{4!1!1!0!1!0!0!0!} =210 $\\
+        $(4, 0, 2, 1, 0, 0, 0, 0)$&$\frac{7!}{4!0!2!1!0!0!0!0!} =105 $\\
+        $(4, 1, 0, 2, 0, 0, 0, 0)$&$\frac{7!}{4!1!0!2!0!0!0!0!} =105 $\\
+        $(3, 3, 0, 0, 1, 0, 0, 0)$&$\frac{7!}{3!3!0!0!1!0!0!0!} =140 $\\
+        $(3, 2, 1, 1, 0, 0, 0, 0)$&$\frac{7!}{ 3!2!1!1!0!0!0!0!} =420 $\\
+        $(3, 1, 3, 0, 0, 0, 0, 0)$&$\frac{7!}{3!1!3!0!0!0!0!0!} =140 $\\
+        $(2, 4, 0, 1, 0, 0, 0, 0)$&$\frac{7!}{2!4!0!1!0!0!0!0!} =105 $\\
+        $(2, 3, 2, 0, 0, 0, 0, 0)$&$\frac{7!}{2!3!2!0!0!0!0!0!} =210 $\\
+        $(1, 5, 1, 0, 0, 0, 0, 0)$&$\frac{7!}{1!5!1!0!0!0!0!0!} =42 $\\
+        $(0, 7, 0, 0, 0, 0, 0, 0)$&$\frac{7!}{0!7!0!0!0!0!0!0!} =1 $\\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-\begin{longtable}{c||c}
-    \caption*{Table: State and configuration a system with $N=P=7$}, and $L\leq P$\\
-    \hline\hline
-    $\begin{array}{c}\text{State} \\n_{k|P}=(n_0,n_1,n_2, n_3, n_4, n_5, n_6, n_7)\end{array}$&$\begin{array}{c}\text{Number of configuration}\\  D(N,P,n_{k|P})\end{array}$\\ 
-    \hline\hline\\
-
-    $(6, 0, 0, 0, 0, 0, 0, 1)$&$\dfrac{7!}{6!0!0!0!0!0!0!1!} =7 $\\\\
-    $(5, 1, 0, 0, 0, 0, 1, 0)$&$\dfrac{7!}{5!1!0!0!0!0!1!0!} =42 $\\\\
-    $(5, 0, 1, 0, 0, 1, 0, 0)$&$\dfrac{7!}{5!0!1!0!0!1!0!0!} =42$\\\\
-    $(5, 0, 0, 1, 1, 0, 0, 0)$&$\dfrac{7!}{5!0!0!1!1!0!0!0!} =42 $\\\\
-    $(4, 2, 0, 0, 0, 1, 0, 0)$&$\dfrac{7!}{4!2!0!0!0!1!0!0!} =105$\\\\
-    $(4, 1, 1, 0, 1, 0, 0, 0)$&$\dfrac{7!}{4!1!1!0!1!0!0!0!} =210 $\\\\
-    $(4, 0, 2, 1, 0, 0, 0, 0)$&$\dfrac{7!}{4!0!2!1!0!0!0!0!} =105 $\\\\
-    $(4, 1, 0, 2, 0, 0, 0, 0)$&$\dfrac{7!}{4!1!0!2!0!0!0!0!} =105 $\\\\
-    $(3, 3, 0, 0, 1, 0, 0, 0)$&$\dfrac{7!}{3!3!0!0!1!0!0!0!} =140 $\\\\
-    $(3, 2, 1, 1, 0, 0, 0, 0)$&$\dfrac{7!}{ 3!2!1!1!0!0!0!0!} =420 $\\\\
-    $(3, 1, 3, 0, 0, 0, 0, 0)$&$\dfrac{7!}{3!1!3!0!0!0!0!0!} =140 $\\\\
-    $(2, 4, 0, 1, 0, 0, 0, 0)$&$\dfrac{7!}{2!4!0!1!0!0!0!0!} =105 $\\\\
-    $(2, 3, 2, 0, 0, 0, 0, 0)$&$\dfrac{7!}{2!3!2!0!0!0!0!0!} =210 $\\\\
-    $(1, 5, 1, 0, 0, 0, 0, 0)$&$\dfrac{7!}{1!5!1!0!0!0!0!0!} =42 $\\\\
-    $(0, 7, 0, 0, 0, 0, 0, 0)$&$\dfrac{7!}{0!7!0!0!0!0!0!0!} =1 $\\\\
-\end{longtable}
 
 \subsubsection*{ Real\textsuperscript{\texttrademark} System.} Boltzmann postulates that thermal equilibrium correspond to state with the largest number of configuration. The previous example with $N=7$ we know that the state in question is $n_{k|P}=(3, 2, 1, 1, 0, 0, 0, 0)$. In real system with large $N$, it is impossible to determine the equilibrium state using method above.
 
@@ -205,47 +208,52 @@ expressing the equation above in terms of $L$ and $N$ to get
     \ln(\mathcal{P}_\text{max})= (N+L)\ln (N+L) - L\ln (L)-N\ln (N) \quad \blacksquare
 \end{equation*}
 
-\subsubsection*{Result.} We shall now discuss the result of Boltzmann derivation. The case in this discussion will be the same as previously, which is $N = P = 7 , L \leq P$. Here we will compare those three result: 
-\begin{enumerate}
-    \item \textbf{Small system}. By this consideration, we know the equilibrium state represented by the following state \begin{equation*}
-        n_{k|P}=(3, 2, 1, 1, 0, 0, 0, 0)
-    \end{equation*} which has 420 number of configuration.
-    \item \textbf{Large system}. Tools we used in this consideration are Stirling's approximation and Lagrange multiplier. We obtain the formula for number of particle $n_k$ with $k\epsilon$ energy \begin{equation*}
-        n_k=\frac{N(1-x)}{1-x^{P+1}}x^k
-    \end{equation*}
-    where $x$ is obtained by solving the following equation
-    \begin{equation*}
-        (N P - L)x^{P+2} - (NP + N - L)x^{P+1} + (L + N ) = 0.
-    \end{equation*}
-    Boltzmann solved the equation numerically and obtained $x=0.5078125$.
-    \item \textbf{Large system with large \emph{P} approximation.} The equation for $n_k$ in this consideration is written as \begin{equation*}
-        n_k= N (1 - x)x^k 
-    \end{equation*}
-\end{enumerate}
-\begin{longtable}{c||c||c||c}
-    \caption*{Table: The result of those three considerations. Quite accurate except few numbers.}\\
-    \hline\hline
-    $k$&$\begin{array}{c}
-        n_k\\
-        \text{for small system}
-    \end{array}$ &$\begin{array}{c}
-        n_k\\
-        \text{for large system}
-    \end{array}$ &$\begin{array}{c}
-        \text{Same but with large}\\
-        P\text{ approximation}
-    \end{array}$\\ 
-    \hline\hline
-    0 &3&3.4535&3.5 \\
-    1 &2&1.7574&1.75 \\
-    2 &1&0.8943&0.875 \\
-    3 &1&0.4551&0.4375 \\
-    4 &0&0.2316&0.2187 \\
-    5 &0&0.1178&0.10937 \\
-    6 &0&0.0599&0.05468 \\
-    7 &0&0.0304&0.02734 \\
-\end{longtable}
+\subsubsection*{Result.} We shall now discuss the result of Boltzmann derivation. The case in this discussion will be the same as previously, which is $N = P = 7 , L \leq P$. Here we will compare those three results: 
 
+\paragraph*{Small system.} By this consideration, we know the equilibrium state represented by the following state \begin{equation*}
+    n_{k|P}=(3, 2, 1, 1, 0, 0, 0, 0)
+\end{equation*} which has 420 number of configuration.
+
+\paragraph*{Large system.} Tools we used in this consideration are Stirling's approximation and Lagrange multiplier. We obtain the formula for number of particle $n_k$ with $k\epsilon$ energy \begin{equation*}
+    n_k=\frac{N(1-x)}{1-x^{P+1}}x^k
+\end{equation*}
+where $x$ is obtained by solving the following equation
+\begin{equation*}
+    (N P - L)x^{P+2} - (NP + N - L)x^{P+1} + (L + N ) = 0.
+\end{equation*}
+Boltzmann solved the equation numerically and obtained $x=0.5078125$.
+
+\paragraph*{Large system with large $P$ approximation.} The equation for $n_k$ in this consideration is written as \begin{equation*}
+    n_k= N (1 - x)x^k 
+\end{equation*}
+
+\begin{table}[h]
+    \centering
+    \caption*{Table: The result of those three considerations. Quite accurate except few numbers.}
+    \begin{tabular}{cccc} 
+        \toprule
+        $k$&$\begin{array}{c}
+            n_k\\
+            \text{for small system}
+        \end{array}$ &$\begin{array}{c}
+            n_k\\
+            \text{for large system}
+        \end{array}$ &$\begin{array}{c}
+            \text{Same but with large}\\
+            P\text{ approximation}
+        \end{array}$\\ 
+        \midrule
+        0 &3&3.4535&3.5 \\
+        1 &2&1.7574&1.75 \\
+        2 &1&0.8943&0.875 \\
+        3 &1&0.4551&0.4375 \\
+        4 &0&0.2316&0.2187 \\
+        5 &0&0.1178&0.10937 \\
+        6 &0&0.0599&0.05468 \\
+        7 &0&0.0304&0.02734 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection*{Continuous Energy Distribution}
 Assume continuous energy $E$ within interval $(0,\infty)$, with a space of $\epsilon$. The function $f(E)$ denote the number of atoms per unit energy. The density function $f(E) $ for continuous energy levels at equilibrium is given by

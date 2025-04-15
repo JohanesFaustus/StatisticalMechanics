@@ -22,18 +22,21 @@ and for fermion
     \Omega_\text{FD}=\prod_k\frac{g_k!}{n_k!(g_k-n_k)!}
 \end{equation*}
 
-\subsubsection*{Example.} Consider system with four particle and five unit energy, where each energy level have the following condition.
-\begin{longtable}{c c c}
-    \caption*{Table: Random system}\\
-    \hline
+\subsubsection*{Example.} Consider system with four particles and five unit energy, where each energy level have the following condition.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc}
+    \toprule
     $n$ & $(g_n,\epsilon_n)$\\ 
-    \hline\\
-
+    \midrule
     $4$&$(1,3)$\\
     $3$&$(3,2)$\\
     $2$&$(2,1)$\\
     $1$&$(3,0)$\\
-\end{longtable}
+    \bottomrule
+    \end{tabular}
+\end{table}
+    
 We have the following macrostate.
 \begin{align*}
     M_1&=(2,0,1,1)\\
@@ -64,19 +67,23 @@ and for fermion
 No $M_4$ for fermion since those three particle cannot have the same energy. 
 
 \subsubsection*{Another example.} This time I will do classical particle only. Consider system with $N=E=7$ unit whose each level of energy obey the following condition.
-\begin{longtable}{c c c}
-    \caption*{Table: Random system}\\
-    \hline
-    $n$ & $(g_n,\epsilon_n)$\\ 
-    \hline\\
-    $7$&$(3,6)$\\
-    $6$&$(3,5)$\\
-    $5$&$(3,4)$\\ 
-    $4$&$(3,3)$\\
-    $3$&$(3,2)$\\
-    $2$&$(3,1)$\\
-    $1$&$(3,0)$\\
-\end{longtable}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        $n$ & $(g_n,\epsilon_n)$\\ 
+        \midrule
+        $7$&$(3,6)$\\
+        $6$&$(3,5)$\\
+        $5$&$(3,4)$\\ 
+        $4$&$(3,3)$\\
+        $3$&$(3,2)$\\
+        $2$&$(3,1)$\\
+        $1$&$(3,0)$\\
+        \bottomrule
+    \end{tabular}
+\end{table}
 The corresponding macrostates are as follows.
 \begin{equation*}
     \begin{array}{l l}
@@ -106,17 +113,22 @@ with the following microstate
 \end{quotation}
 
 Keadaan sistem dapat digambarkan sebagai berikut.
-\begin{longtable}{c | c | c }
-    \caption*{Tabel: Keadaan sistem}\\
-    \hline
+
+\begin{table}[h]
+    \centering
+    \caption*{Tabel: Keadaan sistem}
+    \begin{tabular}{ccc}
+    \toprule
     $s$ & $g_s$& $\epsilon_s= (s-1)$ eV\\ 
-    \hline\hline
+    \midrule
     $5$& $3 $ & $4 $ \\ 
     $4$& $3 $ & $3 $ \\
     $3$& $3 $ & $2 $ \\
     $2$& $3 $ & $1 $\\
     $1$& $3 $ & $0 $\\
-\end{longtable}
+    \bottomrule
+    \end{tabular}
+\end{table}
 Sistem memiliki 12 keadaan makro dengan spesifikasi sebagai berikut.
 \begin{equation*}
     \begin{array}{l r}
