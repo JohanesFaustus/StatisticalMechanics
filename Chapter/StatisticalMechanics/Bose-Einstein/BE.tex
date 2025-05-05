@@ -192,7 +192,7 @@ We determine the total energy of given phonon as
 \end{equation*}
 Using said distribution
 \begin{align*}
-    E&=\int_{0}^{\nu_m}h\nu \frac{3N\delta(\nu-\nu_m)}{\exp(h\nu/kT)-1}\;d\nu\\
+    E&=\int_{0}^{\infty}h\nu \frac{3N\delta(\nu-\nu_m)}{\exp(h\nu/kT)-1}\;d\nu\\
     E&=\frac{3Nh\nu_m}{\exp(h\nu_m/kT)-1}
 \end{align*}
 The experimental data that was mentioned prior takes the form of heat capacitance, hence Einstein's theory should give the heat capacitance by using the definition 
@@ -257,4 +257,8 @@ We also define Debye temperature $\theta_D=h\nu/k$
     E&=\frac{9Nk}{\delta_D^3}T^4\int_{0}^{\theta_D/T}\frac{x^3}{e^x-1}\;dx\\
     E&=\frac{9Nk}{\delta_D^3}6\frac{\pi^4}{90}T^4=\frac{3\pi^4Nk}{5\theta_D}T^4
 \end{align*}
+Which mean that the heat capacitance
+\begin{equation*}
+    C_V=\frac{12\pi^4R}{5\theta_D}T^3
+\end{equation*}
 \end{document}
