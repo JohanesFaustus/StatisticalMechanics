@@ -308,6 +308,76 @@ Hence
     d\epsilon_s=\frac{dW}{E}\epsilon_s
 \end{equation*}
 
+\subsection*{Two Level System}
+This model describes a system that can only exist in two discrete energy states, which might occur naturally in diatomic molecule. The population number of the excitation state is given by 
+\begin{equation*}
+    n_2=\frac{Ng_2}{g_2+g_1\exp(\Delta\epsilon/kT)}
+\end{equation*}
+The heat capacitance is written as 
+\begin{equation*}
+    C_V=N_Ak\left(\frac{\Delta\epsilon}{kT}\right)^2\frac{g_1g_2\exp(\Delta\epsilon/kT)}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}
+\end{equation*}
+In general, the maximum value of $C_V$ occur at
+\begin{equation*}
+   e^{-x}=\frac{(x^2-2x)g_1}{(2x+x^2)g_2e^{-x}} 
+\end{equation*}
+where $x=\Delta\epsilon/kT$. In the special case of $g_1=g_2=1$, the $C_{Vm}$ occur at $x_m=2.4$ and $C_V(x=2.4)=0.44\;Nk$
+
+\subsubsection*{Population number derivation.} Consider $N$ classical particle with two level of energy $g_1$ and $g_2$. Recall the configuration for classical particle
+\begin{equation*}
+    \Omega=N!\prod_s \frac{g_s^{n_s}}{n_s!}
+\end{equation*}
+On using the Stirling approximation and the Boltzmann entropy
+\begin{align*}
+    S&=k\sum_s\left[n_s\ln g_s+N\ln N-N-n_s\ln n_s+n_s\right]\\
+    S&=k\sum_s\left[n_s\ln \frac{g_s}{n_s}+N\ln N\right]
+\end{align*}
+We express the total energy as 
+\begin{equation*}
+    U=(N-n_2)\epsilon_1+n_2\epsilon_2=N\epsilon_1+n_2\Delta\epsilon
+\end{equation*}
+where $n_1=N-n_2$ as the occupation number of the ground state. Here we want to find the distribution function for the second state particle. To do so, we begin by maximizing the Helmholtz potential, since at equilibrium its value is minimum
+\begin{align*}
+    F&=E-TS\\
+    &=(N-n_2)\epsilon_1+n\epsilon_2\notag\\
+    &\qquad-kT\sum_s\left[n_s\ln \frac{g_s}{n_s}+N\ln N\right]\\
+    &=(N-n_2)\epsilon_1+n\epsilon_2\notag\\
+    &\qquad-kT\left[(N-n_2)\ln \frac{g_1}{N-n_2}+n_2\ln\frac{g_2}{n_2}+N\ln N\right]
+\end{align*}
+Then we differentiate it with respect to $n_2$ 
+\begin{align*}
+    \frac{\partial F}{\partial n}&=-\epsilon_1+\epsilon_2 -kT\bigg[-\ln\frac{g_1}{N-n_2}\notag\\
+    &\qquad+(N-n_2)\frac{N-n_2}{g_1}\frac{g_1}{N-n_2} +\ln\frac{g_2}{n} -n\frac{n}{g_2}\frac{g_2}{n^2}\bigg]\\
+    &=\Delta\epsilon-kT\bigg[\ln\left(\frac{g_2}{g_1}\frac{N-n_2}{n}\right)\bigg]\label{eq:dFdn}
+\end{align*}
+and set it to zero
+\begin{align*}
+    kT\bigg[\ln\left(\frac{g_2}{g_1}\frac{N-n_2}{n_2}\right)\bigg]&=\Delta\epsilon\\
+    \frac{g_2}{g_1}\frac{N-n_2}{n_2}&=\exp \frac{\Delta\epsilon}{kT}\\
+    \frac{g_2}{g_1}N&=n_2\left[1+\exp \frac{\Delta\epsilon}{kT}\right]\\
+    n_2&=\frac{g_2}{g_1}\frac{N}{g_2/g_1+\frac{g_2}{g_1}\exp(\Delta\epsilon/kT)}\\
+    n_2&=\frac{Ng_2}{g_2+g_1\exp(\Delta\epsilon/kT)}
+\end{align*}
+
+\subsubsection*{Heat capacitance.} We this on the expression for energy 
+\begin{equation*}
+    U=N\epsilon_1+\frac{Ng_2\Delta\epsilon}{g_2+g_1\exp(\Delta\epsilon/kT)}
+\end{equation*}
+to evaluate its derivative with respect to temperature at constant $V$ and $N=N_A$ to obtain the heat capacitance
+\begin{align*}
+    C_V&=\frac{N_Ag_2\Delta\epsilon\left[-g_1-(\Delta/kT^2)\exp (\Delta \epsilon/kT) \right]}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}\\
+    C_V&=N_Ak\left(\frac{\Delta\epsilon}{kT}\right)^2\frac{g_1g_2\exp(\Delta\epsilon/kT)}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}
+\end{align*}
+To find the maximum value of $C_V$ we shall differentiate it once more, but we first define $x=\Delta\epsilon/kT$. Then 
+\begin{align*}
+    \frac{d}{dx}N_Akx^2\frac{g_1g_2e^x}{\left[g_2+g_1e^x\right]^2}&=0\\
+    \frac{\left[(2xe^x+x^2e^x)(g_2+g_1e^x)^2-x^2e^x(2(g_2+g_1e^x)g_1e^x)\right]}{(g_2+g_1e^x)^4}&=0\\
+    (2xe^x+x^2e^x)(g_2+g_1e^x)^2-2g_1x^2e^{2x}&=0\\
+    (x^2-2x)g_1-(2x+x^2)g_2e^{-x}=0\\
+   \frac{(x^2-2x)g_1}{(2x+x^2)g_2e^{-x}} &=e^{-x}
+\end{align*}
+The value of $x\equiv x_m$ that satisfies above equation is the value of $x$ where $C_V$ assumes the maximum value, or $C_V(x_m)\equiv C_{Vm}$.
+
 \subsection*{Continuous Energy Distribution}
 Assume continuous energy $E$ within interval $(0,\infty)$, with a space of $\epsilon$. The function $f(E)$ denote the number of atoms per unit energy. The density function $f(E) $ for continuous energy levels at equilibrium is given by
 \begin{equation*}
@@ -661,4 +731,5 @@ Raising $e$ to the power of it, we have
     u&=\frac{\epsilon}{\exp(\epsilon/k_BT)-1}
 \end{align*}
 As an aside, using $\epsilon=h\nu$ would result in Planck's entropy and average molecular energy to $S_B$ and $u$ respectively.
+
 \end{document}
