@@ -313,6 +313,10 @@ This model describes a system that can only exist in two discrete energy states,
 \begin{equation*}
     n_2=\frac{Ng_2}{g_2+g_1\exp(\Delta\epsilon/kT)}
 \end{equation*}
+The energy of said system is 
+\begin{equation*}
+    U=N\epsilon_1+\frac{Ng_2\Delta\epsilon}{g_2+g_1\exp(\Delta\epsilon/kT)}
+\end{equation*}
 The heat capacitance is written as 
 \begin{equation*}
     C_V=N_Ak\left(\frac{\Delta\epsilon}{kT}\right)^2\frac{g_1g_2\exp(\Delta\epsilon/kT)}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}
@@ -365,7 +369,7 @@ and set it to zero
 \end{equation*}
 to evaluate its derivative with respect to temperature at constant $V$ and $N=N_A$ to obtain the heat capacitance
 \begin{align*}
-    C_V&=\frac{N_Ag_2\Delta\epsilon\left[-g_1-(\Delta/kT^2)\exp (\Delta \epsilon/kT) \right]}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}\\
+    C_V&=\frac{N_Ag_2\Delta\epsilon\left[-g_1(-\Delta/kT^2)\exp (\Delta \epsilon/kT) \right]}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}\\
     C_V&=N_Ak\left(\frac{\Delta\epsilon}{kT}\right)^2\frac{g_1g_2\exp(\Delta\epsilon/kT)}{\left[g_2+g_1\exp(\Delta\epsilon/kT)\right]^2}
 \end{align*}
 To find the maximum value of $C_V$ we shall differentiate it once more, but we first define $x=\Delta\epsilon/kT$. Then 

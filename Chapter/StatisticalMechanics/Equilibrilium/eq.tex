@@ -1,0 +1,70 @@
+\documentclass[../../../Main.tex]{subfiles}
+\begin{document}
+\subsection*{Ensembles}
+The maximum entropy principle state that thermal equilibrium is described by such probability distribution of microstates for which the statistical entropy is maximum subject to the constraints on the system.
+The constraints of general interest are the ones pertaining to whether the system exchanges energy and/or particles with its environment.
+Those constraints define three types of ensembles:
+\begin{enumerate}
+    \item \textbf{Microcanonical.} Represents a system which is isolated and exchanges neither energy nor particles with the environment. System has fixed $N,\;V,\;E$.
+    \item \textbf{Canonical.} Represents a system which exchanges energy but not particles with the environment. System has fixed $N,\;T,\;V$.
+    \item \textbf{Grand Canonical.} Represents a system which exchanges energy as well as particles with the environment. System has fixed $\mu,\;V,\;T$.
+\end{enumerate}
+
+\subsection*{Partition function}
+For canonical ensembles, the partition function is defined as follows
+\begin{equation*}
+    Z\equiv \sum_i e^{\epsilon_i/kT}
+\end{equation*}
+where $i$ denote the index for the microstates of the system.
+And
+\begin{equation*}
+    Z\equiv \sum_{s} g_se^{\epsilon_s/kT}
+\end{equation*}
+where $g_s$ denote the number of microstates with $\epsilon_s$ energy. 
+Note the difference of $\epsilon_s$ in the context quantum system and canonical ensembles.
+In quantum system, it refers to the $s$-th energy level, while here it refers to the $s$-th microstates.
+
+
+\subsection*{Probability}
+On using the defined partition function, the probability $P_i$ that our system is in microstate $i$ with energy $\epsilon_i$ is
+\begin{equation*}
+    P_i=\frac{1}{Z}e^{\epsilon_i/kT}
+\end{equation*}
+
+\subsubsection*{Derivation.} Probability of the system being in $i$-th state is proportional to the number of ways the reservoir can arrange itself with that its own energy
+\begin{equation*}
+    P_i\propto \Omega_R(E_T-E_i)
+\end{equation*}
+since $E_R=E_T-E_i$. By Boltzmann definition of entropy
+\begin{equation*}
+    \Omega_R(E_T-E_i)=\exp\left[\frac{S_R(E_T-E_i)}{k }\right]
+\end{equation*}
+Then 
+\begin{equation*}
+    P_i\propto \exp\left[\frac{S_R(E_T-E_i)}{k }\right]
+\end{equation*}
+We know that $E_i\ll E_R$, thus $E_i\ll E_T$ and we can expand the reservoir entropy using Taylor expansion
+\begin{equation*}
+    S_R(E_T-E_i)\approx S_R(E_T)-\frac{\partial S_R(E_T)}{\partial E}E_i
+\end{equation*}
+Using the relation $\partial S/\partial E=1/T$
+\begin{equation*}
+    S_R(E_T-E_i)\approx S_R(E_T)-\frac{E_i}{T}
+\end{equation*}
+So 
+\begin{equation*}
+    P_i\propto\exp\left[\frac{S_R}{k }\right]\exp\left[-\frac{E_i}{kT}\right]
+\end{equation*}
+Since $e^{S_R/k}$ is a constant which does not depend on the microstate $i$, we can define it as the normalization constant
+\begin{equation*}
+    \sum_i P_i=C\sum_i e^{-E_i/kT}=1
+\end{equation*}
+which can be evaluated as 
+\begin{equation*}
+    C=\frac{1}{\sum_i e^{-E_i/kT}}=\frac{1}{Z}
+\end{equation*}
+Therefore
+\begin{equation*}
+    P_i=\frac{\sum_i e^{-E_i/kT}}{Z}
+\end{equation*}
+\end{document}
