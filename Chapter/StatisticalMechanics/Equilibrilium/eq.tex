@@ -90,4 +90,32 @@ To obtain the next expression, we express the derivative term as
 \begin{equation*}
     \frac{1}{Z}\frac{\partial Z}{\partial T}=\frac{\partial }{\partial T}\ln Z
 \end{equation*}
+
+\subsubsection*{Entropy}
+Expressed as follows.
+\begin{equation*}
+    S=Nkt\ln Z+\frac{E}{T}
+\end{equation*}
+\paragraph*{Derivation.} Consider the logarith of the configuration for the classical particle 
+\begin{equation*}
+    \ln \Omega=N\ln N +\sum_s\ln\frac{g_s}{n_s}
+\end{equation*} 
+Notice that
+\begin{equation*}
+    \frac{g_s}{n_s}=\frac{g_s}{g_s\exp(\alpha+\beta E_s)}=\exp(-\alpha-\beta E_s)
+\end{equation*}
+Substituting this and with the fact $\beta=-1/kT$
+\begin{align*}
+    \ln \Omega&=-\sum_sn_s\alpha-\sum_sn_s\beta E_s+N\ln N\\
+    \ln\Omega&= N\ln \frac{N}{e^\alpha}+\frac{E}{kT}\\
+\end{align*}
+Also notice that 
+\begin{equation*}
+    \frac{N}{e^\alpha}=\sum_s\frac{n_s}{e^\alpha}=\sum_s\frac{\exp(\alpha+\beta E_s)}{\exp\alpha}=\sum_s\exp \frac{E_s}{kT}=Z
+\end{equation*}
+Thus
+\begin{equation*}
+    S=Nkt\ln Z+\frac{E}{T}
+\end{equation*}
+
 \end{document}
