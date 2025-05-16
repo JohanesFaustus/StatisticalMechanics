@@ -69,6 +69,12 @@ Therefore
 \end{equation*}
 
 \subsection*{Physical Quantities}
+As follows.
+\begin{equation*}
+    P=nkT\ln Z
+\end{equation*}
+
+\paragraph*{Derivation.} We shall derive some physical quantities using partition function and prove them in the case of ideal gas by comparing them to the known ideal gas law. 
 \subsubsection*{Average energy.} Expressed as
 \begin{equation*}
     \braket{E}=\frac{kT^2}{Z}\frac{\partial Z}{\partial T}=kT^2\frac{\partial}{\partial T}\ln Z
@@ -82,7 +88,7 @@ To evaluate the summation, consider
 \begin{equation*}
     \frac{\partial Z}{\partial T}=\frac{\partial}{\partial T}\sum_i e^{E_i/kT}=\frac{1}{kT^2}\sum_i E_ie^{E_i/kT}
 \end{equation*}
-This is simply the previous series. Thus
+This is simply the previous series. Thus,
 \begin{equation*}
     \braket{E}=\frac{kT^2}{Z}\frac{\partial Z}{\partial T}
 \end{equation*}
@@ -91,12 +97,11 @@ To obtain the next expression, we express the derivative term as
     \frac{1}{Z}\frac{\partial Z}{\partial T}=\frac{\partial }{\partial T}\ln Z
 \end{equation*}
 
-\subsubsection*{Entropy}
-Expressed as follows.
+\subsubsection*{Entropy.} Expressed as follows.
 \begin{equation*}
     S=Nkt\ln Z+\frac{E}{T}
 \end{equation*}
-\paragraph*{Derivation.} Consider the logarith of the configuration for the classical particle 
+\paragraph*{Derivation.} Consider the logarithm of the configuration for the classical particle 
 \begin{equation*}
     \ln \Omega=N\ln N +\sum_s\ln\frac{g_s}{n_s}
 \end{equation*} 
@@ -118,4 +123,23 @@ Thus
     S=Nkt\ln Z+\frac{E}{T}
 \end{equation*}
 
+\subsubsection*{Helmholtz Potential.} On using the definition of $F=E-TS$, we have 
+\begin{equation*}
+    F=-NkT\ln Z
+\end{equation*}
+
+\subsubsection*{Pressure.} Consider the first law of thermodynamics
+\begin{equation*}
+    dE=dQ-P\;dV
+\end{equation*}
+and the differential of the Helmholtz potential 
+\begin{equation*}
+    dF=dE-T\;dS-S\;dT
+\end{equation*}
+Thus 
+\begin{equation*}
+    dF=-P\;dV-T\;dT\implies P=-\frac{\partial F}{\partial T}\bigg|_{T}
+\end{equation*}
+On using the expression for Helmholtz potential, we can express pressure in terms of partition function.
+\subsection*{Gibbs Paradox}
 \end{document}
