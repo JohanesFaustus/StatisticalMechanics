@@ -20,10 +20,62 @@ And
 \begin{equation*}
     Z\equiv \sum_{s} g_se^{-E_s/kT}
 \end{equation*}
-where $g_s$ denote the number of microstates with $E_s$ energy. 
-Note the difference of $E_s$ in the context quantum system and canonical ensembles.
-In quantum system, it refers to the $s$-th energy level, while here it refers to the $s$-th microstates.
+In the context of quantum statistical mechanics, $g_s$ denotes the degeneracy of the $E_s$ energy, while in the context of classical quantum mechanics it denotes Number of distinguishable configurations with energy $E_s$. In quantum system, $s$ refers to the $s$-th energy level, while in classical system it refers to the $s$-th microstates.
 
+The generalized partition function for a gas of $N$ identical classical non-interacting particles in three dimensions, the partition function is
+\begin{equation*}
+    Z=\frac{1}{N!h^{3N}} \int \prod_{i=1}^{N} e^{-\beta \mathcal{H}(\mathbf{q}_i, \mathbf{p}_i)} \, d^{3N} \mathbf{q}_i \, d^{3N} \mathbf{p}_i
+\end{equation*}
+Alternatively
+\begin{equation*}
+    Z= \frac{Z^N_\text{single}}{N!}
+\end{equation*}
+where
+\begin{equation*}
+    Z_\text{single}= \frac{1}{h^{3}} \int e^{-\beta \mathcal{H}(\mathbf{q}, \mathbf{p})} \, d^{3} \mathbf{q} \, d^{3} \mathbf{p}
+\end{equation*}
+Using this expression, we obtain the partition function for the ideal gas 
+\begin{equation*}
+    Z=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N\quad\text{where}\quad \lambda=\left(\frac{h^2}{2\pi mkT}\right)^{1/2}
+\end{equation*}
+
+\subsubsection*{Derivation.} For an ideal gas, the Hamiltonian is just kinetic energy
+\begin{equation*}
+    \mathcal{H}(p_i)=\frac{p_i^2}{2m}
+\end{equation*}
+which is also a function of momentum only. Then the partition function is written as 
+\begin{align*}
+    Z&=\frac{1}{N!h^{3N}} \int \exp\left(-\beta\sum_{i=1}^{N}\frac{p_i^2}{2m}\right) \, d^{3N} \mathbf{p}_i \int\, d^{3N} \mathbf{q}_i\\
+    Z&=\frac{V^N}{N!h^{3N}}\left[ \int \exp\left(-\beta\frac{p^2}{2m}\right) \, d^{3} \mathbf{p} \right]^N
+\end{align*}
+Recall that $p^2=p_x^2 +p_y^2 +p_z^2$ and $d^{3} \mathbf{p}=dp_x\;dp_y\;dp_z$
+\begin{align*}
+    Z&=\frac{V^N}{N!h^{3N}}\left[ \int \exp\left(-\frac{p^2}{2mkT}\right) \, d\mathbf{p} \right]^{3N}\\
+    &=\frac{V^N}{N!h^{3N}}(2\pi mkT )^{3N/2}\\
+    Z&=\frac{V^N}{N!h^{3N}}\left(\frac{2\pi mkT}{h^2}\right)^{3N}
+\end{align*}
+Then using the definition of the thermal de Broglie wavelength $\lambda= (h^2/2\pi mkT)^{1/2}$
+\begin{equation*}
+    Z=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N
+\end{equation*}
+
+\subsubsection*{Less rigorous derivation.} Recall the definition of partition function and the degeneracy of the classical particles
+\begin{equation*}
+    Z=\sum_{s} g_se^{-E_s/kT}\quad\text{and}\quad g(E)\;dE=2\pi V\left(\frac{2m}{h^2}\right)^{3/2}E^{1/2}\;dE
+\end{equation*}
+At high $T$, we can assume the summation sign changes into integral due to $kT$ being larger compared to the typical energy level spacing $\Delta E$. Then 
+\begin{align*}
+    Z&=2\pi V\left(\frac{2m}{h^2}\right)^{3/2}\int E^{1/2}\exp \left(\frac{E}{kT}\right)\;dE\\
+    Z&=2\pi V\left(\frac{2m}{h^2}\right)^{3/2}\left[(kT)^{3/2}\frac{\sqrt{\pi}}{2}\right]\\
+    Z&=V\left(\frac{2\pi mkT}{h^2}\right)^{3/2}
+\end{align*}
+In terms of thermal de Broglie wavelength
+\begin{equation*}
+    Z=\frac{V}{\lambda^3}\equiv Z_\text{single}
+\end{equation*}
+This is the partition function for the single particle; for many identical particles then, the partition function is simply the partition function for single particle raised to the power of the number of particle $N$ and multiplied by $1/N!$ to avoid the Gibbs paradox.
+
+To understand the reasoning, consider the classical configuration $\Omega_\text{MB}$. Here we treat the particle as truly distinguishable, yet they cause the Gibbs paradox due to over counting of the microstate. When we are dividing by $N!$ we treat $\Omega_\text{MB}$ as a permutation and the corrected configuration $\Omega'_\text{MB}$ as the combination. To obtain $\Omega_\text{MB}'$, we are then dividing $\Omega_\text{MB}$ by $N!$.
 
 \subsection*{Probability}
 On using the defined partition function, the probability $P_i$ that our system is in microstate $i$ with energy $E_i$ is
