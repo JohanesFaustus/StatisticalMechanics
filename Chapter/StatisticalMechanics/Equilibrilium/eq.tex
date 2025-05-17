@@ -36,8 +36,9 @@ where
 \end{equation*}
 Using this expression, we obtain the partition function for the ideal gas 
 \begin{equation*}
-    Z=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N\quad\text{where}\quad \lambda=\left(\frac{h^2}{2\pi mkT}\right)^{1/2}
+    Z=\frac{1}{N!}\left(\frac{V}{\Lambda^3}\right)^N\quad\text{where}\quad \Lambda=\left(\frac{h^2}{2\pi mkT}\right)^{1/2}
 \end{equation*}
+with the single partition function itself as $Z_\text{single}=V/\Lambda^3$. Thus, note the difference of $N$ ensemble partition function with the single particle partition function.
 
 \subsubsection*{Derivation.} For an ideal gas, the Hamiltonian is just kinetic energy
 \begin{equation*}
@@ -54,12 +55,12 @@ Recall that $p^2=p_x^2 +p_y^2 +p_z^2$ and $d^{3} \mathbf{p}=dp_x\;dp_y\;dp_z$
     &=\frac{V^N}{N!h^{3N}}(2\pi mkT )^{3N/2}\\
     Z&=\frac{V^N}{N!h^{3N}}\left(\frac{2\pi mkT}{h^2}\right)^{3N}
 \end{align*}
-Then using the definition of the thermal de Broglie wavelength $\lambda= (h^2/2\pi mkT)^{1/2}$
+Then using the definition of the thermal de Broglie wavelength $\Lambda= (h^2/2\pi mkT)^{1/2}$
 \begin{equation*}
-    Z=\frac{1}{N!}\left(\frac{V}{\lambda^3}\right)^N
+    Z=\frac{1}{N!}\left(\frac{V}{\Lambda^3}\right)^N
 \end{equation*}
 
-\subsubsection*{Less rigorous derivation.} Recall the definition of partition function and the degeneracy of the classical particles
+\subsubsection*{Another derivation.} Recall the definition of partition function and the degeneracy of the classical particles
 \begin{equation*}
     Z=\sum_{s} g_se^{-E_s/kT}\quad\text{and}\quad g(E)\;dE=2\pi V\left(\frac{2m}{h^2}\right)^{3/2}E^{1/2}\;dE
 \end{equation*}
@@ -71,7 +72,7 @@ At high $T$, we can assume the summation sign changes into integral due to $kT$ 
 \end{align*}
 In terms of thermal de Broglie wavelength
 \begin{equation*}
-    Z=\frac{V}{\lambda^3}\equiv Z_\text{single}
+    Z=\frac{V}{\Lambda^3}\equiv Z_\text{single}
 \end{equation*}
 This is the partition function for the single particle; for many identical particles then, the partition function is simply the partition function for single particle raised to the power of the number of particle $N$ and multiplied by $1/N!$ to avoid the Gibbs paradox.
 
@@ -121,12 +122,8 @@ Therefore
 \end{equation*}
 
 \subsection*{Physical Quantities}
-As follows.
-\begin{equation*}
-    P=nkT\ln Z
-\end{equation*}
+We shall derive some physical quantities using partition function and prove them in the case of ideal gas by comparing them to the known ideal gas law. 
 
-\paragraph*{Derivation.} We shall derive some physical quantities using partition function and prove them in the case of ideal gas by comparing them to the known ideal gas law. 
 \subsubsection*{Average energy.} Expressed as
 \begin{equation*}
     \braket{E}=\frac{kT^2}{Z}\frac{\partial Z}{\partial T}=kT^2\frac{\partial}{\partial T}\ln Z
@@ -149,39 +146,85 @@ To obtain the next expression, we express the derivative term as
     \frac{1}{Z}\frac{\partial Z}{\partial T}=\frac{\partial }{\partial T}\ln Z
 \end{equation*}
 
+%To prove this expression, we are going to consider the case of ideal gas. Using the partition function of ideal gas
+
 \subsubsection*{Entropy.} Expressed as follows.
 \begin{equation*}
-    S=Nkt\ln Z+\frac{E}{T}
+    S=NkT\ln Z+\frac{E}{T}
 \end{equation*}
+This expression however, suffer from the Gibbs paradox. The expression for entropy that does not suffer from it usually expressed by Sackur-Tetrode equation
+\begin{equation*}
+    S=Nk\left(\ln\frac{V}{N\Lambda^3}+\frac{5}{2}\right)
+\end{equation*}
+
 \paragraph*{Derivation.} Consider the logarithm of the configuration for the classical particle 
 \begin{equation*}
+    \Omega=N!\prod_s \frac{g_s^{n_s}}{n_s!}\implies
     \ln \Omega=N\ln N +\sum_s\ln\frac{g_s}{n_s}
 \end{equation*} 
 Notice that
 \begin{equation*}
-    \frac{g_s}{n_s}=\frac{g_s}{g_s\exp(\alpha+\beta E_s)}=\exp(-\alpha-\beta E_s)
+    \frac{g_s}{n_s}=\frac{g_s}{g_s\exp(\alpha-\beta E_s)}=\exp(-\alpha+\beta E_s)
 \end{equation*}
-Substituting this and with the fact $\beta=-1/kT$
+Thus
 \begin{align*}
-    \ln \Omega&=-\sum_sn_s\alpha-\sum_sn_s\beta E_s+N\ln N\\
-    \ln\Omega&= N\ln \frac{N}{e^\alpha}+\frac{E}{kT}\\
+    \ln \Omega&=N\ln N -\sum_sn_s\alpha +\sum_sn_s\beta E_s\\
+    \ln\Omega&= N\ln \frac{N}{e^\alpha}+\frac{E}{kT}
 \end{align*}
 Also notice that 
 \begin{equation*}
-    \frac{N}{e^\alpha}=\sum_s\frac{n_s}{e^\alpha}=\sum_s\frac{\exp(\alpha+\beta E_s)}{\exp\alpha}=\sum_s\exp \frac{E_s}{kT}=Z
+    \frac{N}{e^\alpha}=\sum_s\frac{n_s}{e^\alpha}=\sum_s\frac{\exp(\alpha+\beta E_s)}{\exp\alpha}=\sum_s\exp \frac{E_s}{kT}=Z_\text{single}
 \end{equation*}
-Thus
+Therefore
 \begin{equation*}
-    S=Nkt\ln Z+\frac{E}{T}
+    S=NkT\ln Z+\frac{E}{T}
+\end{equation*}
+
+To derive the corrected version, consider the configuration number of the semi-classical particle
+\begin{equation*}
+    \Omega=\prod_s \frac{g_s^{n_s}}{n_s!}
+\end{equation*}
+Its logarithm reads
+\begin{equation*}
+    \ln \Omega=\sum_s n_s\ln g_s-n_s\ln n_s +n_s=\sum_s n_s+n_s\ln\frac{g_s}{n_s}
+\end{equation*}
+Using the previous result for $g_s/n_s$ and $N/e^\alpha$
+\begin{align*}
+    \ln \Omega &= \sum_s n_s+n_s\left(\frac{E_s}{kT}-\alpha\right)\\
+    &= N+ N\ln\frac{Z_\text{single}}{N}+\frac{E}{kT}\\
+    \ln \Omega &= N+ N\ln\frac{V}{N\Lambda^3}+\frac{3}{2}N
+\end{align*}
+Thus 
+\begin{equation*}
+    S=Nk\left(\ln\frac{V}{N\Lambda^3}+\frac{5}{2}\right)
 \end{equation*}
 
 \subsubsection*{Helmholtz Potential.} On using the definition of $F=E-TS$, we have 
 \begin{equation*}
     F=-NkT\ln Z
 \end{equation*}
-
-\subsubsection*{Pressure.} Consider the first law of thermodynamics
+which is the wrong result derived from wrong entropy. For the correct one, we have 
 \begin{equation*}
+    F=-NkT\left(\ln \frac{V}{N\Lambda^3}+1\right)
+\end{equation*}
+or in terms of multiparticle partition function
+\begin{equation*}
+    F=-kT\ln Z
+\end{equation*}
+
+\paragraph{Derivation.} The case single particle partition function is quite trivial, while for the case of multi particle one we can simply expand the definition
+\begin{align*}
+    F&=-kT\ln \frac{V^N}{N!\Lambda^{3N}}=-kT\left(N\ln\frac{V}{\Lambda^3}-N\ln N+N\right)\\
+    F&=-NkT\left(\ln \frac{V}{N\Lambda^3}+1\right)
+\end{align*}
+
+\subsubsection*{Pressure.} For the case of the wrong 
+\begin{equation*}
+    P=NkT\frac{\partial}{\partial V} \ln Z\quad\text{or}\quad P=kT\frac{\partial}{\partial V} \ln Z
+\end{equation*}
+
+\paragraph{Derivation.} Consider the first law of thermodynamics
+\begin{equation*} 
     dE=dQ-P\;dV
 \end{equation*}
 and the differential of the Helmholtz potential 
@@ -190,8 +233,10 @@ and the differential of the Helmholtz potential
 \end{equation*}
 Thus 
 \begin{equation*}
-    dF=-P\;dV-T\;dT\implies P=-\frac{\partial F}{\partial T}\bigg|_{T}
+    dF=-P\;dV-T\;dT\implies P=-\frac{\partial F}{\partial V}\bigg|_{T}
 \end{equation*}
 On using the expression for Helmholtz potential, we can express pressure in terms of partition function.
-\subsection*{Gibbs Paradox}
+
+%For the first case, we are going to use the wrong partition function
+%\subsection*{Gibbs Paradox}
 \end{document}
