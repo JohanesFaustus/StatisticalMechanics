@@ -157,7 +157,7 @@ and
 
 \subsubsection*{Entropy.} Expressed as follows.
 \begin{equation*}
-    S=NkT\ln Z+\frac{E}{T}
+    S=NkT\ln \frac{V}{\Lambda}+\frac{E}{T}
 \end{equation*}
 This expression however, suffer from the Gibbs paradox. The expression for entropy that does not suffer from it usually expressed by Sackur-Tetrode equation
 \begin{equation*}
@@ -253,5 +253,14 @@ While for the corrected version, we use the many particles partition function
     P=kT\frac{\partial}{\partial V} \ln \frac{V^N}{N!\Lambda^{3N}}=\frac{NkT}{V}
 \end{equation*}
 
-%\subsection*{Gibbs Paradox}
+\subsection*{Gibbs Paradox}
+
+This problem occurs for the expression of entropy which does not takes into account the indistinguishability of particles. To illustrate this problem, consider two ensembles of ideal gas with the same $E,V,N,T,P,S$ which sat side-by-side.  No macroscopic changes occur, as the system is in equilibrium. But if the formula for entropy is not extensive, the entropy of the combined system will not be $2S$
+\begin{equation*}
+    S_T=2NkT\ln\frac{2V}{\Lambda}+\frac{E}{T}=2NkT\ln\frac{2V}{\Lambda}+\frac{2E}{T}+2NkT\ln2=2S+2NkT
+\end{equation*}
+If the entropy is extensive, however, it will produce total entropy of $2S$
+\begin{equation*}
+    S_T=2Nk\left(\ln\frac{2V}{2N\Lambda^3}+\frac{5}{2}\right)=2S
+\end{equation*}
 \end{document}
