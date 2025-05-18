@@ -57,7 +57,7 @@ Recall that $p^2=p_x^2 +p_y^2 +p_z^2$ and $d^{3} \mathbf{p}=dp_x\;dp_y\;dp_z$
 \end{align*}
 Then using the definition of the thermal de Broglie wavelength $\Lambda= (h^2/2\pi mkT)^{1/2}$
 \begin{equation*}
-    Z=\frac{1}{N!}\left(\frac{V}{\Lambda^3}\right)^N
+    Z=\frac{1}{N!}\left(\frac{V}{\Lambda^3}\right)^N\quad\text{with} \quad Z_\text{single}\equiv\frac{V}{\Lambda^3}
 \end{equation*}
 
 \subsubsection*{Another derivation.} Recall the definition of partition function and the degeneracy of the classical particles
@@ -72,7 +72,7 @@ At high $T$, we can assume the summation sign changes into integral due to $kT$ 
 \end{align*}
 In terms of thermal de Broglie wavelength
 \begin{equation*}
-    Z=\frac{V}{\Lambda^3}\equiv Z_\text{single}
+    Z=\frac{V}{\Lambda^3}
 \end{equation*}
 This is the partition function for the single particle; for many identical particles then, the partition function is simply the partition function for single particle raised to the power of the number of particle $N$ and multiplied by $1/N!$ to avoid the Gibbs paradox.
 
@@ -146,7 +146,14 @@ To obtain the next expression, we express the derivative term as
     \frac{1}{Z}\frac{\partial Z}{\partial T}=\frac{\partial }{\partial T}\ln Z
 \end{equation*}
 
-%To prove this expression, we are going to consider the case of ideal gas. Using the partition function of ideal gas
+To prove this expression, we are going to consider the case of ideal gas. Using the partition function of ideal gas for the case of single particle and multiparticle will result with the known result $E=3kT/2$ for single particle and $E=3NkT/2$
+\begin{equation*}
+    \braket{E}=kT^2\frac{\partial}{\partial T}\ln V\left(\frac{2\pi mkT}{h^2}\right)^{3/2}=\frac{3}{2}kT
+\end{equation*}
+and 
+\begin{equation*}
+    \braket{E}=T^2\frac{\partial}{\partial T}\ln \frac{V^N}{N!}\left(\frac{2\pi mkT}{h^2}\right)^{3N/2}=\frac{3}{2}NkT
+\end{equation*}
 
 \subsubsection*{Entropy.} Expressed as follows.
 \begin{equation*}
@@ -218,9 +225,9 @@ or in terms of multiparticle partition function
     F&=-NkT\left(\ln \frac{V}{N\Lambda^3}+1\right)
 \end{align*}
 
-\subsubsection*{Pressure.} For the case of the wrong 
+\subsubsection*{Pressure.} For the case of the wrong and the corrected partition function respectively
 \begin{equation*}
-    P=NkT\frac{\partial}{\partial V} \ln Z\quad\text{or}\quad P=kT\frac{\partial}{\partial V} \ln Z
+    P=NkT\frac{\partial}{\partial V} \ln Z\quad\text{and}\quad P=kT\frac{\partial}{\partial V} \ln Z
 \end{equation*}
 
 \paragraph{Derivation.} Consider the first law of thermodynamics
@@ -237,6 +244,14 @@ Thus
 \end{equation*}
 On using the expression for Helmholtz potential, we can express pressure in terms of partition function.
 
-%For the first case, we are going to use the wrong partition function
+We can obtain the ideal gas law using both the wrong and corrected version. For the case of the wrong version, we use the single particle partition function
+\begin{equation*}
+    P=NkT\frac{\partial}{\partial V} \ln \frac{V}{\Lambda^3}=\frac{NkT}{V}
+\end{equation*}
+While for the corrected version, we use the many particles partition function
+\begin{equation*}
+    P=kT\frac{\partial}{\partial V} \ln \frac{V^N}{N!\Lambda^{3N}}=\frac{NkT}{V}
+\end{equation*}
+
 %\subsection*{Gibbs Paradox}
 \end{document}
