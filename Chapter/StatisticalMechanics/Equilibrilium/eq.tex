@@ -263,4 +263,48 @@ If the entropy is extensive, however, it will produce total entropy of $2S$
 \begin{equation*}
     S_T=2Nk\left(\ln\frac{2V}{2N\Lambda^3}+\frac{5}{2}\right)=2S
 \end{equation*}
+
+\subsection*{Rotational Partition Function}
+
+Rotational partition function $Z_\text{rot}$ relates the rotational degrees of freedom $f$ to the rotational part of the energy and defined as 
+\begin{equation*}
+    Z_\text{rot}=\sum_{J} g_Je^{-E_J/kT}
+\end{equation*}
+where $g_J=2J+1$ is the degeneracy of energy level $E_J$. Its contribution only become significant at temperatures above the molecule's characteristic rotational temperature $\theta_\text{rot}$, for diatomic molecule
+\begin{equation*}
+    \theta_\text{rot}=\frac{\hbar^2}{\mu r^2 k}
+\end{equation*}
+
+Molecule's $Z_\text{rot}$ depends on the structure of said molecule, since different molecules have different degrees of freedom; for example 
+\begin{enumerate}
+    \item \textbf{Monatomic gas.} Noble gas such as He and Ar have $f=0$; thus $Z_\text{rot}=1$, $E_\text{rot}=0$, and $C_{V_\text{rot}=0}$.
+    \item \textbf{Linear molecule.} Examples are diatomic and linear triatomic. For this type of molecules, their $f=2$, with one axis parallel to the bond and the other perpendicular to it. Thermodynamically $E_\text{rot}=NkT$, and $C_{V_\text{rot}=N_Ak}$.
+    \item \textbf{Nonlinear polyatomic.} They have 3 degrees of freedom: one for each three-dimensions. With $E_\text{rot}=3NkT/2$, their $C_{V_\text{rot}}=3N_Ak/2$.
+\end{enumerate}
+
+In general, the expression for the rotational partition function is 
+\begin{equation*}
+    Z_\text{rot}=\sum_J(2J+1)\exp\left[-\frac{\theta_\text{rot}}{T}J(J+1)\right]
+\end{equation*}
+This expression, then, can be simplified for the case of high and low temperature.
+
+\subsubsection*{Derivation.} Recall that in the case of electron, the magnetic quantum number $m_l$ is only allowed to have the values $-l\leq m_l\leq l$, thus $g_l=2l+1$. In the same principle, $g_J=2J+1$ In quantum mechanics, the rotational energy is defined
+\begin{equation*}
+    E_J=\frac{1}{2I}\braket{\hat{J^2}}
+\end{equation*}
+Recall also the orbital angular of electron $L=\sqrt{\hbar^2l(l+1)}$, in the case of total angular momentum then $\hat{J^2}= J(J+1)\hbar^2$, here however it acts as operator. Then we can write the rotational energy as 
+\begin{equation*}
+    E_J=\frac{J(J+1)\hbar^2}{2\mu r^2 }
+\end{equation*}
+
+Substituting those expressions into the partition function
+\begin{equation*}
+    Z_\text{rot}=\sum_J(2J+1)\exp\left[-\frac{\hbar^2}{2\mu r^2 k}\frac{1}{T}J(J+1)\right]
+\end{equation*}
+On using the definition of the rotational temperature
+\begin{equation*}
+    Z_\text{rot}=\sum_J(2J+1)\exp\left[-\frac{\theta_\text{rot}}{T}J(J+1)\right]
+\end{equation*}
+
+
 \end{document}
