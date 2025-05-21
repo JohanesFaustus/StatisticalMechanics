@@ -329,5 +329,25 @@ and its heat capacitance
     C_V=R
 \end{equation*}
 
+\begin{figure*}
+    \centering
+    \normfigXL{../Rss/StatisticalMechanics/Equilibrium/CvLowTemp.png}
+    \caption*{Figure: $C_V$ obtained by approximating $Z_\text{rot}$ at low temperature and high temperature}
+\end{figure*}
 
+\subsubsection*{Low temperature approximation.} At low temperature, only low states $J$ are occupied, thus we can approximate the $Z_\text{rot}$ by its few first terms 
+\begin{equation*}
+    Z_\text{rot}=1+3\exp\left(-\frac{2\theta_\text{rot}}{T}\right)
+\end{equation*}
+The energy can be evaluated into 
+\begin{align*}
+    E&=\frac{kT^2}{1+3\exp\left(-\frac{2\theta_\text{rot}}{T}\right)}\frac{d}{dT}1+3\exp\left(-\frac{2\theta_\text{rot}}{T}\right)\\
+    &=\frac{kT^2}{1+3\exp\left(-\frac{2\theta_\text{rot}}{T}\right)}\left(\frac{2\theta_\text{rot}}{T^2}\right)3\exp\left(-\frac{2\theta_\text{rot}}{T}\right)\\
+    E&=\frac{6k\theta_\text{rot}}{\exp\left(\frac{2\theta_\text{rot}}{T}\right)+3}
+\end{align*}
+and the heat capacitance
+\begin{align*}
+    C_V&=6R\theta_\text{rot}(-1)\left[\exp\left(\frac{2\theta_\text{rot}}{T}\right)+3\right]^{-2}\left(-\frac{2\theta_\text{rot}}{T^2}\right)\exp\left(\frac{2\theta_\text{rot}}{T}\right)\\
+    C_V&=\frac{12(\theta_\text{rot}/T)^2\exp(2\theta_\text{rot}/T)}{\left[\exp(\theta_\text{rot}/T)+3\right]^2}
+\end{align*}
 \end{document}
