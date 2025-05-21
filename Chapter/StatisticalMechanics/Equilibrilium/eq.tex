@@ -306,5 +306,28 @@ On using the definition of the rotational temperature
     Z_\text{rot}=\sum_J(2J+1)\exp\left[-\frac{\theta_\text{rot}}{T}J(J+1)\right]
 \end{equation*}
 
+\subsubsection*{High temperature approximation.} At high temperature, we can approx the summation of $Z_\text{rot}$ by integral
+\begin{equation*}
+    Z_\text{rot}=\int_J (2J+1)\exp\left[-\frac{\theta_\text{rot}}{T}J(J+1)\right]\;dJ
+\end{equation*}
+Changing the variable into $u=2J+1$ and $du=d(2J+1)dJ$, we have
+\begin{equation*}
+    Z_\text{rot}=\int_J\exp\left[-\frac{\theta_\text{rot}}{T}u\right]\;du=\frac{T}{\theta_\text{rot}}\exp\left[-\frac{\theta_\text{rot}}{T}u\right]\bigg|_\infty^0=\frac{T}{\theta_\text{rot}}
+\end{equation*}
+Certain state will be over counted if we did not take into account the symmetry number $\sigma$. For example consider hetero nuclear diatomic molecule, where if we rotate the molecule in 180 deg results in a different orientation--atom A on the left and on the right. This means that we over count the configuration, thus we divide by $\sigma=2$ to fix it
+\begin{equation*}
+    Z_\text{rot}=\frac{T}{\sigma\theta_\text{rot}}
+\end{equation*}
+For the case of homo nuclear molecules, $\sigma=1$.
+
+The energy can be evaluated into 
+\begin{equation*}
+    E=\frac{kT^2}{T/\sigma\theta_\text{rot}}\frac{d}{dT}\frac{T}{\sigma\theta_\text{rot}}=kT
+\end{equation*}
+and its heat capacitance 
+\begin{equation*}
+    C_V=R
+\end{equation*}
+
 
 \end{document}
