@@ -123,37 +123,37 @@ Also note that the $T$ in question is measure in kelvin, not Celsius.
     \end{align*}
     Now we use the equations of state 
     \begin{multline*}
-        C_V\;dT+P\;dV\implies dT+\frac{P\;dV}{C_V}\implies\frac{dT}{T}+\frac{P\;dT}{cNk_BT}\\\implies \frac{dT}{T}+\frac{dV}{cV}\implies\frac{dT}{T}+(\gmto-1)\frac{dV}{V}
+        C_V\;dT+P\;dV\implies dT+\frac{P\;dV}{C_V}\implies\frac{dT}{T}+\frac{P\;dT}{cNk_BT}\\\implies \frac{dT}{T}+\frac{dV}{cV}\implies\frac{dT}{T}+(\gamma-1)\frac{dV}{V}
     \end{multline*}
     And we obtain
     \begin{equation*}
-        \frac{dT}{T}+(\gmto-1)\frac{dV}{V}=0
+        \frac{dT}{T}+(\gamma-1)\frac{dV}{V}=0
     \end{equation*}
     On integrating the equation above between the state, we get 
     \begin{equation*}
-        \ln \frac{T_C}{T_B}+(\gmto-1)\ln\frac{V_C}{V_B}=0
+        \ln \frac{T_C}{T_B}+(\gamma-1)\ln\frac{V_C}{V_B}=0
     \end{equation*}
     We can write 
     \begin{equation*}
-        \ln \frac{T_C}{T_B}+(\gmto-1)\ln\frac{V_C}{V_B}=\ln \frac{T_C}{T_B}\frac{V_C^{\gmto-1}}{V_B^{\gmto-1}} 
+        \ln \frac{T_C}{T_B}+(\gamma-1)\ln\frac{V_C}{V_B}=\ln \frac{T_C}{T_B}\frac{V_C^{\gamma-1}}{V_B^{\gamma-1}} 
     \end{equation*}
     which implies
     \begin{equation*}
-        \frac{V_C^{\gmto-1}}{V_B^{\gmto-1}} =1
+        \frac{V_C^{\gamma-1}}{V_B^{\gamma-1}} =1
     \end{equation*}
     In other words
     \begin{equation*}
-        TV^{\gmto-1}=\text{constant.}
+        TV^{\gamma-1}=\text{constant.}
     \end{equation*}
     Expressing $T$ in terms of $P$ and $V$
     \begin{equation*}
-        PV^{\gmto-1}=\text{constant.}
+        PV^{\gamma-1}=\text{constant.}
     \end{equation*}
     And expressing $V$ in terms of $P$ and $T$
     \begin{equation*}
         TP^{-v}=\text{constant.}
     \end{equation*}
-    where $v=(\gmto-1)/\gmto$. These equations are called \textbf{adiabatic equations of state.}
+    where $v=(\gamma-1)/\gamma$. These equations are called \textbf{adiabatic equations of state.}
 
     Due to the reservoir $T_c$, the gas compresses isothermally till its volume and pressure become $V_D$, $P_D$.
 
@@ -177,11 +177,11 @@ Also note that the $T$ in question is measure in kelvin, not Celsius.
 
 \subsubsection*{Carnot's equation in cyclic processes.} The Carnot's equation still holds true even in cyclic process. To prove this, first we're applying adiabatic equation to path $BC$
 \begin{equation*}
-    T_BV_B^{\gmto-1}=T_CV_C^{\gmto-1}\implies \biggl(\frac{V_B}{V_C}\biggr)^{\gmto-1}=\frac{T_C}{T_B}\implies\biggl(\frac{V_B}{V_C}\biggr)^{\gmto-1}=\frac{T_c}{T_h}
+    T_BV_B^{\gamma-1}=T_CV_C^{\gamma-1}\implies \biggl(\frac{V_B}{V_C}\biggr)^{\gamma-1}=\frac{T_C}{T_B}\implies\biggl(\frac{V_B}{V_C}\biggr)^{\gamma-1}=\frac{T_c}{T_h}
 \end{equation*}
 In similar manner, the adiabatic transformation along $ D A$ gives
 \begin{equation*}
-    \biggl(\frac{V_D}{V_A}\biggr)^{\gmto-1}=\frac{T_A}{T_D}\implies \biggl(\frac{V_D}{V_A}\biggr)^{\gmto-1}=\frac{T_h}{T_c}
+    \biggl(\frac{V_D}{V_A}\biggr)^{\gamma-1}=\frac{T_A}{T_D}\implies \biggl(\frac{V_D}{V_A}\biggr)^{\gamma-1}=\frac{T_h}{T_c}
 \end{equation*}
 On comparing these, it is seen that
 \begin{equation*}
@@ -233,14 +233,14 @@ Both equation can be combined into
     &=\dfrac{\partial }{\partial T}C_VT\bigg|_P+P\dfrac{\partial }{\partial T}\frac{Nk_BT}{P}\bigg|_P-\dfrac{\partial }{\partial T}C_VT\bigg|_V\\
     C_P-C_V&=Nk_B
 \end{align*}
-In terms of the parameter gamma $\gmto$, called adiabatic constant, defined by
+In terms of the parameter gamma $\gamma$, called adiabatic constant, defined by
 \begin{equation*}
-    \gmto=\frac{C_P}{C_V}
+    \gamma=\frac{C_P}{C_V}
 \end{equation*}
 Using these, the equation yields 
 \begin{align*}
     C_V\biggl(\frac{C_P}{C_V}-1\biggr)&=Nk_B\\
-    C_V&=\frac{Nk_B}{\gmto-1}=cNk_B
+    C_V&=\frac{Nk_B}{\gamma-1}=cNk_B
 \end{align*}
 
 \subsection*{Internal Energy}
@@ -248,7 +248,7 @@ The independence of internal energy to volume was proved by Thomson and Joule (i
 \begin{equation*}
     U(V,T)=C_VT=cNk_BT
 \end{equation*}
-For an ideal monoatomic gas, $c=3/2$ thus $\gmto=5/3$
+For an ideal monoatomic gas, $c=3/2$ thus $\gamma=5/3$
 
 \subsection*{Entropy}
 The relation for the reversible cyclic process may then be rewritten as $Q_h /T_h + (-Q_c /T_c ) = 0$. The quantity

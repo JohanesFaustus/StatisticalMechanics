@@ -278,7 +278,7 @@ where $g_J=2J+1$ is the degeneracy of energy level $E_J$. Its contribution only 
 Molecule's $Z_\text{rot}$ depends on the structure of said molecule, since different molecules have different degrees of freedom; for example 
 \begin{enumerate}
     \item \textbf{Monatomic gas.} Noble gas such as He and Ar have $f=0$; thus $Z_\text{rot}=1$, $E_\text{rot}=0$, and $C_{V_\text{rot}=0}$.
-    \item \textbf{Linear molecule.} Examples are diatomic and linear triatomic. For this type of molecules, their $f=2$, with one axis parallel to the bond and the other perpendicular to it. Thermodynamically $E_\text{rot}=NkT$, and $C_{V_\text{rot}=N_Ak}$.
+    \item \textbf{Linear molecule.} Examples are diatomic and linear triatomic. For this type of molecules, their $f=2$, with one axis parallel to the bond and the other perpendicular to it. Thermodynamically, $E_\text{rot}=NkT$, and $C_{V_\text{rot}=N_Ak}$.
     \item \textbf{Nonlinear polyatomic.} They have 3 degrees of freedom: one for each three-dimensions. With $E_\text{rot}=3NkT/2$, their $C_{V_\text{rot}}=3N_Ak/2$.
 \end{enumerate}
 
@@ -349,5 +349,49 @@ and the heat capacitance
 \begin{align*}
     C_V&=6R\theta_\text{rot}(-1)\left[\exp\left(\frac{2\theta_\text{rot}}{T}\right)+3\right]^{-2}\left(-\frac{2\theta_\text{rot}}{T^2}\right)\exp\left(\frac{2\theta_\text{rot}}{T}\right)\\
     C_V&=\frac{12(\theta_\text{rot}/T)^2\exp(2\theta_\text{rot}/T)}{\left[\exp(\theta_\text{rot}/T)+3\right]^2}
+\end{align*}
+
+\subsection*{Vibration Partition Function}
+The vibrational partition function refers to the vibrational components of a system canonical partition function.
+For the case of diatomic molecule, their vibrational degrees of freedom is one, however their total energy is $E=kT$ since they have both kinetic and potential energy based on the motion and the stretching of the bond.
+Assuming the diatomic molecule as harmonic oscillator, the partition function can be written as 
+\begin{equation*}
+    Z_\text{vib}=\frac{\exp\left({\theta_v}/{2T}\right)}{1-\exp\left({\theta_\text{vib}}/{T}\right)}
+\end{equation*}
+where $\theta_\text{vib}\equiv h\nu/kT$ denote the vibrational temperature. Then the average energy
+\begin{equation*}
+    \braket{E}=k\theta_\text{vib}\left[\frac{1}{2}+\frac{1}{\exp\left(\theta_\text{vib}/T-1\right)}\right]
+\end{equation*} 
+and the heat capacitance
+\begin{equation*}
+    C_V=\frac{(\theta_\text{vib}/T)^2e^{\theta_\text{vib}/T}}{(e^{\theta_\text{vib}}/T)^2}R
+\end{equation*}
+
+\subsubsection{Derivation.} The energy eigenstate of harmonic oscillator is 
+\begin{equation*}
+    E_n=\left(n+\frac{1}{2}\right)h\nu
+\end{equation*}
+Then the partition function reads 
+\begin{align*}
+   Z_\text{vib}=\sum_n \exp\left(-\frac{n+1/2}{kT}h\nu\right)
+\end{align*}
+Using the defined rotational temperature 
+\begin{align*}
+    Z_\text{vib}&= \exp\left(\frac{\theta_\text{vib}}{2T}\right)\sum_n \exp\left(-\frac{n\theta_\text{vib}}{T}\right)\\
+     Z_\text{vib}&=\frac{\exp(-\theta_\text{vib}/2T)}{1-\exp(\theta_\text{vib}/T)}
+\end{align*}
+Thus the average energy can be evaluated into 
+\begin{align*}
+    \braket{E}&=kT^2\frac{\partial}{\partial T}\left[-\frac{\theta_\text{vib}}{2T}-\ln\left(1-e^{\theta_\text{vib}/T}\right)\right]\\
+    &=kT^2\left[\frac{\theta_\text{vib}}{2T^2} -\ln\left(1-e^{-\theta_\text{vib}/T}\right)\right]\\
+    &=kT^2\left[\frac{\theta_\text{vib}}{2T^2} +\frac{1}{1-e^{-\theta_\text{vib}/T}}\left(\frac{\theta_\text{vib}}{T^2}\right)e^{-\theta_\text{vib}/T}\right]\\
+    \braket{E}&=k\theta_\text{vib}\left[\frac{1}{2}+\frac{1}{e^{\theta_\text{vib}/T}-1}\right]
+\end{align*}
+
+For the heat capacitance, we differentiate the expression for average energy respect to temperature
+\begin{align*}
+    C_V&=k\theta_\text{vib}\frac{\partial}{\partial T}\left[\frac{1}{2}+\frac{1}{e^{\theta_\text{vib}/T}-1}\right]\\
+    &=N_Ak\theta_\text{vib} (-1)(e^{\theta_\text{vib}/T}-1)^{-2}\left(-\frac{-\theta_\text{vib}}{T^2}\right)e^{\theta_\text{vib}/T}\\
+    C_V&=\frac{(\theta_\text{vib}/T)^2e^{\theta_\text{vib}/T}}{(e^{\theta_\text{vib}/T}-1)^2}R
 \end{align*}
 \end{document}
