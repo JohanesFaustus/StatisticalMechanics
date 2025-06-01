@@ -61,7 +61,7 @@ Then using the definition of the thermal de Broglie wavelength $\Lambda= (h^2/2\
 \begin{equation*}
 	Z=\frac{1}{N!}\left(\frac{V}{\Lambda^3}\right)^N\quad\text{with} \quad Z_\text{single}\equiv\frac{V}{\Lambda^3}
 \end{equation*}
-/mnt/F8AEB259AEB2105C/Doc/Cod/LaTeX/Git/StatisticalMechanic/mnt/F8AEB259AEB2105C/Doc/Cod/LaTeX/Git/StatisticalMechanicss
+
 \subsubsection*{Another derivation.} Recall the definition of partition function and the degeneracy of the classical particles
 \begin{equation*}
 	Z=\sum_{s} g_se^{-E_s/kT}\quad\text{and}\quad g(E)\;dE=2\pi V\left(\frac{2m}{h^2}\right)^{3/2}E^{1/2}\;dE
@@ -160,6 +160,23 @@ To prove this expression, we are going to consider the case of ideal gas. Using 
 and
 \begin{equation*}
 	\braket{E}=T^2\frac{\partial}{\partial T}\ln \frac{V^N}{N!}\left(\frac{2\pi mkT}{h^2}\right)^{3N/2}=\frac{3}{2}NkT
+\end{equation*}
+
+Writing the partition function in terms of thermodynamics constant
+\begin{equation*}
+	Z=\sum_se^{E_s\beta}
+\end{equation*}
+and its derivative with respect to the
+\begin{equation*}
+	\frac{\partial Z}{\partial \beta}=-\sum_sE_se^{E_s\beta}
+\end{equation*}
+Then the average energy is  simply
+\begin{equation*}
+	\braket{E}=\frac{1}{Z}\sum E_se^{E_s\beta}=-\frac{1}{Z}\frac{\partial Z}{\partial\beta}
+\end{equation*}
+which is equivalent with 
+\begin{equation*}
+	\braket{E}=-\frac{\partial}{\partial \beta}\ln Z
 \end{equation*}
 
 \subsubsection*{Energy Fluctuation.}
