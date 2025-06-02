@@ -345,7 +345,7 @@ where $g_J=2J+1$ is the degeneracy of energy level $E_J$. Its contribution only 
 Molecule's $Z_\text{rot}$ depends on the structure of said molecule, since different molecules have different degrees of freedom; for example
 \begin{enumerate}
 	\item \textbf{Monatomic gas.} Noble gas such as He and Ar have $f=0$; thus $Z_\text{rot}=1$, $E_\text{rot}=0$, and $C_{V_\text{rot}=0}$.
-	\item \textbf{Linear molecule.} Examples are diatomic and linear triatomic. For this type of molecules, their $f=2$, with one axis parallel to the bond and the other perpendicular to it. Thermodynamically, $E_\text{rot}=NkT$, and $C_{V_\text{rot}=N_Ak}$.
+	\item \textbf{Linear molecule.} Examples are diatomic and linear triatomic. For this type of molecules, their $f=2$, with one axis parallel to the bond and the other perpendicular to it. Thermodynamically, $E_\text{rot}=NkT$, and $C_{V_\text{rot}}=N_Ak$.
 	\item \textbf{Nonlinear polyatomic.} They have 3 degrees of freedom: one for each three-dimensions. With $E_\text{rot}=3NkT/2$, their $C_{V_\text{rot}}=3N_Ak/2$.
 \end{enumerate}
 
@@ -431,7 +431,7 @@ where $\theta_\text{vib}\equiv h\nu/kT$ denote the vibrational temperature. Then
 \end{equation*}
 and the heat capacitance
 \begin{equation*}
-	C_V=\frac{(\theta_\text{vib}/T)^2e^{\theta_\text{vib}/T}}{(e^{\theta_\text{vib}}/T)^2}R
+	C_V^{\text{vib}}=R\left(\frac{\theta_\text{vib}}{T}\right)^2\frac{e^{\theta_\text{vib}/T}}{(e^{\theta_\text{vib}}/T-1)^2}
 \end{equation*}
 
 \subsubsection{Derivation.} The energy eigenstate of harmonic oscillator is
