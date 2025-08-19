@@ -301,5 +301,4 @@ TSWLatexianTemp*
 #*Notes.bib
 .vscode
 *.bbl-SAVE-ERROR
-/PhysicalMathematics
 /Chapter/**/*.pdf
