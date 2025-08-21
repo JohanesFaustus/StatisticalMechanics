@@ -1,6 +1,6 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsection*{Identity Involving Partial Derivative}
+\subsection{Identity Involving Partial Derivative}
 The Jacobian of $[u(x,y), v(x,y)]$ with respect to $(x, y)$ is defined by
 \begin{equation*}
     \frac{\partial (u,v)}{\partial (x,y)}=\begin{vmatrix}
@@ -11,7 +11,7 @@ The Jacobian of $[u(x,y), v(x,y)]$ with respect to $(x, y)$ is defined by
 \end{equation*}
 Here are some identity relating the Jacobian with partial derivative.
 
-\subsubsection*{Unity.} Unity as in one
+\subsubsection{Unity.} Unity as in one
 \begin{equation*}
     \frac{\partial (u,v)}{\partial (x,y)}=1
 \end{equation*}
@@ -25,7 +25,7 @@ Here are some identity relating the Jacobian with partial derivative.
      \end{vmatrix}=\dfrac{\partial x}{\partial x} \dfrac{\partial y}{\partial y}-   \dfrac{\partial x}{\partial y}\dfrac{\partial y}{\partial x}  =1\quad\blacksquare
 \end{equation*}
 
-\subsubsection*{Change of order.} It can be proved that change of order cost the minus sign 
+\subsubsection{Change of order.} It can be proved that change of order cost the minus sign 
 \begin{equation*}
     \frac{\partial (u,v)}{\partial (x,y)}=- \frac{\partial (v,u)}{\partial (x,y)}= -\frac{\partial (u,v)}{\partial (y,x)}
 \end{equation*}
@@ -54,7 +54,7 @@ Here are some identity relating the Jacobian with partial derivative.
 \end{align*}
 See? $\blacksquare$
 
-\subsubsection*{Jacobian.} In terms of Jacobian, partial derivative of $u$ with respect to $x$ can be written as 
+\subsubsection{Jacobian.} In terms of Jacobian, partial derivative of $u$ with respect to $x$ can be written as 
 \begin{equation*}
     \frac{\partial u}{\partial x}\bigg|_y\;=\frac{\partial (u,y)}{\partial (x,y)} 
 \end{equation*}
@@ -69,7 +69,7 @@ See? $\blacksquare$
      =\dfrac{\partial u}{\partial x} \dfrac{\partial y}{\partial y}-\dfrac{\partial u}{\partial y} \dfrac{\partial y}{\partial x} =\dfrac{\partial u}{\partial x}\quad \blacksquare
 \end{equation*}
 
-\subsubsection*{Chain rule for partial derivative.} The expression is
+\subsubsection{Chain rule for partial derivative.} The expression is
 \begin{equation*}
     \frac{\partial (u,y)}{\partial (x,y)}= \frac{\partial (u,y)}{\partial (w,z)}\frac{\partial (w,z)}{\partial (x,y)}
 \end{equation*}
@@ -118,7 +118,7 @@ We can therefore evaluate the Jacobian
      \frac{\partial (u,y)}{\partial (x,y)}&=\frac{\partial (u,y)}{\partial (w,z)}\frac{\partial (w,z)}{\partial (x,y)} \quad \blacksquare
 \end{align*}
 
-\subsubsection*{The real chain rule.} We have 
+\subsubsection{The real chain rule.} We have 
 \begin{equation*}
     \frac{\partial x}{\partial z}\bigg|_y\;\frac{\partial z}{\partial x}\bigg|_y\;=1
 \end{equation*}
@@ -128,7 +128,7 @@ We can therefore evaluate the Jacobian
     1=\frac{\partial (x,y)}{\partial (x,y)}=\frac{\partial (x,y)}{\partial (z,y)}\frac{\partial (z,y)}{\partial (x,y)}=\frac{\partial x}{\partial z}\bigg|_y\;\frac{\partial z}{\partial x}\bigg|_y\; \quad\blacksquare
 \end{equation*}
 
-\subsubsection*{Yet another chain rule\dots} Even more chain rule\dots
+\subsubsection{Yet another chain rule\dots} Even more chain rule\dots
 \begin{equation*}
     \frac{\partial x}{\partial y}\bigg|_w\;=\frac{\partial x}{\partial z}\bigg|_w\;\frac{\partial z}{\partial y}\bigg|_w
 \end{equation*}
@@ -137,7 +137,7 @@ We can therefore evaluate the Jacobian
     \frac{\partial x}{\partial y}\bigg|_w\;=\frac{\partial (x,w)}{\partial (y,w)} =\frac{\partial (x,w)}{\partial (z,w)}\frac{\partial (z,w)}{\partial (y,w)}  =\frac{\partial x}{\partial z}\bigg|_w\;\frac{\partial z}{\partial y}\bigg|_w
 \end{equation*}
 
-\subsubsection*{Cyclic rule.} This is chain rule all over again\dots
+\subsubsection{Cyclic rule.} This is chain rule all over again\dots
 \begin{equation*}
     \frac{\partial x}{\partial z}\bigg|_y \;\frac{\partial z}{\partial y}\bigg|_x \; \frac{\partial y}{\partial x}\bigg|_z\;=-1
 \end{equation*}
@@ -149,7 +149,7 @@ We can therefore evaluate the Jacobian
     =-\frac{\partial x}{\partial z}\bigg|_y\;\frac{\partial y}{\partial x}\bigg|_z\;\frac{\partial z}{\partial y}\bigg|_x \;\quad\blacksquare
 \end{multline*}
 
-\subsection*{Application in Thermodynamics}
+\subsection{Application in Thermodynamics}
 Here we will derive some useful intensive parameter used in thermodynamics. We assumed entropy function $S$ has the form of 
 \begin{equation*}
     S=S(U, V, N_{i|r} )
@@ -165,7 +165,7 @@ We also assume the following quantities
     ;\mu_j=\frac{\partial U}{\partial N}\bigg|_{S, V, N_{i\neq j} }
 \end{equation*}
 
-\subsubsection*{First identity.} As follows
+\subsubsection{First identity.} As follows
 \begin{equation*}
     \frac{\partial S}{\partial U}\bigg|_{V, N_i}=\frac{1}{T}
 \end{equation*}
@@ -180,7 +180,7 @@ Then, from the definition of temperature
     \frac{\partial S}{\partial U}\bigg|_{V,N_i}=\frac{1}{T}\quad \blacksquare
 \end{equation*}
 
-\subsubsection*{Second identity.} The identity written as
+\subsubsection{Second identity.} The identity written as
 \begin{equation*}
     \frac{\partial S}{\partial V}\bigg|_{U, N_i}=\frac{P}{T}
 \end{equation*}
@@ -195,7 +195,7 @@ Then, from the first identity and the definition of pressure
    \frac{\partial S}{\partial V}\bigg|_{U,N_{i}} =\frac{P}{T}\quad \blacksquare
 \end{equation*}
 
-\subsubsection*{Third Identity.} Expressed as 
+\subsubsection{Third Identity.} Expressed as 
 \begin{equation*}
     \frac{\partial S}{\partial N_j}\bigg|_{U, N_{i\neq j}}=-\frac{P}{T}
 \end{equation*}

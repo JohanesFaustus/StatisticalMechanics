@@ -1,7 +1,7 @@
 \documentclass[../../../Main.tex]{subfiles}
 
 \begin{document}
-\subsection*{Maxwell-Boltzman Distribution} 
+\subsection{Maxwell-Boltzman Distribution} 
 Maxwell assumes that the random velocity of particles can be described by some probability distribution. He then derived the formula for average number of particles whose velocity lies between $(\mathbf{v},\mathbf{v}+d\mathbf{v})$. The 3D distribution function $f(\mathbf{v})$ is given by Maxwell distribution:
 \begin{equation*}
     n(\mathbf{v})\;d^3\mathbf{v}=N\left(\frac{m}{2\pi k T}\right)^{3/2}\exp\left(-\frac{m v^2}{2k T}\right)d^3\mathbf{v}
@@ -33,7 +33,7 @@ In general, the number of particle in $g(E)$ energy state is
     n(E)\;dE\approx g(E)\exp\left(-\frac{E}{kT}\right)\;dE
 \end{equation*}
 
-\subsection*{Maxwell's Derivation}
+\subsection{Maxwell's Derivation}
 Maxwell first noted that the distribution function $F(\mathbf{v})$ with res-pect to $x$-axis does not affect $F(\mathbf{v})$ with respect to $y$-axis and $z$-axis, since they are at right angle, orthogonal, and independent. Hence, He wrote that a particle velocity lies at $(\mathbf{v}, \mathbf{v}+d\mathbf{v})$ as 
 \begin{equation*}
     F(\mathbf{v})\;d^3\mathbf{v}=f(v_x)f(v_y)f(v_z)\;dv_x\;dv_y\;dv_z
@@ -162,7 +162,7 @@ To put a nice little bow over everything, we write the complete form of Maxwell 
     f(\mathbf{v})=\left(\frac{m}{2\pi k T}\right)^{3/2}\exp\left(-\frac{mv^2}{2k T}\right) \quad\blacksquare
 \end{equation*}
 where, as before, $v^2=v_x^2+v_y^2+v_z^2$
-\subsection*{Boltzmann's Derivation}
+\subsection{Boltzmann's Derivation}
 We will now derive the Maxwell distribution using Boltzmann's method. Let $n_\mathbf{k}$ be the number of particle whose velocity lies within $(\boldsymbol{\epsilon}\mathbf{v},\boldsymbol{\epsilon}\mathbf{v}+\boldsymbol{\epsilon})$, so
 \begin{equation*}
     n_\mathbf{k}=\boldsymbol{\epsilon}f(\mathbf{kv})
@@ -245,7 +245,7 @@ Hence
 \end{equation*}
 
 
-\subsection*{Einstein's Derivation}
+\subsection{Einstein's Derivation}
 The number of way to distribute $N_E$ distinct particle into $P_E$ distinct cells is 
 \begin{equation*}
     \mathcal{P}_e=P_E^{N_E}
@@ -353,7 +353,7 @@ We can also recover the ideal gas law using the thermodynamics relationship
     \frac{P}{T}=\frac{\partial S}{\partial V}\bigg|_{S,N}=\frac{Nk_B}{V} \implies PV=Nk_BT
 \end{equation*}
 
-\subsection*{Thermodynamics Derivation}
+\subsection{Thermodynamics Derivation}
 We consider the number of configuration of classical particle
 \begin{equation*}
     \mathcal{W}=N! \prod_{s} \frac{g_s^{n_S}}{n_s!}
@@ -435,7 +435,7 @@ The complete form of our distribution function is then
     n(E)\;dE&=\frac{2\pi N}{(\pi kT)^{3/2}}\sqrt{E}\exp\left(-\frac{E}{k_BT}\right)\;dE\quad\blacksquare
 \end{align*}
 
-\subsection*{Maxwell Distribution for Relative Velocities}
+\subsection{Maxwell Distribution for Relative Velocities}
 Maxwell distribution also works on composite system. This is due to it also works on relative velocities. We shall prove this.
 
 Consider two system with $N_1$ and $N_2$ Particles. We then want to find the probability of pairs of particles whose relative velocity is $\mathbf{V}$. We define such probability density function as 
@@ -499,7 +499,7 @@ Since we are integrating over the same limit, we can conclude that
 \end{equation*} 
 The equation above shows that the probability distribution function for composite system has the same form as Maxwell distribution, hence Maxwell distribution function also works on composite system. $\qed$
 
-\subsection*{Physical Quantity}
+\subsection{Physical Quantity}
 Few physical quantities that can be derived from the MB distribution function are as follows. First we have the average velocity
 \begin{equation*}
     \braket{v}=\sqrt{\frac{8kT}{\pi m}}
@@ -527,7 +527,7 @@ where $f(x)=n(x)/N$ is normalized distribution function. Alternately, for small 
     \text{Fraction}=\left[f\left(\frac{x_1+x_2}{2}\right)\right](x_2-x_1)
 \end{equation*}
 
-\subsubsection*{Derivation.} The derivation of $\braket{v}$ and $v_\text{rms}$ are quite trivial. For the expectation value of velocity
+\subsubsection{Derivation.} The derivation of $\braket{v}$ and $v_\text{rms}$ are quite trivial. For the expectation value of velocity
 \begin{multline*}
     \braket{v}=4\pi \left(\frac{m}{2\pi k T}\right)^{3/2} \int_{0}^{\infty}v^3\exp\left(-\frac{m v^2}{2k T}\right)\;dv\\
     =4\pi \left(\frac{m}{2\pi k T}\right)^{3/2} \frac{1}{2}\left(\frac{2kT}{m}\right)^{4/2}\Gamma(2)=\sqrt{\frac{8kT}{\pi m}}

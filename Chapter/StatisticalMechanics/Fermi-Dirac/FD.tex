@@ -1,6 +1,6 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsection*{Fermi-Dirac Distribution}
+\subsection{Fermi-Dirac Distribution}
 The distribution of particle obeying the Pauli exclusion principle, also called fermion, is governed by Fermi-Dirac distribution. In general, the number of particle per unit energy interval is given by 
 \begin{equation*}
     n(E)=\frac{g(E)}{\exp\left[(E-\mu)/k_BT\right]+1}
@@ -23,7 +23,7 @@ where
 \begin{equation*}
     f(E,T)=\frac{1}{\exp\left[(E-\mu)/k_BT\right]+1}
 \end{equation*}
-\subsection*{Einstein Derivation}
+\subsection{Einstein Derivation}
 The number of configuration in this case is the number of ways to choose $N_E$ particle from $P_E$ cells
 \begin{equation*}
     \mathcal{P}_E={P_E \choose N_E}=\frac{P_E!}{(P_E-N_E)!N_E!}
@@ -94,7 +94,7 @@ and for the distribution function
     n_E=\frac{2\pi}{h^3} \frac{V (2m)^{3/2}\sqrt{E}}{\exp\left[(E-\mu)/k_BT\right]+1}
 \end{equation*}
 
-\subsection*{Fermi Gas at Zero Temperature}
+\subsection{Fermi Gas at Zero Temperature}
 The Fermi function at absolute zero can be written as step function
 \begin{equation*}
     f(E,0)=\begin{cases}
@@ -114,7 +114,7 @@ Since the Fermi-Dirac distribution is a product of Fermi function and density of
     \end{cases}
 \end{equation*}
 
-\subsubsection*{Fermi energy.} The Fermi energy is the energy of the highest occupied state at absolute zero temperature.  It is given by
+\subsubsection{Fermi energy.} The Fermi energy is the energy of the highest occupied state at absolute zero temperature.  It is given by
 \begin{equation*}
     E_F=\frac{\hbar^2}{2m}\left(3\pi^2\frac{N}{V}\right)^{2/3}=\frac{3N}{2g(E_F)}
 \end{equation*}
@@ -131,12 +131,12 @@ By solving for $E_F$, we obtain the expression for Fermi energy. Alternatively w
     g(E_F)&=\frac{3N}{2}\frac{E_F^{1/2}}{E_F^{3/2}}=\frac{3N}{2E_F}
 \end{align*}
 
-\subsubsection*{Fermi temperature.} The Fermi temperature is the temperature where the thermal energy $kT$ can be compared with the Fermi energy $E_F$. By comparing those two energy, we obtain the value of Fermi temperature
+\subsubsection{Fermi temperature.} The Fermi temperature is the temperature where the thermal energy $kT$ can be compared with the Fermi energy $E_F$. By comparing those two energy, we obtain the value of Fermi temperature
 \begin{equation*}
     T_F=\frac{E_F}{k}=\frac{\hbar^2}{2mk}\left(3\pi^2\frac{N}{V}\right)^{2/3}
 \end{equation*}
 
-\subsubsection*{Fermi velocity.} Like Fermi energy, the Fermi velocity is the highest velocity, or rather speed, of fermion at absolute zero. It is given by 
+\subsubsection{Fermi velocity.} Like Fermi energy, the Fermi velocity is the highest velocity, or rather speed, of fermion at absolute zero. It is given by 
 \begin{equation*}
     v_F=\left(\frac{2E_F}{m}\right)^{1/2}
 \end{equation*}
@@ -145,12 +145,12 @@ It can be obtained by using the kinetic energy relation $E=mv^2/2$ for the Fermi
     v_F=\frac{h}{m}\left(3\pi^2\frac{N}{V}\right)^{1/3}
 \end{equation*}
 
-\subsubsection*{Fermi momentum.} The Fermi momentum is the highest momentum fermions at absolute zero can possibly have, and it is given by 
+\subsubsection{Fermi momentum.} The Fermi momentum is the highest momentum fermions at absolute zero can possibly have, and it is given by 
 \begin{equation*}
     p=\hbar\left(3\pi^2\frac{N}{V}\right)^{1/3}
 \end{equation*}
 
-\subsubsection*{Fermi wavevector and wavelength.} Since the momentum of a free fermion is $p=hk$, we have the Fermi wavevector as $k=p/h$ or 
+\subsubsection{Fermi wavevector and wavelength.} Since the momentum of a free fermion is $p=hk$, we have the Fermi wavevector as $k=p/h$ or 
 \begin{equation*}
     k_F=\left(3\pi^2\frac{N}{V}\right)^{1/3}
 \end{equation*}
@@ -160,7 +160,7 @@ Using the wave relation $k=2\pi/\lambda$, we can determine the Fermi wavelength
     \lambda_F=\frac{2\pi}{\left(3\pi^2N/V\right)^{1/3}}
 \end{equation*}
 
-\subsubsection*{Average energy.} At absolute zero, the average energy of fermion is given by 
+\subsubsection{Average energy.} At absolute zero, the average energy of fermion is given by 
 \begin{equation*}
     \braket{E}=\frac{3}{5}E_F
 \end{equation*}
@@ -172,7 +172,7 @@ It is derived by the following method.
     \braket{E}\big|_{T=0}&=\frac{1}{5}\left(\frac{\pi^2N}{V}\right)^{3/2}\left(\frac{\hbar}{2m}\right)3^{5/3}=\frac{3^{5/3}}{5}\frac{E_F}{3^{2/3}}=\frac{3}{5}E_F
 \end{align*}
 
-\subsubsection*{Average velocity.} The average velocity of fermion at absolute zero is given by 
+\subsubsection{Average velocity.} The average velocity of fermion at absolute zero is given by 
 \begin{equation*}
     \braket{v}\big|_{T=0}= \frac{1}{N}\int_{0}^{\infty}En(E)\;dE 
 \end{equation*}
@@ -183,7 +183,7 @@ It is derived in the following ways.
     &=\frac{V}{\pi^2N}\left(\frac{m}{\hbar}\right)^3\frac{1}{4} \left(\frac{h}{m}\right)^3\left(3\pi^2\frac{N}{V}\right)v_f=\frac{3}{4}v_F
 \end{align*}
 
-\subsection*{Fermi Gas at Low Temperature}
+\subsection{Fermi Gas at Low Temperature}
 Unlike at the absolute zero, the Fermi function at low temperature can not be written as step function, instead it decreases smoothly around the Fermi energy. This also implies that the distribution function does not suffer from discontinuity.
 
 At low temperature, there are $N_0$ fermions occupying Fermi energy state and $\Delta N$ fermion occupying the higher energy state. Thus, the number of fermion is $N=N_0+\Delta N$.
@@ -197,7 +197,7 @@ In many practical applications, however, we can approximate the integral only us
     \int_{0}^{\infty} f(E) g(E) dE \approx \int_{0}^{E_F} g(E) dE +  \frac{(\pi kT)^2}{6}g'(E)_{E_F}
 \end{equation*}
 
-\subsubsection*{Chemical potential.} Recall the integral for fermion at absolute zero 
+\subsubsection{Chemical potential.} Recall the integral for fermion at absolute zero 
 \begin{equation*}
     N=\int_{0}^{\infty}n(E)\;dE=\int_{0}^{E_F}g(E)\;dE
 \end{equation*}
@@ -241,7 +241,7 @@ Hence
 \end{align*}
 Alternatively, using the Fermi temperature, we can rewrite the expression i terms of Fermi temperature.
 
-\subsubsection*{Average energy.} Given by 
+\subsubsection{Average energy.} Given by 
 \begin{equation*}
     \braket{E}=E_F\left[\frac{3}{5}+\frac{\pi^2}{4}\left(\frac{kT}{E_F}\right)^2\right]= E_F\left[\frac{3}{5}+\frac{\pi^2}{4}\left(\frac{T}{T_F}\right)^2\right]
 \end{equation*}
@@ -270,7 +270,7 @@ Thus
     \braket{E}=\frac{3}{5}E_F-\frac{1}{4}\frac{(\pi kT)^2}{E_F}+\frac{3}{8}\frac{(\pi kT)^2}{E_F}=E_F\left[\frac{3}{5}+\frac{\pi^2}{4}\left(\frac{kT}{E_F}\right)^2\right]
 \end{align*}
 
-\subsubsection*{Heat capacitance.} Inside metal, heat capacitance is the sum of heat capacitance due to phonon, predicted by Debye's model, and due to the free electron, governed by Fermi-Dirac distribution 
+\subsubsection{Heat capacitance.} Inside metal, heat capacitance is the sum of heat capacitance due to phonon, predicted by Debye's model, and due to the free electron, governed by Fermi-Dirac distribution 
 \begin{equation*}
     C_V=C_{V\text{ph}}+C_{V\text{el}}=\begin{cases*}
         AT^3+\gamma T &$T<\theta_D$\\

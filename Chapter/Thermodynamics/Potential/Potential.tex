@@ -2,7 +2,7 @@
 \begin{document}
 Both entropy and internal energy are a function of volume and number of particle, which are extensive parameters. In experiment, however, we only controls intensive parameters, such as temperature and pressure. Thermodynamics potentials provide a way to describe system using intensive parameters.
 
-\subsection*{Entropy and internal Energy Relation}
+\subsection{Entropy and internal Energy Relation}
 I already derived these somewhere, I don't remember
 \begin{equation*}
     \frac{\partial U}{\partial S}\bigg|_{V, N_{i} }=T,\quad
@@ -16,7 +16,7 @@ and
     \frac{\partial S}{\partial N_j}\bigg|_{U, N_{i\neq j}}=-\frac{P}{T}\quad
 \end{equation*}
 
-\subsection*{Helmholtz Potential}
+\subsection{Helmholtz Potential}
 By performing Legendre transform of $U(S,V,N)$ with respect to $S$, we get
 \begin{align*}
     \mathcal{L}_S[U(S,V,N)]&=U\left[S\left(\frac{\partial U}{\partial S}\right), V,N\right]-\frac{\partial U}{\partial S}S\left(\frac{\partial U}{\partial S}\right)\\
@@ -27,7 +27,7 @@ We define the resulting function as Helmholtz potential or Free energy
     F(T,V,N)=U[S,V,N]-TS
 \end{equation*}
 
-\subsubsection*{Partial derivative relation.} The differential of $F$ read as
+\subsubsection{Partial derivative relation.} The differential of $F$ read as
 \begin{align*}
     dF&=dU-T\;dS-S\;dT=T\;dS-P\;dV+\mu \;dN-T\;dS-S\;dT\\
     dF&=-S\;dT - P\; dV + \mu \;dN
@@ -37,11 +37,11 @@ Therefore
     S=-\frac{\partial F}{\partial T}\bigg|_{V,N},\quad P=-\frac{\partial F}{\partial V}\bigg|_{T,N},\quad \mu=\frac{\partial F}{\partial N}\bigg|_{T,V}
 \end{equation*}
 
-\subsubsection*{Physical meaning.} Consider system undergoing thermodynamics transform from state $A$ to $B$. Suppose that the temperature $T$, volume $V$, and number of particle $N$ is held constant during the transformation; according to the second law,
+\subsubsection{Physical meaning.} Consider system undergoing thermodynamics transform from state $A$ to $B$. Suppose that the temperature $T$, volume $V$, and number of particle $N$ is held constant during the transformation; according to the second law,
 \begin{equation*}
     \int_\text{irr}\frac{\dbar Q}{T}\leq\int_\text{rev}\frac{\dbar Q}{T} \implies \frac{\dbar Q}{T}\leq d S\implies d Q\leq T\;d S
 \end{equation*}
-\subsubsection*{Partial derivative relation.} The differential of $F$ is then 
+\subsubsection{Partial derivative relation.} The differential of $F$ is then 
 \begin{equation*}
     dF=dU-T\;dS\implies dF\leq dU-\dbar Q
 \end{equation*}
@@ -51,7 +51,7 @@ Using the first law and the result from the second law, we have
 \end{equation*} 
 Therefore, Helmholtz potential never increases in thermodynamics transformation which is performed under isothermal, isovolume, and iso-number-of-particle conditions.
 
-\subsection*{Gibbs Potential}
+\subsection{Gibbs Potential}
 Gibbs potential is obtained by performed Legendre transformation to $U(S,V,N)$ with respect $S$ and $V$. Consider
 \begin{align*}
     \mathcal{L}_{S,V}[U(S,V,N)]&=U\left[S\left(\frac{\partial U}{\partial S}\right), V\left(\frac{\partial U}{\partial V}\right),N\right]\\
@@ -66,7 +66,7 @@ By invoking the Euler equation in terms of internal energy, we can also write Gi
 \begin{align*}
     G(T,P,N)=TS-PV+\mu N-TS+PV=\mu N
 \end{align*}
-\subsubsection*{Partial derivative relation.} Now, consider the total differential of $G$
+\subsubsection{Partial derivative relation.} Now, consider the total differential of $G$
 \begin{align*}
     dG&=dU-T\;dS-S\;dT+P\;dV+V\;dP\\
     &=T\;dS-P\;dV+\mu \;dN-T\;dS-S\;dT+P\;dV+V\;dP\\
@@ -77,7 +77,7 @@ It follows that
     S=-\frac{\partial G}{\partial T}\bigg|_{P,N},\quad V=\frac{\partial G}{\partial P}\bigg|_{T,N},\quad \mu=\frac{\partial G}{\partial N}\bigg|_{T,P}
 \end{equation*}
 
-\subsubsection*{Physical meaning.} We again consider the same system under transformation. The transformation, however, performed under the same temperature $T$, pressure $P$, and number of particle $N$. We write the differential of $G$ as 
+\subsubsection{Physical meaning.} We again consider the same system under transformation. The transformation, however, performed under the same temperature $T$, pressure $P$, and number of particle $N$. We write the differential of $G$ as 
 \begin{equation*}
     dG=dU-T\;dS+P\;dV=\dbar Q-T\;dS
 \end{equation*}
@@ -86,7 +86,7 @@ Using the result we obtained earlier from the second law
     dG \leq0, \quad \text{for }\quad dT=dP=dN=0
 \end{equation*}
 We have proofed that in isothermal, isobaric, and iso-number-of-particle, Gibbs potential never increases.
-\subsection*{Enthalpy}
+\subsection{Enthalpy}
 Suppose we perform Legendre transformation of $U(x,y,z)$ with respect to $V$, we write 
 \begin{align*}
     \mathcal{L}_V\left[U(S,V,N)\right]&= U\left[S,V\left(\frac{\partial U}{\partial V}\right),N\right]- \frac{\partial U}{\partial V}V\left(\frac{\partial U}{\partial V}\right) \\
@@ -96,7 +96,7 @@ This function is defined as enthalpy
 \begin{equation*}
     H(S,P,N)=U(S,V,N)+PV
 \end{equation*}
-\subsubsection*{Partial derivative relation.} We write the differential of $H$ as
+\subsubsection{Partial derivative relation.} We write the differential of $H$ as
 \begin{align*}
     dH&=dU+P\;dV+V\;dP=T\;dS-P\;dV+\mu\;dN+P\;dV+V\;dP\\
     dH&=T\;dS+V\;dP+\mu\;dN
@@ -106,7 +106,7 @@ Hence
     T=\frac{\partial H}{\partial S}\bigg|_{P,N}, \quad V=\frac{\partial H}{\partial P}\bigg|_{S,N},\quad \mu=\frac{\partial H}{\partial N}\bigg|_{S,P}
 \end{equation*}
 
-\subsubsection*{Physical meaning.} We can also write the differential of $H$ as 
+\subsubsection{Physical meaning.} We can also write the differential of $H$ as 
 \begin{align*}
     dH&=dU+P\;dV+V\;dP=\dbar Q-P\;dV+\mu\;dN+P\;dV+V\;dP\\
     dH&=\dbar Q+V\;dP+\mu\;dN
@@ -123,7 +123,7 @@ Applying the transformation constrains, we get
 \end{equation*}
 In other words, enthalpy can never increase in isentropic, isobaric, and iso-number-particle.
 
-\subsection*{Grand Potential}
+\subsection{Grand Potential}
 Grand potential is obtained by performing Legendre transform of $U(S,V,N)$ with respect to $S$ and $N$
 \begin{align*}
     \mathcal{L}_{S,N}\left[U(S,V,N)\right]&= U\left[S\left(\frac{\partial U}{\partial S}\right),V,N\left(\frac{\partial U}{\partial N}\right)\right] - \frac{\partial U}{\partial S}S\left(\frac{\partial U}{\partial S}\right)\\
@@ -139,7 +139,7 @@ Due to Euler's equation, we can rewrite the grand potential it terms of pressure
     \Omega(T,V,\mu)=TS-PV+\mu N-TS-\mu N=-PV
 \end{equation*}
 
-\subsubsection*{Partial differential relation.} We can write the total differential of $\Omega$ as 
+\subsubsection{Partial differential relation.} We can write the total differential of $\Omega$ as 
 \begin{align*}
     d\Omega&= dU-T\;dS- S\;dT-\mu \;dN-N\;d\mu\\
     &=T\;dS-P\;dV+\mu\;dN-T\;dS- S\;dT-\mu \;dN-N\;d\mu\\

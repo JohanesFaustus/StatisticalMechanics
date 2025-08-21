@@ -1,6 +1,6 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsection*{Few Terminologies}
+\subsection{Few Terminologies}
 \begin{enumerate}
     \item \textbf{Heat and energy.} Heat is considered a form of energy. It can be converted to work, and in turn can be produced by consuming work. Work and heat together obey law of conservation of energy.
     \item \textbf{Thermodynamic equilibrium.} The state of a thermodynamic system which does not change with time is called the state of thermodynamic equilibrium.
@@ -19,7 +19,7 @@
     \item \textbf{Cyclic transformation.} If a transformation is such that it restores the system to its initial state then it is called cyclic. 
 \end{enumerate}
 
-\subsection*{The Ideal Gas} 
+\subsection{The Ideal Gas} 
 The ideal gas model represents the gas particles as point particles (i.e. a material body having mass but no spatial extent), and assumes that there are no (attractive or repulsive) physical interactions between them. For an ideal gas composed of $N$ particles or $n$ moles in equilibrium, the pressure $P$ is related with the volume $V$ occupied by the gas and its temperature $T$, through the ideal gas equation:
 \begin{equation*}
     P V = n RT = N k_B T
@@ -37,7 +37,7 @@ Since, in addition to the equation of state relating pressure, volume, and tempe
 \end{equation*}
 
 
-\subsubsection*{Van der Waals Equation of State.} The equation of state for a real gas derived by van der Waals was also based on the kinetic theory and the Virial theorem. Here we give standard phenomenological derivation of the equation, obtained by introducing following modifications in the ideal gas law:
+\subsubsection{Van der Waals Equation of State.} The equation of state for a real gas derived by van der Waals was also based on the kinetic theory and the Virial theorem. Here we give standard phenomenological derivation of the equation, obtained by introducing following modifications in the ideal gas law:
 \begin{enumerate}
     \item \textbf{Specific volume.} It is assumed that the molecules are not point particles but are hard spheres. This results in each molecule excluding some volume, say $b$, from the total volume $V$. It was argued that the ideal gas law should therefore be modified to replace $V$ by $V - N b$.
     \item \textbf{Force of attraction.} The molecules attract each other when separated by distances greater than the molecular radius $r_0$. Assuming that the molecules are distributed uniformly, each mole-cule in the interior is acted upon by forces on all sides resulting in net-zero force; however near the boundary surfaces therefore experience a net inward force resulting in reduction of pressure. This causes net reduction of pressure proportional to $(N /V )^2$ which must be subtracted from the pressure appearing in the ideal gas law.
@@ -51,7 +51,7 @@ where $v=V/N$ is the specific volume. And for the internal energy of single part
     u=ck_BT-\frac{a}{v}
 \end{equation*}
 
-\subsubsection*{Entropy of ideal gas.} Consider a reversible process which takes $N$ molecules of an ideal gas be in equilibrium in the state $A$ to the equilibrium state $B$. The process being reversible is described by the form of the first law which, on reversible process takes the form of 
+\subsubsection{Entropy of ideal gas.} Consider a reversible process which takes $N$ molecules of an ideal gas be in equilibrium in the state $A$ to the equilibrium state $B$. The process being reversible is described by the form of the first law which, on reversible process takes the form of 
 \begin{eqnarray}
     dU=T\;dS-P\;dV
 \end{eqnarray}
@@ -76,7 +76,7 @@ where $K$ is the integration constant. Determination of absolute value of entrop
     S(B)-S(A)=Nk_B \biggl[c\ln\frac{U_B}{U_A}+\ln\frac{V_B}{V_A}\biggr]
 \end{equation*}
 
-\subsection*{Carnot Engine}
+\subsection{Carnot Engine}
 \begin{figure*}
     \centering
     \includegraphics[width=0.4\textwidth]{../../../Rss/Themodynamics/KeyConcepts/CarnotEngine.png}
@@ -101,7 +101,7 @@ where the last line is obtained from clever derivation. I won't go into the deri
 \end{equation*}
 Also note that the $T$ in question is measure in kelvin, not Celsius. 
 
-\subsubsection*{Cyclic Process.} Consider the cyclic process comprises a sequence of four reversible processes of a thermodynamic system, namely, an isothermal expansion, an adiabatic expansion, an isothermal compression, and an adiabatic compression. Suppose also that the working fluid is an ideal gas. Those processes are as follows.
+\subsubsection{Cyclic Process.} Consider the cyclic process comprises a sequence of four reversible processes of a thermodynamic system, namely, an isothermal expansion, an adiabatic expansion, an isothermal compression, and an adiabatic compression. Suppose also that the working fluid is an ideal gas. Those processes are as follows.
 
 \begin{enumerate}
     \item \textbf{Point A.} The gas is initially in equilibrium at temperature $T_h$ and its pressure and volume $P_A $, $V_A$. The temperature is kept constant by keeping the gas in contact with a heat reservoir at the desired temperature. The gas is then let to expand isothermally to volume $V_B$ with $P_B$ as its pressure.
@@ -175,7 +175,7 @@ Also note that the $T$ in question is measure in kelvin, not Celsius.
     \caption*{Figure: $PV$ diagram of a cyclic Carnot process.}
 \end{figure*}
 
-\subsubsection*{Carnot's equation in cyclic processes.} The Carnot's equation still holds true even in cyclic process. To prove this, first we're applying adiabatic equation to path $BC$
+\subsubsection{Carnot's equation in cyclic processes.} The Carnot's equation still holds true even in cyclic process. To prove this, first we're applying adiabatic equation to path $BC$
 \begin{equation*}
     T_BV_B^{\gamma-1}=T_CV_C^{\gamma-1}\implies \biggl(\frac{V_B}{V_C}\biggr)^{\gamma-1}=\frac{T_C}{T_B}\implies\biggl(\frac{V_B}{V_C}\biggr)^{\gamma-1}=\frac{T_c}{T_h}
 \end{equation*}
@@ -193,7 +193,7 @@ This leads to
 \end{equation*}
 which is the Carnot's equation.
 
-\subsubsection*{Efficiency of cyclic Carnot engine.} To find efficiency of the process under consideration from first principles note that total work done by the gas in the cycle, due to first law, is
+\subsubsection{Efficiency of cyclic Carnot engine.} To find efficiency of the process under consideration from first principles note that total work done by the gas in the cycle, due to first law, is
 \begin{equation*}
     W=\oint(\dbar Q-dU)=\oint \dbar Q
 \end{equation*}
@@ -210,7 +210,7 @@ The relation derived above is independent of the equation of state obeyed by the
     \mu=\frac{W}{Q_h}=1-\frac{Q_c}{Q_h}=1-\frac{T_c}{T_h}
 \end{equation*}
 
-\subsection*{Specific Heat}
+\subsection{Specific Heat}
 Invoking the first law we have
 \begin{align*}
     dU=\dbar Q-P\;dV\begin{cases}
@@ -243,14 +243,14 @@ Using these, the equation yields
     C_V&=\frac{Nk_B}{\gamma-1}=cNk_B
 \end{align*}
 
-\subsection*{Internal Energy}
+\subsection{Internal Energy}
 The independence of internal energy to volume was proved by Thomson and Joule (in 1845) which involved direct measurement of temperature of the gas. It is also known experimentally that the heat capacity of ideal gas is independent of temperature. Consequently, $C_V$ is a constant so that
 \begin{equation*}
     U(V,T)=C_VT=cNk_BT
 \end{equation*}
 For an ideal monoatomic gas, $c=3/2$ thus $\gamma=5/3$
 
-\subsection*{Entropy}
+\subsection{Entropy}
 The relation for the reversible cyclic process may then be rewritten as $Q_h /T_h + (-Q_c /T_c ) = 0$. The quantity
 \begin{equation*}
     S\equiv \frac{Q}{T}

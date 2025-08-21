@@ -1,6 +1,6 @@
 \documentclass[../../../Main.tex]{subfiles}
 \begin{document}
-\subsection*{Blackbody radiation}
+\subsection{Blackbody radiation}
 In his theory of blackbody radiation, energy density at frequency $\nu$ inside cavity with temperature $T$ is given by
 \begin{equation*}
     \mathcal{U}(\nu,T)=\rho u
@@ -28,7 +28,7 @@ And the relation with energy density
 \end{equation*}
 with $E=hc/\lambda$. 
 
-\subsection*{Planck's Derivation}
+\subsection{Planck's Derivation}
 
 In his work, Planck assumes that the walls of the cavity act as oscillator with  energy of integer multiple $\epsilon$. This has some similarity with Boltzmann discrete model. We denote $n_k$ as the number particle with $k\epsilon$ energy, with maximum energy of $P\epsilon$. Therefore, we have the following constraints.
 \begin{equation*}
@@ -119,7 +119,7 @@ Substituting $\epsilon=h\nu$ from our empirical observation, we obtain
     u=\frac{hv}{\exp(hv/k T)-1}\quad\blacksquare
 \end{equation*}
 
-\subsection*{Bose's Derivation}
+\subsection{Bose's Derivation}
 Bose derived Planck's law independent of classical electrodynamics to obtain coefficient $8\pi \nu^2/c^3$. He defined the cell $\mathcal{P}_v$ as a box which photon are distributed. Let $n_{k\nu}$ defined as the number of boxes that contain $k$ photon of frequency $\nu$. We have then the following constraints.
 \begin{equation*}
     P_\nu=\sum_{k=0}^{\infty}n_{k\nu},\quad U_\nu= hv\sum_{k=0}^{\infty}kn_{k\nu}
@@ -268,7 +268,7 @@ To obtain the average energy per unit frequency, we divide $U_\nu$ by spatial vo
     \mathcal{U}(\nu,T)=\frac{U_\nu}{V\;d\nu}=\frac{\nu^3}{c^3}\frac{8\pi h}{\exp(h\nu/k T)-1}
 \end{equation*}
 
-\subsection*{Einstein's Method}
+\subsection{Einstein's Method}
 Suppose we use Einstein method to rederive Planck's law, just like Bose did. In his method, he distributed the number of identical quanta $N_\nu$ within distinct $P_\nu$ cells. The number of configuration in this case is given by 
 \begin{equation*}
     \mathcal{P}_\nu=\frac{(N_\nu+P_\nu-1)}{N_\nu! (P_\nu-1)!}
@@ -319,12 +319,12 @@ and
 \end{equation*}
 which is the same as Bose's result.
 
-\subsection*{Rayleigh-Jeans Model}
+\subsection{Rayleigh-Jeans Model}
 This model is only accurate for large $\lambda$ or small $\nu$. The energy density described by this model is 
 \begin{equation*}
     \mathcal{U}(\lambda,T)=\frac{8\pi}{\lambda^4}kT\quad\text{or}\quad\mathcal{U}(\nu,T)=\frac{8\pi\nu^2}{c^3}kT
 \end{equation*}
-\subsubsection*{Derivation.} For large $\lambda$, the exponential term approaches zero, so it can be approximated with 
+\subsubsection{Derivation.} For large $\lambda$, the exponential term approaches zero, so it can be approximated with 
 \begin{equation*}
     \exp\left(\frac{hc}{\lambda kT}\right)\approx\frac{hc}{\lambda kT}-1
 \end{equation*}
@@ -333,7 +333,7 @@ Hence, the energy density as function of wavelength is
     \mathcal{U}(\lambda,T)\approx\frac{8\pi hc}{\lambda^5}\frac{1}{(hc/\lambda kT)}=\frac{8\pi}{\lambda^4}kT\quad\blacksquare
 \end{equation*}
 
-\subsection*{Wien's Law}
+\subsection{Wien's Law}
 In other hand, this model only accurate for small $\lambda$ or large $\nu$. The energy density based this model is 
 \begin{equation*}
     \mathcal{U}(\lambda,T)=\frac{8\pi hc}{\lambda^5}\exp\left(-\frac{hc}{\lambda kT}\right)
@@ -342,7 +342,7 @@ Wien's model is able to obtain the fact that the product maximum wavelength and 
 \begin{equation*}
     \lambda_m T=2.897 \text{ mmK}
 \end{equation*}
-\subsubsection*{Derivation.} For small $\lambda$, the exponential term approach infinity, so the denominator term of the Plack distribution can be approximated with
+\subsubsection{Derivation.} For small $\lambda$, the exponential term approach infinity, so the denominator term of the Plack distribution can be approximated with
 \begin{equation*}
     \left[\exp\left(\frac{hc}{\lambda kT}\right)-1\right]^{-1}\approx \exp\left(-\frac{hc}{\lambda kT}\right)
 \end{equation*}
@@ -362,13 +362,13 @@ into zero to obtain
 \end{align*}
 
 
-\subsection*{Stefan's Law}
+\subsection{Stefan's Law}
 \begin{equation*}
     u=\alpha T^4
 \end{equation*}
 where $\alpha=1.65\cdot10^{-16}$ J/K$^{4}$m$^{3}$.
 
-\subsubsection*{Derivation.} Integrating $\mathcal{U}(\lambda)$ over all possible wavelength to obtain
+\subsubsection{Derivation.} Integrating $\mathcal{U}(\lambda)$ over all possible wavelength to obtain
 \begin{equation*}
     u=\int_0^\infty\frac{8\pi hc}{\lambda^5}\frac{1}{\exp(hc/\lambda k T)-1}d\lambda\\
 \end{equation*}
@@ -384,13 +384,13 @@ Evaluating the constant, we finally have
     u=7.65\cdot10^{-16} T^4\quad\blacksquare
 \end{equation*}
 
-\subsection*{Stefan-Boltzman's Law}
+\subsection{Stefan-Boltzman's Law}
 \begin{equation*}
     I=\sigma T^4
 \end{equation*}
 where $\sigma=5.57\cdot10^{-8}$ J/K$^{4}$m$^{2}$.
 
-\subsubsection*{Derivation.} Based on MB distribution, the flux of a gas is 
+\subsubsection{Derivation.} Based on MB distribution, the flux of a gas is 
 \begin{equation*}
     \Gamma=\frac{1}{4}\rho\braket{v}
 \end{equation*}

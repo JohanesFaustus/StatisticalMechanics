@@ -24,11 +24,47 @@
 
 \allowdisplaybreaks
 
-\titleformat{\chapter}[hang]{\thispagestyle{empty}\centering \Huge \bfseries}{}{}{}[\clearpage]
-\titleformat{\section}[hang]{\bfseries\Large\centering}{}{}{}[\vspace{0.5cm}]
-\titleformat{\subsection}[hang]{\bfseries\large}{}{}{}[\noindent\rule{\textwidth}{0.4pt}]
-\titleformat{\subsubsection}[runin]{\bfseries}{}{}{\indent}
-\titleformat{\paragraph}[runin]{\itshape}{}{}{\indent}
+
+\usepackage{hyperref}
+\hypersetup{bookmarksopen=true }
+
+\usepackage{etoolbox}
+\makeatletter
+\makeatother
+
+\titleformat{\chapter}[display]
+  {\thispagestyle{empty}\centering \Huge \bfseries} % format
+  {}                                                % label (empty = no number)
+  {0pt}                                             % sep
+  {}                                                % before-code
+\titlespacing*{\chapter}{0pt}{\fill}{\fill}
+
+\titleformat{\section}[hang]
+  {\bfseries\Large\centering}
+  {} % empty = no section number
+  {0pt}
+  {}
+  [\vspace{0.5cm}]
+
+\titleformat{\subsection}[hang]
+  {\bfseries\large}
+  {} % empty = no subsection number
+  {0pt}
+  {}
+  [\noindent\rule{\textwidth}{0.4pt}]
+
+\titleformat{\subsubsection}[runin]
+  {\bfseries}
+  {} % empty = no subsubsection number
+  {0pt}
+  {\indent}
+
+\titleformat{\paragraph}[runin]
+  {\itshape}
+  {} % empty = no paragraph number
+  {0pt}
+  {\indent}
+
 
 
 \def\dbar{{\mathchar'26\mkern-12mu d}}
@@ -37,64 +73,70 @@
 \pagestyle{empty}
 \subfile{./Cover/cov.tex}
 \nocite{*}
-\chapter*{Mathematics}
-\section*{Homongeneus Function}
+\clearpage
+\tableofcontents
+\clearpage
+
+\chapter{Mathematics}
+\clearpage
+
+\section{Homongeneus Function}
 \subfile{./Chapter/Mathematics/HomongeneusFunction/HF.tex}\clearpage
 
-\section*{Partial Derivative}
+\section{Partial Derivative}
 \subfile{./Chapter/Mathematics/PartialDerivative/PD.tex}\clearpage
 
-\section*{Legendre Transform}
+\section{Legendre Transform}
 \subfile{./Chapter/Mathematics/LTransform/LT.tex}\clearpage
 
-\section*{State Function And Conservative Field}
+\section{State Function And Conservative Field}
 \subfile{./Chapter/Mathematics/StateFunctionAndConservativeField/SFCF.tex}\clearpage
 
-\section*{Special Function}
+\section{Special Function}
 \subfile{./PhysicalMathematics/Section/SpecialFunction/Sfunc.tex}\clearpage 
 
-\section*{Statistics}
+\section{Statistics}
 \subfile{./PhysicalMathematics/Section/Probability/Probability.tex}
 
-\chapter*{Thermodynamics}
+\chapter{Thermodynamics}\clearpage
 
-\section*{Key Concepts}
+\section{Key Concepts}
 \subfile{./Chapter/Thermodynamics/KeyConcept/KeyConcept.tex}\clearpage
 
-\section*{Thermodynamics' Law}
+\section{Thermodynamics' Law}
 \subfile{./Chapter/Thermodynamics/ThermoLaw/ThermoLaw.tex}\clearpage
 
-\section*{Thermodynamics Postulate}
+\section{Thermodynamics Postulate}
 \subfile{./Chapter/Thermodynamics/Postulate/Postulate.tex}\clearpage
 
-\section*{Thermodynamics' Potentials}
+\section{Thermodynamics' Potentials}
 \subfile{./Chapter/Thermodynamics/Potential/Potential.tex}\clearpage
 
-\section*{Maxwell Relations}
+\section{Maxwell Relations}
 \subfile{./Chapter/Thermodynamics/MaxwellRelation/Maxwell.tex}\clearpage
 
-\chapter*{Statistical Mechanics}
+\chapter{Statistical Mechanics}\clearpage
 
-\section*{Introduction}
+\section{Introduction}
 \subfile{./Chapter/StatisticalMechanics/Intro/Intro.tex}\clearpage
 
-\section*{Maxwell-Boltzman Distribution}
+\section{Maxwell-Boltzman Distribution}
 \subfile{./Chapter/StatisticalMechanics/Maxwell-Boltzman/MB.tex}\clearpage
 \subfile{./Chapter/StatisticalMechanics/Maxwell-Boltzman/MBAppend.tex}\clearpage
 
-\section*{Bose-Einstein Distribution}
+\section{Bose-Einstein Distribution}
 \subfile{./Chapter/StatisticalMechanics/Bose-Einstein/BE.tex}\clearpage
 
-\section*{Planck Distribution}
+\section{Planck Distribution}
 \subfile{./Chapter/StatisticalMechanics/Planck/Planck.tex}\clearpage
 
-\section*{Fermi-Dirac Distribution}
+\section{Fermi-Dirac Distribution}
 \subfile{./Chapter/StatisticalMechanics/Fermi-Dirac/FD.tex}\clearpage
 
-\section*{Boltzmann Entropy}
+\section{Boltzmann Entropy}
 \subfile{./Chapter/StatisticalMechanics/BoltzmannEntropy/Boltzmann.tex}\clearpage
 
-\section*{Equilibrium Distribution}
+\section{Equilibrium Distribution}
 \subfile{./Chapter/StatisticalMechanics/Equilibrilium/eq.tex}\clearpage
 \printbibliography
 \end{document}
